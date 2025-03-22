@@ -160,9 +160,9 @@
      </p>
 
   <div class="max-w-5xl mx-auto">
-    
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-      <div id="water" class="color-panel bg-teal-950 text-white rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="frankincense">
+      <!-- Water Sec - Plant/Growth Theme -->
+      <div class="color-panel bg-teal-950 text-white rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="frankincense">
         <h2 class="text-2xl font-semibold text-lime-300">Water Security</h2>
         <p class="text-white mb-3">Safe drinking water, hygenic sanitation</p>
         <div class="hover-content text-blue-800 font-medium hidden">
@@ -173,10 +173,33 @@
         </svg>
       </div>
       
+
+      <div class="color-panel bg-gray-700 rounded-lg text-white p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="gold">
+        <h2 class="text-2xl font-semibold text-orange-400">Fuel Briquette</h2>
+        <p class="text-white mb-3">Small solar electric, diy wind systems, batteries, wiring.</p>
+        <div class="hover-content text-blue-800 font-medium hidden">
+          Load youtube video
+        </div>
+        <svg class="icon-bg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"></path>
+        </svg>
+      </div>
+     
+      <!-- Soft Lavender Panel - Stars/Cosmos Theme -->
+      <div class="color-panel bg-gray-900 rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="olive">
+        <h2 class="text-2xl font-semibold text-sky-600">DIY Water Filters</h2>
+        <p class="text-white mb-3">Support for resilience amid disruption.</p>
+        <div class="hover-content hidden text-blue-800 font-medium">
+          Load youtube video
+        </div>
+        <svg class="icon-bg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"></path>
+        </svg>
+      </div>
       
       <div class="color-panel bg-stone-600 rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="myhrr">
-        <h2 class="text-2xl font-semibold text-orange-300">Fuel Briquette</h2>
-        <p class="text-white mb-3">Heating from waste sawdust, paper,... </p>
+        <h2 class="text-2xl font-semibold text-amber-950">Briquette Production</h2>
+        <p class="text-white mb-3">simple hands on approach</p>
         <div class="hover-content text-blue-800 font-medium hidden">
           Click to load video
         </div>
@@ -192,6 +215,198 @@
     </div>
   </div>
 
+<script>
+    
+
+document.addEventListener('DOMContentLoaded', () => {
+  const colorPanels = document.querySelectorAll('.color-panel');
+  const videoSection = document.getElementById('video-section');
+  const videoContainer = document.getElementById('video-container');
+  const selectedColorTitle = document.getElementById('selected-color-title');
+  
+  // Add skeleton loader CSS
+  const skeletonStyles = document.createElement('style');
+  skeletonStyles.textContent = `
+    .skeleton-loader {
+      width: 100%;
+      animation: pulse 1.5s infinite ease-in-out;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .skeleton-video {
+      width: 100%;
+      height: 450px;
+      background-color: #e0e0e0;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    
+    .skeleton-text {
+      width: 40%;
+      height: 24px;
+      background-color: #e0e0e0;
+      border-radius: 4px;
+      margin: 0 auto;
+    }
+    
+    .video-wrapper {
+      width: 100%;
+      z-index: 2;
+    }
+    
+    @keyframes pulse {
+      0% {
+        opacity: 0.6;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.6;
+      }
+    }
+    
+    .video-links {
+      margin-top: 12px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+    
+    .video-links a {
+      color: #3b82f6;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      background-color: #f3f4f6;
+      transition: all 0.2s;
+    }
+    
+    .video-links a:hover {
+      background-color: #e5e7eb;
+      color: #2563eb;
+    }
+  `;
+  document.head.appendChild(skeletonStyles);
+  
+  // Show "Click to load" text on hover
+  colorPanels.forEach(panel => {
+    panel.addEventListener('mouseover', () => {
+      const hoverContent = panel.querySelector('.hover-content');
+      hoverContent.classList.remove('hidden');
+    });
+    
+    panel.addEventListener('mouseout', () => {
+      const hoverContent = panel.querySelector('.hover-content');
+      hoverContent.classList.add('hidden');
+    });
+    
+    // Load video on click
+    panel.addEventListener('click', () => {
+      const colorName = panel.dataset.color; 
+      selectedColorTitle.textContent = `You selected: ${colorName}`;
+      
+      console.log("Clicked:", colorName);
+      
+      // Set default values
+      let videoId = 'BqHCRmU4y5g';
+      let detailsLink = '<a href="#">Learn more</a>';
+      let resourceLink = '<a href="#">Additional resources</a>';
+      let transcriptLink = '<a href="#">View transcript</a>';
+      
+      // Update links based on colorName
+      if (colorName === "olive") {
+        videoId = 'Upw8D9GMMVc';
+        detailsLink = '<a href="water.html#1">Learn more about DIY filters</a>';
+        resourceLink = '<a href="filter-resources.html">Filter building materials</a>';
+        transcriptLink = '<a href="transcripts/filter-video.html">View transcript</a>';
+      } else if (colorName === "frankincense") {
+        videoId = 'ADWNO0WrrTY';
+        detailsLink = '<a href="waste.html#1">Learn more about water safety</a>';
+        resourceLink = '<a href="water-safety-resources.html">Water safety guides</a>';
+        transcriptLink = '<a href="transcripts/water-safety.html">View transcript</a>';
+      } else if (colorName === "gold") {
+        videoId = 'BqHCRmU4y5g';
+        detailsLink = '<a href="water.html#2">Learn more about fuel briquettes</a>';
+        resourceLink = '<a href="briquette-resources.html">Briquette materials</a>';
+        transcriptLink = '<a href="transcripts/briquette-video.html">View transcript</a>';
+      } else if (colorName === "myhrr") {
+        videoId = 'qtDO9AI2Ie8';
+        detailsLink = '<a href="waste.html#2">Learn more about production</a>';
+        resourceLink = '<a href="production-resources.html">Production equipment</a>';
+        transcriptLink = '<a href="transcripts/production-video.html">View transcript</a>';
+      }
+      
+      console.log("Video ID:", videoId);
+      
+      // Show skeleton loader while video loads
+      videoContainer.innerHTML = `
+        <div class="skeleton-loader">
+          <div class="skeleton-video"></div>
+          <div class="skeleton-text"></div>
+        </div>
+      `;
+      
+      // Show the video section with loader
+      videoSection.classList.remove('hidden');
+      videoSection.scrollIntoView({ behavior: 'smooth' });
+      
+      // Create iframe
+      const iframe = document.createElement('iframe');
+      iframe.width = "100%";
+      iframe.height = "450";
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      iframe.title = "YouTube video player";
+      iframe.frameBorder = "0";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+      
+      // Create a holding container for our video and links
+      const videoWrapper = document.createElement('div');
+      videoWrapper.className = 'video-wrapper';
+      videoWrapper.style.display = 'none'; // Hide initially
+      
+      // Append iframe to the wrapper
+      videoWrapper.appendChild(iframe);
+      
+      // Create links container
+      const linksContainer = document.createElement('div');
+      linksContainer.className = 'video-links';
+      linksContainer.innerHTML = detailsLink + resourceLink + transcriptLink;
+      
+      // Add links to wrapper
+      videoWrapper.appendChild(linksContainer);
+      
+      // Add the wrapper to the DOM (but keep it hidden)
+      videoContainer.appendChild(videoWrapper);
+      
+      // Function to show content
+      const showContent = () => {
+        // Only show content if not already shown
+        if (videoContainer.querySelector('.skeleton-loader')) {
+          // First, set the wrapper to be visible
+          videoWrapper.style.display = 'block';
+          
+          // Then, after a small delay, remove the skeleton loader
+          setTimeout(() => {
+            const skeletonLoader = videoContainer.querySelector('.skeleton-loader');
+            if (skeletonLoader) {
+              skeletonLoader.remove();
+            }
+          }, 50);
+        }
+      };
+      
+      // Add onload handler
+      iframe.onload = showContent;
+      
+      // Backup timeout in case onload doesn't fire
+      setTimeout(showContent, 3000);
+    });
+  });
+});
+</script>
 
     <div id="health-library"></div>
 
@@ -233,23 +448,14 @@
           <br>
           Sharing knowledge & expertise benefits vulnerable communities.
           </p>
+
           <div class="flex space-x-4 mt-4 md:mt-0">
               <a href="#privacy" id="privacy-link-footer" class="text-gray-400 hover:text-white">Privacy Policy</a>
               <a href="#terms" id="terms-link-footer" class="text-gray-400 hover:text-white">Terms of Service</a>
               <a href="#cookies" class="text-gray-400 hover:text-white">Cookie Policy</a>
           </div>
       </div>
-
 </footer>
-
-<script>
-  document.getElementById('water').addEventListener('click', function() {
-    window.location.href = "water.html";
-  });
-  document.getElementById('briquette_use').addEventListener('click', function() {
-    window.location.href = "waste.html"; 
-  });
-</script>
 
 </body>
 </html>

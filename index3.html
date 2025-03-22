@@ -1,0 +1,598 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+      <title>Appro Community Connect</title>
+      <script src="/tailwind-3.4.16.es"></script>
+      <script src="./flowbite.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+      <link rel="stylesheet" href="/style.css">
+      <meta property="og:image" content="briquette.webp">
+      <meta property="og:description" content="trash to fuel and water to drinkable">
+      <meta property="og:title" content="Appro - Community Connect">   
+      <meta name="description" content="Appropriate Technology Engineering and Science Connect">
+      
+      <!-- PWA Meta Tags -->
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      <meta name="apple-mobile-web-app-title" content="Approvideo Hub">
+      <meta name="application-name" content="Approvideo Hub">
+      <meta name="theme-color" content="#047857">
+      <meta name="License" content="GPLv3">
+      <meta name="msapplication-TileColor" content="#047857">
+      <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  
+      <!-- PWA Icons -->
+      <link rel="icon" type="image/png" href="/favicon.ico"> 
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+      <style>
+            body {
+            font-family: sans-serif;
+            margin: 20px;
+            }
+            h1 {
+            text-align: left;
+            margin-bottom: 30px;
+            }
+            .item-container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .item-container h2 {
+            margin-top: 0;
+            color: #333;
+            }
+            .item-container h3 {
+            margin-top: 10px;
+            color: #555;
+            }
+            .item-container p, .item-container ul, .item-container ol {
+            line-height: 1.6;
+            }
+            .item-container ul, .item-container ol {
+            padding-left: 20px;
+            }
+
+            .header {
+            display: flex;
+            align-items: center; /* Aligns items vertically centered */
+            padding: 10px;       /* Adjust as needed */
+            }
+
+            .logo {
+            margin-right: 20px;  /* Creates spacing between logo and breadcrumbs */
+            }
+
+            .breadcrumbs ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            }
+
+            .breadcrumbs li + li::before {
+            content: ">>";
+            margin: 0 10px;
+            color: #ffffff;         /* Change color as desired */
+            }
+
+      </style>
+</head>
+<body>
+    <body class="bg-gray-50 min-h-screen">
+        <div id="app" class="flex flex-col">
+                <header class="header flex flex-col items-start bg-orange-600 text-white p-4 shadow-md">
+                    <div class="logo flex items-start">
+                        <a href=/><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+                        stroke-linecap="round" stroke-linejoin="round" 
+                        class="icon-butto>n animate bg-grey-100 flex items-center" >
+                            <path d="M12 2.5c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10-4.477-10-10-10z" />
+                            <path d="M15.5 8.5l-4 4 4 4" />
+                            <path d="M8.5 15.5l4-4-4-4" />
+                            <path d="M16 16.5l-1.5-1.5" />
+                            <path d="M8 16.5l1.5-1.5" />
+                            <path d="M14.146 7.146l1.414-1.414" />
+                            <path d="M9.854 7.146l-1.414-1.414" />
+                            </svg></a>           
+                        <h1 class="text-xl font-bold"><a href=/>Appro Community Connect</a></h1>
+                    </div>
+                    <nav class="breadcrumbs w-full and text-left" >
+                      <ul>
+			<li></li>
+                        <li><a href="waste.html">waste to fuel</a></li>
+                      </ul>
+                      <ul>
+			<li></li>
+                        <li><a href="water.html">water to drink</a></li>
+                      </ul>
+                    </nav>
+
+                </header>
+        </div>
+
+
+<main>
+
+
+            <div id="dashboard-logged-out" class="text-center">
+
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Appropriate Technology Educational Primers</h2>
+            <p class="text-xl text-gray-600 mb-8">
+                <a href="#watersec">Water Security</a>,
+                <a href="#energy">Fuel Briquettes</a>,
+                <a href="#infrarepair">DIY Water Filters</a>,
+                <a href="#crisisrecovery">Briquette Production</a>
+            </p>
+
+            <div class="audio-player mt-8 w-full max-w-lg mx-auto">
+                <div class="player-header">
+                    <img class="thumbnail" id="thumbnailImg" src="briquette.webp" alt="Briquette Audio">
+                    <div class="led-display">
+                        <div class="filename-text scrolling" id="filenameContainer">
+                            <span class="scrolling-text" id="filenameDisplay">Approvideo Fuel briquette ar</span>
+                        </div>
+                    </div>
+                    <div class="controls-top">
+                        <button class="play-btn" id="playPauseBtn">▶</button>
+                        <a href="approvideo_fuel-briquette-ar.mp3" class="download-link" id="downloadLink" title="Download approvideo_fuel-briquette-ar.mp3" download="approvideo_fuel-briquette-ar.mp3">⬇</a>
+                    </div>
+                </div>
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <div class="player-controls">
+                    <div class="time-display">
+                        <span id="currentTime">0:00</span> / <span id="duration">5:24</span>
+                    </div>
+                </div>
+                <audio id="audioElement" src="/approvideo_fuel-briquette-ar.mp3"></audio>
+            </div>
+     <p>
+     <BR><BR>
+     </p>
+
+  <div class="max-w-5xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      <!-- Water Sec - Plant/Growth Theme -->
+      <div class="color-panel bg-teal-950 text-white rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="frankincense">
+        <h2 class="text-2xl font-semibold text-lime-300">Water Security</h2>
+        <p class="text-white mb-3">Safe drinking water, hygenic sanitation</p>
+        <div class="hover-content text-blue-800 font-medium hidden">
+          Load youtube video
+        </div>
+        <svg class="icon-bg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 11.5v-7m0 0l-3 3m3-3l3 3m-12 9.5h16.5M12 18.5c-4.65 0-8.5-3.85-8.5-8.5 0-1.05.22-2.05.6-2.96m17.4 2.96c0 1.05-.22 2.05-.6 2.96M12 18.5c4.65 0 8.5-3.85 8.5-8.5 0-1.05-.22-2.05-.6-2.96M5.63 7.04L4.5 7.5m15-3l-1.1.55"></path>
+        </svg>
+      </div>
+      
+
+      <div class="color-panel bg-gray-700 rounded-lg text-white p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="gold">
+        <h2 class="text-2xl font-semibold text-orange-400">Fuel Briquette</h2>
+        <p class="text-white mb-3">Small solar electric, diy wind systems, batteries, wiring.</p>
+        <div class="hover-content text-blue-800 font-medium hidden">
+          Load youtube video
+        </div>
+        <svg class="icon-bg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"></path>
+        </svg>
+      </div>
+     
+      <!-- Soft Lavender Panel - Stars/Cosmos Theme -->
+      <div class="color-panel bg-gray-900 rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="olive">
+        <h2 class="text-2xl font-semibold text-sky-600">DIY Water Filters</h2>
+        <p class="text-white mb-3">Support for resilience amid disruption.</p>
+        <div class="hover-content hidden text-blue-800 font-medium">
+          Load youtube video
+        </div>
+        <svg class="icon-bg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"></path>
+        </svg>
+      </div>
+      
+      <div class="color-panel bg-stone-600 rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="myhrr">
+        <h2 class="text-2xl font-semibold text-amber-950">Briquette Production</h2>
+        <p class="text-white mb-3">simple hands on approach</p>
+        <div class="hover-content text-blue-800 font-medium hidden">
+          Click to load video
+        </div>
+        <svg class="icon-bg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path>
+        </svg>
+      </div>
+    </div>
+    
+    <div id="video-section" class="hidden mt-8 transition-all duration-300 ease-in-out">
+      <h2 id="selected-color-title" class="text-2xl font-bold text-center mb-4"></h2>
+      <div class="video-container" id="video-container"></div>
+    </div>
+  </div>
+
+<script>
+ 
+document.addEventListener('DOMContentLoaded', () => {
+  const colorPanels = document.querySelectorAll('.color-panel');
+  const videoSection = document.getElementById('video-section');
+  const videoContainer = document.getElementById('video-container');
+  const selectedColorTitle = document.getElementById('selected-color-title');
+  
+  // Keep track of currently playing video iframe
+  let currentVideoIframe = null;
+  
+  // Function to stop any currently playing video
+  const stopCurrentVideo = () => {
+    if (currentVideoIframe) {
+      try {
+        // Get current src
+        const currentSrc = currentVideoIframe.src;
+        
+        // Reset iframe src to stop video
+        currentVideoIframe.src = currentSrc.replace('autoplay=1', 'autoplay=0');
+        
+        // Alternatively, we can also try to access the YT player API
+        // This won't work across origins, but worth trying
+        try {
+          if (currentVideoIframe.contentWindow) {
+            currentVideoIframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+          }
+        } catch (e) {
+          // Cross-origin restriction, but that's ok, we already changed the src
+        }
+      } catch (e) {
+        console.log('Error stopping video:', e);
+      }
+    }
+  };
+  
+  // Add skeleton loader CSS
+  const skeletonStyles = document.createElement('style');
+  skeletonStyles.textContent = `
+    .skeleton-loader {
+      width: 100%;
+      animation: pulse 1.5s infinite ease-in-out;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .skeleton-video {
+      width: 100%;
+      height: 450px;
+      background-color: #e0e0e0;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    
+    .skeleton-text {
+      width: 40%;
+      height: 24px;
+      background-color: #e0e0e0;
+      border-radius: 4px;
+      margin: 0 auto;
+    }
+    
+    .video-wrapper {
+      width: 100%;
+      z-index: 2;
+      position: relative;
+    }
+    
+    .load-status {
+      position: absolute;
+      bottom: 60px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: #4b5563;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 8px;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    
+    /* Ensure iframe takes the right size */
+    iframe {
+      display: block;
+      border: none;
+    }
+    
+    @keyframes pulse {
+      0% {
+        opacity: 0.6;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.6;
+      }
+    }
+    
+    .video-links {
+      margin-top: 12px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+    
+    .video-links a {
+      color: #3b82f6;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      background-color: #f3f4f6;
+      transition: all 0.2s;
+    }
+    
+    .video-links a:hover {
+      background-color: #e5e7eb;
+      color: #2563eb;
+    }
+  `;
+  document.head.appendChild(skeletonStyles);
+  
+  // Show "Click to load" text on hover
+  colorPanels.forEach(panel => {
+    panel.addEventListener('mouseover', () => {
+      const hoverContent = panel.querySelector('.hover-content');
+      hoverContent.classList.remove('hidden');
+      // Add page visibility and beforeunload handlers to pause video when page is hidden/closed
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') {
+      stopCurrentVideo();
+    }
+  });
+  
+  window.addEventListener('beforeunload', () => {
+    stopCurrentVideo();
+  });
+});
+    
+    panel.addEventListener('mouseout', () => {
+      const hoverContent = panel.querySelector('.hover-content');
+      hoverContent.classList.add('hidden');
+    });
+    
+    // Load video on click
+    panel.addEventListener('click', () => {
+      // Stop any currently playing video first
+      stopCurrentVideo();
+      
+      const colorName = panel.dataset.color; 
+      selectedColorTitle.textContent = `You selected: ${colorName}`;
+      
+      console.log("Clicked:", colorName);
+      
+      // Set default values
+      let videoId = 'BqHCRmU4y5g';
+      let detailsLink = '<a href="#">Learn more</a>';
+      let resourceLink = '<a href="#">Additional resources</a>';
+      let transcriptLink = '<a href="#">View transcript</a>';
+      
+      // Update links based on colorName
+      if (colorName === "olive") {
+        videoId = 'CgXStF-mR90';
+        detailsLink = '<a href="water.html#1">Learn more about DIY filters</a>';
+        resourceLink = '<a href="filter-resources.html">Filter building materials</a>';
+        transcriptLink = '<a href="transcripts/filter-video.html">View transcript</a>';
+      } else if (colorName === "frankincense") {
+        videoId = 'ADWNO0WrrTY';
+        detailsLink = '<a href="waste.html#1">Learn more about water safety</a>';
+        resourceLink = '<a href="water-safety-resources.html">Water safety guides</a>';
+        transcriptLink = '<a href="transcripts/water-safety.html">View transcript</a>';
+      } else if (colorName === "gold") {
+        videoId = 'BqHCRmU4y5g';
+        detailsLink = '<a href="water.html#2">Learn more about fuel briquettes</a>';
+        resourceLink = '<a href="briquette-resources.html">Briquette materials</a>';
+        transcriptLink = '<a href="transcripts/briquette-video.html">View transcript</a>';
+      } else if (colorName === "myhrr") {
+        videoId = 'qtDO9AI2Ie8';
+        detailsLink = '<a href="waste.html#2">Learn more about production</a>';
+        resourceLink = '<a href="production-resources.html">Production equipment</a>';
+        transcriptLink = '<a href="transcripts/production-video.html">View transcript</a>';
+      }
+      
+      console.log("Video ID:", videoId);
+      
+      // Show skeleton loader while video loads
+      videoContainer.innerHTML = `
+        <div class="skeleton-loader">
+          <div class="skeleton-video"></div>
+          <div class="skeleton-text"></div>
+        </div>
+      `;
+      
+      // Show the video section with loader
+      videoSection.classList.remove('hidden');
+      videoSection.scrollIntoView({ behavior: 'smooth' });
+      
+      // Create iframe
+      const iframe = document.createElement('iframe');
+      iframe.width = "100%";
+      iframe.height = "450";
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      iframe.title = "YouTube video player";
+      iframe.frameBorder = "0";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+      
+      // Create a holding container for our video and links
+      const videoWrapper = document.createElement('div');
+      videoWrapper.className = 'video-wrapper';
+      videoWrapper.style.opacity = '0'; // Start with 0 opacity instead of display:none
+      videoWrapper.style.transition = 'opacity 0.5s ease-in-out';
+      
+      // Append iframe to the wrapper
+      videoWrapper.appendChild(iframe);
+      
+      // Create links container
+      const linksContainer = document.createElement('div');
+      linksContainer.className = 'video-links';
+      linksContainer.innerHTML = detailsLink + resourceLink + transcriptLink;
+      
+      // Add links to wrapper
+      videoWrapper.appendChild(linksContainer);
+      
+      // Add the wrapper to the DOM (but with 0 opacity)
+      videoContainer.appendChild(videoWrapper);
+      
+      // Create load status indicator
+      const loadStatus = document.createElement('div');
+      loadStatus.className = 'load-status';
+      loadStatus.textContent = 'Loading video...';
+      videoContainer.querySelector('.skeleton-loader').appendChild(loadStatus);
+      
+      // Better video loading detection
+      let checkCount = 0;
+      let maxChecks = 40; // 10 seconds total (40 * 250ms)
+      
+      const checkVideoLoaded = () => {
+        checkCount++;
+        
+        // Update loading status text based on progress
+        if (checkCount % 4 === 0) {
+          loadStatus.textContent = `Loading video${'.'.repeat((checkCount / 4) % 4 + 1)}`;
+        }
+        
+        try {
+          // Try to access iframe content to check loading status
+          const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+          
+          // If we can access the document but still loading
+          if (iframeDoc && iframeDoc.readyState !== 'complete') {
+            if (checkCount < maxChecks) {
+              setTimeout(checkVideoLoaded, 250);
+            } else {
+              // After max checks, show the video anyway
+              fadeInVideo(true);
+            }
+            return;
+          }
+          
+          // Check if YouTube player has loaded by looking for specific elements
+          const playerReady = iframe.contentWindow && 
+                             iframe.contentWindow.document && 
+                             iframe.contentWindow.document.querySelector('.html5-video-player');
+          
+          if (playerReady) {
+            // YouTube player detected, fade in video
+            fadeInVideo();
+          } else if (checkCount < maxChecks) {
+            // Keep checking
+            setTimeout(checkVideoLoaded, 250);
+          } else {
+            // After max checks, show the video anyway
+            fadeInVideo(true);
+          }
+        } catch (e) {
+          // Security error from cross-origin frame, use fallback detection
+          // This is normal - we can't directly check YouTube iframe contents
+          // Instead, check if iframe dimensions indicate content loaded
+          if (iframe.clientHeight > 0 && iframe.clientWidth > 0) {
+            // Video likely loaded if iframe has dimensions
+            if (checkCount > 8) { // Wait at least 2 seconds
+              fadeInVideo();
+            } else {
+              setTimeout(checkVideoLoaded, 250);
+            }
+          } else if (checkCount < maxChecks) {
+            setTimeout(checkVideoLoaded, 250);
+          } else {
+            // After max checks, show the video anyway
+            fadeInVideo(true);
+          }
+        }
+      };
+      
+      const fadeInVideo = (isFallback = false) => {
+        if (isFallback) {
+          loadStatus.textContent = 'Video taking longer than expected...';
+        }
+        
+        // First make wrapper visible
+        videoWrapper.style.opacity = '1';
+        
+        // After transition completes, remove the skeleton
+        setTimeout(() => {
+          const skeletonLoader = videoContainer.querySelector('.skeleton-loader');
+          if (skeletonLoader) {
+            skeletonLoader.remove();
+          }
+        }, 500); // Match the transition duration
+      };
+      
+      // Start checking for video load
+      setTimeout(checkVideoLoaded, 1000); // Start checking after 1 second
+      
+      // Fallback: Show video after 15 seconds no matter what
+      setTimeout(() => {
+        if (videoContainer.querySelector('.skeleton-loader')) {
+          loadStatus.textContent = 'Almost there...';
+          fadeInVideo(true);
+        }
+      }, 15000);
+    });
+  });
+});
+   
+</script>
+
+    <div id="health-library"></div>
+
+</main>
+<footer class="bg-gray-800 text-white py-8">
+  <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+
+          <div>
+              <h3 class="text-lg font-semibold mb-4">Appro Community Connect</h3>
+              <ul class="space-y-2 text-gray-400">
+
+              </ul>
+          </div>
+          <div>
+              <ul class="space-y-2 text-gray-400">
+
+              </ul>
+          </div>
+          <div>
+              <div class="flex space-x-4 mb-4">
+              </div>
+              <p class="text-gray-400">
+                  
+                  <a href="#contact" class="text-gray-400 hover:text-white" id="contact-header"><i class="fab fa-letter"></i>ecocommunity@protonmail.com</a>
+                      
+                  <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                      </svg>
+                  </button>
+              </p>
+          </div>
+          </div>
+      </div>
+
+      <div class="border-t border-gray-500 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-400">open &copy; 2025 Appro Community Connect
+          <br>
+          Sharing knowledge & expertise benefits vulnerable communities.
+          </p>
+
+          <div class="flex space-x-4 mt-4 md:mt-0">
+              <a href="#privacy" id="privacy-link-footer" class="text-gray-400 hover:text-white">Privacy Policy</a>
+              <a href="#terms" id="terms-link-footer" class="text-gray-400 hover:text-white">Terms of Service</a>
+              <a href="#cookies" class="text-gray-400 hover:text-white">Cookie Policy</a>
+          </div>
+      </div>
+</footer>
+
+</body>
+</html>
+
