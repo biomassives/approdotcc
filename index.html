@@ -22,13 +22,13 @@
       <meta name="theme-color" content="#047857">
       <meta name="License" content="GPLv3">
       <meta name="msapplication-TileColor" content="#047857">
-      <meta name="msapplication-TileImage" content="/assets/ms-icon-144x144.png">
+      <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   
       <!-- PWA Icons -->
       <link rel="icon" type="image/png" href="/favicon.ico"> 
-      <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-      <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-      <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
       <style>
             body {
             font-family: sans-serif;
@@ -122,7 +122,8 @@
 <main>
 
 
-<div id="dashboard-logged-out" class="text-center">
+            <div id="dashboard-logged-out" class="text-center">
+
             <h2 class="text-3xl font-bold text-gray-800 mb-4">Appropriate Technology Educational Primers</h2>
             <p class="text-xl text-gray-600 mb-8">
                 <a href="#watersec">Water Security</a>,
@@ -130,9 +131,6 @@
                 <a href="#infrarepair">DIY Water Filters</a>,
                 <a href="#crisisrecovery">Briquette Production</a>
             </p>
-            <button id="faq-footer" class="hidden nav-item hover:bg-emerald-900 bg-emerald-700 text-gray-100 hover:text-emerald-200" data-icon="Solutions Library">
-                Learning Portal
-            </button>
 
             <div class="audio-player mt-8 w-full max-w-lg mx-auto">
                 <div class="player-header">
@@ -144,7 +142,7 @@
                     </div>
                     <div class="controls-top">
                         <button class="play-btn" id="playPauseBtn">▶</button>
-                        <a href="https://hub.approvideo.org/assets/mp3/approvideo_fuel-briquette-ar.mp3" class="download-link" id="downloadLink" title="Download approvideo_fuel-briquette-ar.mp3" download="approvideo_fuel-briquette-ar.mp3">⬇</a>
+                        <a href="approvideo_fuel-briquette-ar.mp3" class="download-link" id="downloadLink" title="Download approvideo_fuel-briquette-ar.mp3" download="approvideo_fuel-briquette-ar.mp3">⬇</a>
                     </div>
                 </div>
                 <div class="progress-container" id="progressContainer">
@@ -155,9 +153,8 @@
                         <span id="currentTime">0:00</span> / <span id="duration">5:24</span>
                     </div>
                 </div>
-                <audio id="audioElement" src="/assets/mp3/approvideo_fuel-briquette-ar.mp3"></audio>
+                <audio id="audioElement" src="/approvideo_fuel-briquette-ar.mp3"></audio>
             </div>
-
      <p>
      <BR><BR>
      </p>
@@ -219,72 +216,77 @@
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const colorPanels = document.querySelectorAll('.color-panel');
-      const videoSection = document.getElementById('video-section');
-      const videoContainer = document.getElementById('video-container');
-      const selectedColorTitle = document.getElementById('selected-color-title');
-      
-      const videoId = 'BqHCRmU4y5g';
-      const detailsLink = 'hello';
- 
-      // Show "Click to load" text on hover
-      colorPanels.forEach(panel => {
-        panel.addEventListener('mouseover', () => {
-          const hoverContent = panel.querySelector('.hover-content');
-          hoverContent.classList.remove('hidden');
-        });
-        
-        panel.addEventListener('mouseout', () => {
-          const hoverContent = panel.querySelector('.hover-content');
-          hoverContent.classList.add('hidden');
-        });
-        
-        // Load video on click
-        panel.addEventListener('click', () => {
-          const colorName = panel.querySelector('h2').textContent;
-          selectedColorTitle.textContent = `You selected: ${colorName}`;
-         
-         if (colorName == "frankincense"){ 
-		videoId = 'CgXStF-mR90';
-		detailsLink = '<a href=water.html#1>learn more</a> ';
-}
-         if (colorName == "olive"){ 
-		videoId = 'ADWNO0WrrTY'; 
-		detailsLink = '<a href=waste.html#1>learn more</a> ';
-}
-         if (colorName == "gold"){ 
-		videoId = 'BqHCRmU4y5g';
-		detailsLink = '<a href=water.html#2>learn more</a> ';
-}
-         if (colorName == "mhyrr"){ 
-		videoId = 'qtDO9AI2Ie8'; 
-		detailsLink = '<a href=waste.html#2>learn more</a> ';
-}
-
-
- 
-          // Create and append the iframe only after user clicks
-          const iframe = document.createElement('iframe');
-          iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-          iframe.title = "YouTube video player";
-          iframe.frameBorder = "0";
-          iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-          iframe.allowFullscreen = true;
-          
-          // Clear previous video if any
-          videoContainer.innerHTML = '';
-          videoContainer.innerHTML = '';
-          videoContainer.appendHTML(detailsLink);
-          
-          // Show the video section
-          videoSection.classList.remove('hidden');
-          
-          // Scroll to the video section
-          videoSection.scrollIntoView({ behavior: 'smooth' });
-        });
-      });
+  document.addEventListener('DOMContentLoaded', () => {
+  const colorPanels = document.querySelectorAll('.color-panel');
+  const videoSection = document.getElementById('video-section');
+  const videoContainer = document.getElementById('video-container');
+  const selectedColorTitle = document.getElementById('selected-color-title');
+  
+  // Show "Click to load" text on hover
+  colorPanels.forEach(panel => {
+    panel.addEventListener('mouseover', () => {
+      const hoverContent = panel.querySelector('.hover-content');
+      hoverContent.classList.remove('hidden');
     });
+    
+    panel.addEventListener('mouseout', () => {
+      const hoverContent = panel.querySelector('.hover-content');
+      hoverContent.classList.add('hidden');
+    });
+    
+    // Load video on click
+    panel.addEventListener('click', () => {
+      const colorName = panel.dataset.color; 
+      selectedColorTitle.textContent = `You selected: ${colorName}`;
+      
+      console.log("Clicked:", colorName);
+      
+      // Set default values
+      let videoId = 'BqHCRmU4y5g';
+      let detailsLink = '<a href="#">(your video is loading)</a>';
+      
+      // Update videoId and detailsLink based on colorName
+      if (colorName === "olive") {
+        videoId = 'CgXStF-mR90';
+        detailsLink = '<a href="water.html#1">learn more</a>';
+      } else if (colorName === "frankincense") {
+        videoId = 'ADWNO0WrrTY';
+        detailsLink = '<a href="waste.html#1">learn more</a>';
+      } else if (colorName === "gold") {
+        videoId = 'BqHCRmU4y5g';
+        detailsLink = '<a href="water.html#2">learn more</a>';
+      } else if (colorName === "myhrr") {
+        videoId = 'qtDO9AI2Ie8';
+        detailsLink = '<a href="waste.html#2">learn more</a>';
+      }
+      
+      console.log("Video ID:", videoId);
+      
+      // Create and append the iframe only after user clicks
+      const iframe = document.createElement('iframe');
+      iframe.width = "100%";
+      iframe.height = "450";
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      iframe.title = "YouTube video player";
+      iframe.frameBorder = "0";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+      
+      // Clear previous content and add new content
+      videoContainer.innerHTML = ''; 
+      videoContainer.appendChild(iframe);
+      videoContainer.insertAdjacentHTML('beforeend', detailsLink);
+      
+      // Show the video section
+      videoSection.classList.remove('hidden');
+      
+      // Scroll to the video section
+      videoSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+});
+
+
   </script>
           
 
@@ -340,33 +342,6 @@
 
 </footer>
 
-<script>
-
-async function loadHealthLibrary() {
-      try {
-        const response = await fetch('./index.json');
-        const healthData = await response.json();
-
-        const libraryContainer = document.getElementById('health-library');
-        const itemContainer = document.createElement('div');
-        itemContainer.className = 'item-container';
-
-        const title = document.createElement('h2');
-        title.textContent = healthData.item;
-        itemContainer.appendChild(title);
-
-        itemContainer.innerHTML += healthData.contentHtml;
-
-        libraryContainer.appendChild(itemContainer);
-
-      } catch (error) {
-        console.error('Error loading health library:', error);
-        document.getElementById('health-library').innerHTML = '<p>Failed to load library content.</p>';
-      }
-    }
-
-    loadHealthLibrary();
-    </script>
 </body>
 </html>
 

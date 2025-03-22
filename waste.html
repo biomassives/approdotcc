@@ -28,8 +28,6 @@
       <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
       <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
       <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-      <link rel="manifest" href="/manifest.json">
-      <script src="/manifest.js"></script>
       <style>
             body {
             font-family: sans-serif;
@@ -168,36 +166,8 @@
               <a href="#cookies" class="text-gray-400 hover:text-white">Cookie Policy</a>
           </div>
       </div>
-
 </footer>
 
-<script>
-
-async function loadHealthLibrary() {
-      try {
-        const response = await fetch('./waste.json');
-        const healthData = await response.json();
-
-        const libraryContainer = document.getElementById('health-library');
-        const itemContainer = document.createElement('div');
-        itemContainer.className = 'item-container';
-
-        const title = document.createElement('h2');
-        title.textContent = healthData.item;
-        itemContainer.appendChild(title);
-
-        itemContainer.innerHTML += healthData.contentHtml;
-
-        libraryContainer.appendChild(itemContainer);
-
-      } catch (error) {
-        console.error('Error loading health library:', error);
-        document.getElementById('health-library').innerHTML = '<p>Failed to load library content.</p>';
-      }
-    }
-
-    loadHealthLibrary();
-    </script>
 </body>
 </html>
 
