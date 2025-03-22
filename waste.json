@@ -1,0 +1,162 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+      <title>Ecosystems Biodivesity - ApproVideo Community Learning Hub - Appropriate Technology Engineering and Science Clinics</title>
+      <script src="/js/libs/tailwind-3.4.16.es"></script>
+      <script src="/js/libs/Dexie.js"></script>
+      <script src="/js/libs/dexie-encrypted-addon.min.js"></script>
+      <script src="/js/libs/supabase-js2.js"></script>
+  
+      <link rel="stylesheet" href="/style.css">
+      <meta property="og:image" content="/assets/appro4.gif">
+      <meta property="og:description" content="URL_of_the_image">
+      <meta property="og:title" content="Approvideo Learning Hub - Community Health  -appropriate- Sustainable Development Portal">   
+  
+      <meta name="description" content="Appropriate Technology Engineering and Science Clinics">
+      
+      <!-- PWA Meta Tags -->
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      <meta name="apple-mobile-web-app-title" content="Approvideo Hub">
+      <meta name="application-name" content="Approvideo Hub">
+      <meta name="theme-color" content="#047857">
+      <meta name="License" content="GPLv3">
+      <meta name="msapplication-TileColor" content="#047857">
+      <meta name="msapplication-TileImage" content="/assets/ms-icon-144x144.png">
+  
+      <!-- PWA Icons -->
+      <link rel="icon" type="image/png" href="/favicon.ico"> 
+      <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+      <link rel="manifest" href="/manifest.json">
+      <script src="/manifest.js"></script>
+      <style>
+            body {
+            font-family: sans-serif;
+            margin: 20px;
+            }
+            h1 {
+            text-align: left;
+            margin-bottom: 30px;
+            }
+            .item-container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .item-container h2 {
+            margin-top: 0;
+            color: #333;
+            }
+            .item-container h3 {
+            margin-top: 10px;
+            color: #555;
+            }
+            .item-container p, .item-container ul, .item-container ol {
+            line-height: 1.6;
+            }
+            .item-container ul, .item-container ol {
+            padding-left: 20px;
+            }
+
+            .header {
+            display: flex;
+            align-items: center; /* Aligns items vertically centered */
+            padding: 10px;       /* Adjust as needed */
+            }
+
+            .logo {
+            margin-right: 20px;  /* Creates spacing between logo and breadcrumbs */
+            }
+
+            .breadcrumbs ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            }
+
+            .breadcrumbs li + li::before {
+            content: ">>";
+            margin: 0 10px;
+            color: #ffffff;         /* Change color as desired */
+            }
+
+      </style>
+</head>
+<body>
+    <body class="bg-gray-50 min-h-screen">
+        <div id="app" class="flex flex-col">
+                <header class="header flex flex-col items-start bg-emerald-700 text-white p-4 shadow-md">
+                    <div class="logo flex items-start">
+                        <a href=/><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+                        stroke-linecap="round" stroke-linejoin="round" 
+                        class="icon-butto>n animate bg-grey-100 flex items-center" >
+                            <path d="M12 2.5c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10-4.477-10-10-10z" />
+                            <path d="M15.5 8.5l-4 4 4 4" />
+                            <path d="M8.5 15.5l4-4-4-4" />
+                            <path d="M16 16.5l-1.5-1.5" />
+                            <path d="M8 16.5l1.5-1.5" />
+                            <path d="M14.146 7.146l1.414-1.414" />
+                            <path d="M9.854 7.146l-1.414-1.414" />
+                            </svg></a>           
+                        <h1 class="text-xl font-bold"><a href=/>Approvideo Learning Hub</a></h1>
+                    </div>
+                    <nav class="breadcrumbs w-full and text-left" >
+                      <ul>
+                        <li><a href="/lib">Solutions Library</a></li>
+                        <li><a href="/lib/ecosystems">Ecosystems</a></li>
+                        <li>Biodiversity</li>
+                      </ul>
+                    </nav>
+
+                </header>
+        </div>
+
+
+<main>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/JYGqIY8prhY?si=5xQwCw9tUO9ZHgMV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <div id="health-library"></div>
+
+</main>
+
+  <script>
+    async function loadHealthLibrary() {
+      try {
+        const response = await fetch('/api/health.json');
+        const healthData = await response.json();
+
+        const libraryContainer = document.getElementById('health-library');
+        const itemContainer = document.createElement('div');
+        itemContainer.className = 'item-container';
+
+        const title = document.createElement('h2');
+        title.textContent = healthData.item;
+        itemContainer.appendChild(title);
+
+        itemContainer.innerHTML += healthData.contentHtml;
+
+        libraryContainer.appendChild(itemContainer);
+
+      } catch (error) {
+        console.error('Error loading health library:', error);
+        document.getElementById('health-library').innerHTML = '<p>Failed to load library content.</p>';
+      }
+    }
+
+    loadHealthLibrary();
+  </script>
+
+
+
+</body>
+</html>
