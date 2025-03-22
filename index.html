@@ -136,7 +136,7 @@
 
             <div class="audio-player mt-8 w-full max-w-lg mx-auto">
                 <div class="player-header">
-                    <img class="thumbnail" id="thumbnailImg" src="/assets/mp3/briquette.webp" alt="Briquette Audio">
+                    <img class="thumbnail" id="thumbnailImg" src="briquette.webp" alt="Briquette Audio">
                     <div class="led-display">
                         <div class="filename-text scrolling" id="filenameContainer">
                             <span class="scrolling-text" id="filenameDisplay">Approvideo Fuel briquette ar</span>
@@ -158,13 +158,15 @@
                 <audio id="audioElement" src="/assets/mp3/approvideo_fuel-briquette-ar.mp3"></audio>
             </div>
 
-     <p></p>
+     <p>
+     <BR><BR>
+     </p>
 
   <div class="max-w-5xl mx-auto">
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
       <!-- Water Sec - Plant/Growth Theme -->
-      <div class="color-panel bg-teal-950 text-white rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="sage">
+      <div class="color-panel bg-teal-950 text-white rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="frankincense">
         <h2 class="text-2xl font-semibold text-lime-300">Water Security</h2>
         <p class="text-white mb-3">Safe drinking water, hygenic sanitation</p>
         <div class="hover-content text-blue-800 font-medium hidden">
@@ -175,7 +177,7 @@
         </svg>
       </div>
       
-      <div class="color-panel bg-zinc-950 rounded-lg text-white p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="blue">
+      <div class="color-panel bg-zinc-950 rounded-lg text-white p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="gold">
         <h2 class="text-2xl font-semibold text-blue-800">Fuel Briquette</h2>
         <p class="text-white mb-3">Small solar electric, diy wind systems, batteries, wiring.</p>
         <div class="hover-content text-blue-800 font-medium hidden">
@@ -187,9 +189,9 @@
       </div>
       
       <!-- Soft Lavender Panel - Stars/Cosmos Theme -->
-      <div class="color-panel bg-gray-900 rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="lavender">
-        <h2 class="text-2xl font-semibold text-sky-600">Crisis Recovery</h2>
-        <p class="text-white mb-3">Support for resilience mid disruption.</p>
+      <div class="color-panel bg-gray-900 rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="olive">
+        <h2 class="text-2xl font-semibold text-sky-600">DIY Water Filters</h2>
+        <p class="text-white mb-3">Support for resilience amid disruption.</p>
         <div class="hover-content hidden text-blue-800 font-medium">
           Load youtube video
         </div>
@@ -198,10 +200,9 @@
         </svg>
       </div>
       
-      <!-- Blush Pink Panel - Heart/Compassion Theme -->
-      <div class="color-panel bg-red-950 rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="pink">
-        <h2 class="text-2xl font-semibold text-black">Infrastructure Repair</h2>
-        <p class="text-white mb-3">Repair and restore basic services.</p>
+      <div class="color-panel bg-stone-800 rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="myhrr">
+        <h2 class="text-2xl font-semibold text-black">Briquette Production</h2>
+        <p class="text-white mb-3">simple method</p>
         <div class="hover-content text-blue-800 font-medium hidden">
           Click to load video
         </div>
@@ -211,7 +212,6 @@
       </div>
     </div>
     
-    <!-- Video container (hidden initially) -->
     <div id="video-section" class="hidden mt-8 transition-all duration-300 ease-in-out">
       <h2 id="selected-color-title" class="text-2xl font-bold text-center mb-4"></h2>
       <div class="video-container" id="video-container"></div>
@@ -225,8 +225,8 @@
       const videoContainer = document.getElementById('video-container');
       const selectedColorTitle = document.getElementById('selected-color-title');
       
-      // Rick Roll YouTube video ID
       const videoId = 'BqHCRmU4y5g';
+      const detailsLink = 'hello';
  
       // Show "Click to load" text on hover
       colorPanels.forEach(panel => {
@@ -244,7 +244,26 @@
         panel.addEventListener('click', () => {
           const colorName = panel.querySelector('h2').textContent;
           selectedColorTitle.textContent = `You selected: ${colorName}`;
-          
+         
+         if (colorName == "frankincense"){ 
+		videoId = 'CgXStF-mR90';
+		detailsLink = '<a href=water.html#1>learn more</a> ';
+}
+         if (colorName == "olive"){ 
+		videoId = 'ADWNO0WrrTY'; 
+		detailsLink = '<a href=waste.html#1>learn more</a> ';
+}
+         if (colorName == "gold"){ 
+		videoId = 'BqHCRmU4y5g';
+		detailsLink = '<a href=water.html#2>learn more</a> ';
+}
+         if (colorName == "mhyrr"){ 
+		videoId = 'qtDO9AI2Ie8'; 
+		detailsLink = '<a href=waste.html#2>learn more</a> ';
+}
+
+
+ 
           // Create and append the iframe only after user clicks
           const iframe = document.createElement('iframe');
           iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
@@ -255,7 +274,8 @@
           
           // Clear previous video if any
           videoContainer.innerHTML = '';
-          videoContainer.appendChild(iframe);
+          videoContainer.innerHTML = '';
+          videoContainer.appendHTML(detailsLink);
           
           // Show the video section
           videoSection.classList.remove('hidden');
