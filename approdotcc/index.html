@@ -4,15 +4,15 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-      <title>Appro Community Connect</title>
-      <script src="/tailwind-3.4.16.es"></script>
-      <script src="./flowbite.min.js"></script>
+      <title>Appro Community Connector</title>
+      <script src="js/tailwind-3.4.16.es"></script>
+      <script src="js/flowbite.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
-      <link rel="stylesheet" href="/style.css">
-      <meta property="og:image" content="briquette.webp">
+      <link rel="stylesheet" href="style.css">
+      <meta property="og:image" content="images/briquette.webp">
       <meta property="og:description" content="trash to fuel and water to drinkable">
-      <meta property="og:title" content="Appro - Community Connect">   
-      <meta name="description" content="Appropriate Technology Engineering and Science Connect">
+      <meta property="og:title" content="Appro - Community Connector">   
+      <meta name="description" content="Appropriate Technology Engineering and Science Connector">
       
       <!-- PWA Meta Tags -->
       <meta name="apple-mobile-web-app-capable" content="yes">
@@ -22,13 +22,13 @@
       <meta name="theme-color" content="#047857">
       <meta name="License" content="GPLv3">
       <meta name="msapplication-TileColor" content="#047857">
-      <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+      <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
   
       <!-- PWA Icons -->
-      <link rel="icon" type="image/png" href="/favicon.ico"> 
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+      <link rel="icon" type="image/png" href="images/favicon.ico"> 
+      <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
       <style>
             body {
             font-family: sans-serif;
@@ -93,7 +93,7 @@
                         <a href=/><svg dataSlot="icon" aria-hidden="true" fill="none" strokeWidth={1.5} stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
   <path d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" strokeLinecap="round" strokeLinejoin="round" />
 </svg></a>           
-                        <h1 class="text-xl font-bold"><a href=/>Appro Community Connect</a></h1>
+                        <h1 class="text-xl font-bold"><a href=/>Appro Community Connector</a></h1>
                     </div>
                     <nav class="breadcrumbs w-full and text-left" >
                       <ul>
@@ -104,6 +104,12 @@
 			<li></li>
                         <li><a href="water.html">water to drink</a></li>
                       </ul>
+<!--
+                      <ul>
+			<li></li>
+                        <li><a href="wastewater.html">wastewater to manage</a></li>
+                      </ul>
+-->
                     </nav>
 
                 </header>
@@ -115,17 +121,26 @@
 
             <div id="dashboard-logged-out" class="text-center">
 
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Appropriate Technology Educational Primers</h2>
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Appropriate Technology Reference</h2>
             <p class="text-xl text-gray-600 mb-8">
-                <a href="#watersec">Water Security</a>,
-                <a href="#energy">Fuel Briquettes</a>,
-                <a href="#infrarepair">DIY Water Filters</a>,
-                <a href="#crisisrecovery">Briquette Production</a>
+            </p>
+
+ 	 <div class="flex justify-center items-center py-4">
+ 	   <div class="flex space-x-4">
+             <img src="images/wastemanagement64_.png" width="64" height="64" alt="appro cc" title="Appro Community Connector" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
+             <! img src="wastewater64_.png" width="64" height="64" alt="appro cc" title="Appro Community Connector" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
+             <img src="images/drinkingwater64_.png" width="64" height="64" alt="appro cc" title="Appro Community Connector" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
+          </div>
+        </div>
+            <p class="text-xl text-gray-600 mb-8">
+                <a href="#infrarepair">Trash/ Waste</a>,
+                <!-- <a href="#wastewater">Wastewater</a>, -->
+                <a href="#watersec">Drinking Water</a>,
             </p>
 
             <div class="audio-player mt-8 w-full max-w-lg mx-auto">
                 <div class="player-header">
-                    <img class="thumbnail" id="thumbnailImg" src="briquette.webp" alt="Briquette Audio">
+                    <img class="thumbnail" id="thumbnailImg" src="images/briquette.webp" alt="Briquette Audio">
                     <div class="led-display">
                         <div class="filename-text scrolling" id="filenameContainer">
                             <span class="scrolling-text" id="filenameDisplay">Approvideo Fuel briquette ar</span>
@@ -165,7 +180,7 @@
       </div>
       
       
-      <div class="color-panel bg-stone-600 rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="myhrr">
+      <div id="briquette_use" class="color-panel bg-stone-600 rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="myhrr">
         <h2 class="text-2xl font-semibold text-orange-300">Fuel Briquette</h2>
         <p class="text-white mb-3">Heating from waste sawdust, paper,... </p>
         <div class="hover-content text-blue-800 font-medium hidden">
@@ -176,7 +191,20 @@
         </svg>
       </div>
     </div>
-    
+<!--
+      <div class="color-panel bg-lime-900 rounded-lg p-6 cursor-pointer h-48 flex flex-full justify-between" data-color="gold">
+        <h2 class="text-2xl font-semibold text-cyan-300">Waste Water</h2>
+        <p class="text-white mb-3">Improvisational Safety and management</p>
+        <div class="hover-content text-blue-800 font-medium hidden">
+          Click to load video
+        </div>
+        <svg class="icon-bg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path>
+        </svg>
+      </div>
+    </div>
+-->  
+ 
     <div id="video-section" class="hidden mt-8 transition-all duration-300 ease-in-out">
       <h2 id="selected-color-title" class="text-2xl font-bold text-center mb-4"></h2>
       <div class="video-container" id="video-container"></div>
@@ -184,7 +212,15 @@
   </div>
 
 
-    <div id="health-library"></div>
+  <div class="flex justify-center items-center py-4">
+  <div class="flex space-x-4">
+    <a href="waste.html"><img src="images/wastemanagement64_.png" width="64" height="64" alt="appro cc" title="Appro Community Connector" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300" boder=0></a>
+    <!img src="wasstewater256.gif" width="64" height="64" alt="appro cc" title="Appro Community Connector" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
+    <a href="water.html"><img src="images/drinkingwater64_.png" width="64" height="64" alt="appro cc" title="Appro Community Connector" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300" border=0></a>
+  </div>
+</div>
+
+
 
 </main>
 <footer class="bg-gray-800 text-white py-8">
@@ -192,7 +228,8 @@
       <div class="grid md:grid-cols-4 gap-8">
 
           <div>
-              <h3 class="text-lg font-semibold mb-4">Appro Community Connect</h3>
+		<img src="images/foote_logo_appro_dark220.webp" width="220" height="117" alt="appro cc" title="Appro Community Connector">
+
               <ul class="space-y-2 text-gray-400">
 
               </ul>
@@ -207,7 +244,6 @@
               </div>
               <p class="text-gray-400">
                   
-                  <a href="#contact" class="text-gray-400 hover:text-white" id="contact-header"><i class="fab fa-letter"></i>ecocommunity@protonmail.com</a>
                       
                   <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none hidden">
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -219,8 +255,8 @@
           </div>
       </div>
 
-      <div class="border-t border-gray-500 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
-          <p class="text-gray-400">open &copy; 2025 Appro Community Connect
+      <div class="border-t border-gray-500 mt-8 pt-6 flex flex-col md:flex-roorw justify-between items-center">
+          <p class="text-gray-400">open &copy; 2025 Appro Community Connector
           <br>
           Sharing knowledge & expertise benefits vulnerable communities.
           </p>

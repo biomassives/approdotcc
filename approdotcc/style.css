@@ -1038,3 +1038,76 @@ button:focus, input:focus, select:focus, textarea:focus {
     outline: 2px solid #3B82F6;
     outline-offset: 2px;
 }
+
+
+
+.item-container {
+border: 1px solid #ddd;
+padding: 20px;
+margin-bottom: 20px;
+border-radius: 5px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.item-container h2 {
+margin-top: 0;
+color: #333;
+}
+.item-container h3 {
+margin-top: 10px;
+color: #555;
+}
+.item-container p, .item-container ul, .item-container ol {
+line-height: 1.6;
+}
+.item-container ul, .item-container ol {
+padding-left: 20px;
+}
+
+.header {
+display: flex;
+align-items: center; /* Aligns items vertically centered */
+padding: 10px;       /* Adjust as needed */
+}
+
+.logo {
+margin-right: 20px;  /* Creates spacing between logo and breadcrumbs */
+}
+
+.breadcrumbs ul {
+display: flex;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+.breadcrumbs li + li::before {
+content: ">>";
+margin: 0 10px;
+color: #ffffff;         /* Change color as desired */
+}
+
+.centered-container {
+display: flex;
+justify-content: center; /* Center horizontally */
+align-items: center; /* Center vertically */
+padding: 20px; /* Optional padding for visual spacing */
+}
+
+.icon-text-container {
+display: flex;
+align-items: center; /* Align items vertically within the container */
+padding: 10px 15px; /* Padding for the rounded box */
+border-radius: 8px; /* Rounded corners */
+}
+
+.centered-icon {
+width: 64px;
+height: 64px;
+margin-right: 10px; /* Space between icon and text */
+}
+
+.text-label {
+font-size: 1.25rem; /* Tailwind text-xl equivalent, adjust as needed */
+font-weight: bold;
+white-space: nowrap; /* Prevent text wrapping */
+}
