@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Audio Player</title>
+  <script src="js/flowbite.min.js"></script>
+
+  <style>
+    .audio-player {
+      max-width: 350px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 12px;
+      background-color: #f9f9f9;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      font-family: Arial, sans-serif;
+    }
+    
+    .player-header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .controls-top {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .thumbnail {
+      width: 50px;
+      height: 50px;
+      border-radius: 6px;
+      margin-right: 10px;
+      object-fit: cover;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .download-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #4d7bac;
+      text-decoration: none;
+      font-size: 12px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: #f0f3f7;
+      border: 1px solid #d0d8e0;
+      transition: all 0.2s ease;
+    }
+    
+    .download-link:hover {
+      background-color: #e0e7f0;
+      color: #3a5e8c;
+    }
+   
+    .led-display {
+      background: linear-gradient(to bottom, #d0d8e0, #c0c9d8);
+      border-radius: 6px;
+      padding: 6px 8px;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.3), 0 1px 0 rgba(255,255,255,0.8);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #a3adb9;
+      flex: 1;
+      min-width: 0; /* Important for text overflow to work properly */
+    }
+    
+    .led-display:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+      pointer-events: none;
+      border-radius: 7px 7px 0 0;
+    }
+    
+    .filename-text {
+      font-family: 'Courier New', monospace;
+      color: #000000;
+      font-size: 14px;
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      letter-spacing: 1px;
+      margin: 0;
+      padding: 3px 0;
+    }
+    
+    .scrolling-text {
+      display: inline-block;
+      animation: scroll-text 10s linear infinite;
+      animation-play-state: paused;
+      padding-right: 20px;
+    }
+    
+    .scrolling .scrolling-text {
+      animation-play-state: running;
+    }
+    
+    @keyframes scroll-text {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+   
+    .player-controls {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-top: 6px;
+    }
+   
+    .play-btn {
+      background: linear-gradient(to bottom, #55b559, #4CAF50);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+   
+    .play-btn:hover {
+      background: linear-gradient(to bottom, #4CAF50, #45a049);
+    }
+   
+    .time-display {
+      font-size: 14px;
+      color: #555;
+      font-weight: bold;
+    }
+   
+    .progress-container {
+      width: 100%;
+      height: 8px;
+      background-color: #ddd;
+      border-radius: 4px;
+      margin: 8px 0;
+      cursor: pointer;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+      overflow: hidden;
+    }
+   
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(to right, #4CAF50, #7dde81);
+      border-radius: 4px;
+      width: 0%;
+      transition: width 0.1s ease;
+    }
+    
+    .time-display {
+      font-size: 12px;
+      color: #555;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="audio-player">
+    <div class="player-header">
+      <img class="thumbnail" id="thumbnailImg" src="/api/placeholder/60/60" alt="Audio thumbnail">
+      <div class="led-display">
+        <div class="filename-text" id="filenameContainer">
+          <span class="scrolling-text" id="filenameDisplay">Loading file...</span>
+        </div>
+      </div>
+      <div class="controls-top">
+        <button class="play-btn" id="playPauseBtn">▶</button>
+        <a href="#" class="download-link" id="downloadLink" title="Download">▼</a>
+      </div>
+    </div>
+    <div class="progress-container" id="progressContainer">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="player-controls">
+      <div class="time-display">
+        <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+      </div>
+    </div>
+    <audio id="audioElement" src="/av/approvideo_fuel-briquette-ar.mp3"></audio>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get elements
+      const audioElement = document.getElementById('audioElement');
+      const playPauseBtn = document.getElementById('playPauseBtn');
+      const progressBar = document.getElementById('progressBar');
+      const progressContainer = document.getElementById('progressContainer');
+      const currentTimeElement = document.getElementById('currentTime');
+      const durationElement = document.getElementById('duration');
+      const filenameDisplay = document.getElementById('filenameDisplay');
+      const filenameContainer = document.getElementById('filenameContainer');
+      const downloadLink = document.getElementById('downloadLink');
+      const thumbnailImg = document.getElementById('thumbnailImg');
+     
+      // Initialize
+      let isPlaying = false;
+      
+      // Extract and display filename from the audio source
+      function extractFilename(src) {
+        // Get just the filename from the path
+        const fullPath = src.split('/');
+        const filename = fullPath[fullPath.length - 1];
+        
+        // Store original filename for download
+        const originalFilename = filename;
+        
+        // Remove extension and replace hyphens with spaces
+        const cleanName = filename.split('.')[0].replace(/-/g, ' ');
+        
+        // Capitalize words for nicer display
+        return {
+          display: cleanName.split('_').map(word => 
+            word.charAt(0).toUpperCase() + word.slice(1)
+          ).join(' '),
+          original: originalFilename
+        };
+      }
+      
+      // Set up filename display and download link
+      const fileInfo = extractFilename(audioElement.src);
+      filenameDisplay.textContent = fileInfo.display;
+      downloadLink.href = audioElement.src;
+      downloadLink.download = fileInfo.original;
+      downloadLink.setAttribute('title', 'Download ' + fileInfo.original);
+      
+      // Check if text needs scrolling
+      function checkScroll() {
+        if (filenameDisplay.offsetWidth > filenameContainer.offsetWidth) {
+          filenameContainer.classList.add('scrolling');
+        } else {
+          filenameContainer.classList.remove('scrolling');
+        }
+      }
+      
+      // Call checkScroll after rendering
+      setTimeout(checkScroll, 100);
+      
+      // Set thumbnail image based on audio type
+      // In a real application, you would determine this based on audio metadata
+      // For now, we'll use a basic approach
+      if (fileInfo.original.includes('briquette')) {
+        thumbnailImg.src = "/images/briquette.webp";
+        thumbnailImg.alt = "Briquette Audio";
+      } else {
+        thumbnailImg.src = "/images/briquette.webp"; 
+        thumbnailImg.alt = "Audio Thumbnail";
+      }
+     
+      // Format time in MM:SS
+      function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        seconds = Math.floor(seconds % 60);
+        return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+      }
+     
+      // Set up duration display once metadata is loaded
+      audioElement.addEventListener('loadedmetadata', function() {
+        durationElement.textContent = formatTime(audioElement.duration);
+      });
+     
+      // Toggle play/pause
+      playPauseBtn.addEventListener('click', function() {
+        if (isPlaying) {
+          audioElement.pause();
+          playPauseBtn.textContent = '▶';
+        } else {
+          audioElement.play()
+            .catch(error => {
+              console.error('Playback failed:', error);
+              filenameDisplay.textContent = 'Error loading audio';
+              // Provide fallback or error message if needed
+            });
+          playPauseBtn.textContent = '❚❚';
+        }
+        isPlaying = !isPlaying;
+      });
+     
+      // Update progress bar and current time during playback
+      audioElement.addEventListener('timeupdate', function() {
+        const progress = (audioElement.currentTime / audioElement.duration) * 100;
+        progressBar.style.width = `${progress}%`;
+        currentTimeElement.textContent = formatTime(audioElement.currentTime);
+      });
+     
+      // Allow seeking by clicking on progress bar
+      progressContainer.addEventListener('click', function(e) {
+        const rect = progressContainer.getBoundingClientRect();
+        const pos = (e.clientX - rect.left) / rect.width;
+        audioElement.currentTime = pos * audioElement.duration;
+      });
+     
+      // Reset player when audio ends
+      audioElement.addEventListener('ended', function() {
+        progressBar.style.width = '0%';
+        playPauseBtn.textContent = '▶';
+        isPlaying = false;
+        audioElement.currentTime = 0;
+      });
+     
+      // Handle errors
+      audioElement.addEventListener('error', function() {
+        console.error('Audio error:', audioElement.error);
+        filenameDisplay.textContent = 'Error: File not found';
+        filenameDisplay.style.color = '#000000';
+        downloadLink.style.display = 'none';
+      });
+      
+      // Reset scrolling when audio ends
+      audioElement.addEventListener('ended', function() {
+        // Reset scrolling animation if needed
+        filenameContainer.classList.remove('scrolling');
+        setTimeout(checkScroll, 100);
+      });
+      
+      // Start scrolling on mouseover and pause on mouseout for better user experience
+      filenameContainer.addEventListener('mouseenter', function() {
+        if (filenameDisplay.offsetWidth > filenameContainer.offsetWidth) {
+          filenameContainer.classList.add('scrolling');
+        }
+      });
+      
+      filenameContainer.addEventListener('mouseleave', function() {
+        filenameContainer.classList.remove('scrolling');
+        setTimeout(() => {
+          checkScroll();
+        }, 2000);
+      });
+      
+      // Responsive handling for window resize
+      window.addEventListener('resize', checkScroll);
+    });
+  </script>
+</body>
+</html>

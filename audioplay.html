@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appro Community Connector</title>
+    <script src="js/tailwind-3.4.16.es"></script>
+    <script src="js/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <meta property="og:image" content="images/briquette.webp">
+    <meta property="og:description" content="trash to fuel and water to drinkable">
+    <meta property="og:title" content="Appro - Community Connector">
+    <meta name="description" content="Appropriate Technology Engineering and Science Connector">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Approvideo Hub">
+    <meta name="application-name" content="Approvideo Hub">
+    <meta name="theme-color" content="#047857">
+    <meta name="License" content="GPLv3">
+    <meta name="msapplication-TileColor" content="#047857">
+    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
+    <link rel="icon" type="image/png" href="images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        .item-container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .item-container h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .item-container h3 {
+            margin-top: 10px;
+            color: #555;
+        }
+        .item-container p, .item-container ul, .item-container ol {
+            line-height: 1.6;
+        }
+        .item-container ul, .item-container ol {
+            padding-left: 20px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+        .logo {
+            margin-right: 20px;
+        }
+        .breadcrumbs ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .breadcrumbs li + li::before {
+            content: ">>";
+            margin: 0 10px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+<div id="app" class="flex flex-col">
+    <header class="header flex flex-col items-start bg-orange-600 text-white p-4 shadow-md">
+        <div class="logo flex items-start">
+            <a href="/"><svg dataSlot="icon" aria-hidden="true" fill="none" strokeWidth={1.5} stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" strokeLinecap="round" strokeLinejoin="round" /></svg></a>
+            <h1 class="text-xl font-bold"><a href="/">Appro Community Connector</a></h1>
+        </div>
+        <nav class="breadcrumbs w-full and text-left">
+            <ul>
+                <li></li>
+                <li><a href="waste.html">waste to fuel</a></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li><a href="water.html">water to drink</a></li>
+            </ul>
+        </nav>
+    </header>
+</div>
+<main>
+    <div id="dashboard-logged-out" class="text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Appropriate Technology Reference</h2>
+        <p class="text-xl text-gray-600 mb-8"></p>
+        <div class="flex justify-center items-center py-4">
+            <div class="flex space-x-4">
+                <img src="images/wastemanagement64_.png" width="64" height="64" alt="appro cc" title="Appro Community Connector" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
+                <img src="images/drinkingwater64_.png" width="64" height="64" alt="appro cc" title="Appro Community Connector" class
