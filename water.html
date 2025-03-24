@@ -4,14 +4,14 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-      <title>Appro Community Connect</title>
-      <script src="/tailwind-3.4.16.es"></script>
-      <script src="./flowbite.min.js"></script>
+      <title>Appro Community Connector</title>
+      <script src="/js/tailwind-3.4.16.es"></script>
+      <script src="/js/flowbite.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
       <link rel="stylesheet" href="/style.css">
-      <meta property="og:image" content="briquette.webp">
+      <meta property="og:image" content="/images/briquette.webp">
       <meta property="og:description" content="trash to fuel and water to drinkable">
-      <meta property="og:title" content="Appro - Community Connect">   
+      <meta property="og:title" content="Appro - Community Connector">   
       <meta name="description" content="Appropriate Technology Engineering and Science Connect">
       
       <!-- PWA Meta Tags -->
@@ -22,67 +22,17 @@
       <meta name="theme-color" content="#047857">
       <meta name="License" content="GPLv3">
       <meta name="msapplication-TileColor" content="#047857">
-      <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+      <meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
   
       <!-- PWA Icons -->
       <link rel="icon" type="image/png" href="/favicon.ico"> 
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
       <style>
-            body {
-            font-family: sans-serif;
-            margin: 20px;
-            }
-            h1 {
-            text-align: left;
-            margin-bottom: 30px;
-            }
-            .item-container {
-            border: 1px solid #ddd;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            }
-            .item-container h2 {
-            margin-top: 0;
-            color: #333;
-            }
-            .item-container h3 {
-            margin-top: 10px;
-            color: #555;
-            }
-            .item-container p, .item-container ul, .item-container ol {
-            line-height: 1.6;
-            }
-            .item-container ul, .item-container ol {
-            padding-left: 20px;
-            }
-
-            .header {
-            display: flex;
-            align-items: center; /* Aligns items vertically centered */
-            padding: 10px;       /* Adjust as needed */
-            }
-
-            .logo {
-            margin-right: 20px;  /* Creates spacing between logo and breadcrumbs */
-            }
-
-            .breadcrumbs ul {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            }
-
-            .breadcrumbs li + li::before {
-            content: ">>";
-            margin: 0 10px;
-            color: #ffffff;         /* Change color as desired */
-            }
-
+        html {
+          scroll-behavior: smooth;
+        }
       </style>
 </head>
 <body>
@@ -102,7 +52,7 @@
                             <path d="M14.146 7.146l1.414-1.414" />
                             <path d="M9.854 7.146l-1.414-1.414" />
                             </svg></a>           
-                        <h1 class="text-xl font-bold"><a href=/>Appro Community Connect</a></h1>
+                        <h1 class="text-xl font-bold"><a href=/> Appro Community Connector</a></h1>
                     </div>
                     <nav class="breadcrumbs w-full and text-left" >
                       <ul>
@@ -114,9 +64,6 @@
                         <li><a href="water.html">water to drink</a></li>
                       </ul>
                     </nav>
-     <nav class="text-right" ><a href=/><svg data-slot="icon" aria-hidden="true" fill="none" stroke-width="1.5" height=40px width=40px stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-  <path d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg></a></nav>
 
                 </header>
         </div>
@@ -124,9 +71,16 @@
 
 <main>
 
+<div class="centered-container">
+  <div class="icon-text-container">
+    <img src="/images/drinkingwater64_.png" alt="Water Security Icon" class="centered-icon">
+    <span class="text-label">Water Security</span>
+  </div>
+</div>
 
 
-  <div class="max-w-5xl mx-auto py-8 px-4">
+
+  <div class="max-w-6xl mx-auto py-8 px-4">
 
     <div class="bg-blue-600 text-white py-2 px-4 font-bold text-lg mb-8 w-full">
       Evaluating Water Source : Salinity
@@ -222,15 +176,10 @@ Ceramic filters trap contaminants in microscopic pores, with designs ranging fro
       </div>
       <div class="aspect-w-16 aspect-h-9">
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TxmrNGLFNnY?si=yPOMd6dymyYbRWBM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/TxmrNGLFNnY?si=yPOMd6dymyYbRWBM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
     </div>
-
-
-
-
-
 
 
     <div class="bg-stone-600 text-white py-2 px-4 font-bold text-lg mb-8 w-full">
@@ -240,8 +189,8 @@ Ceramic filters trap contaminants in microscopic pores, with designs ranging fro
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
       <div>
         <p>
-	<p>
-Very interestng technology and approach.. Ben shares plans on this video at <a href=https://youtu.be/KlUQ1pneow8?t=201 title="3d view of system">3:20</a></p>
+        <p>
+      Very interestng technology and approach.. Ben shares plans on this video at <a href=https://youtu.be/KlUQ1pneow8?t=201 title="3d view of system">3:20</a></p>
       </div>
       <div>
         <div class="aspect-w-16 aspect-h-9">
@@ -251,23 +200,83 @@ Very interestng technology and approach.. Ben shares plans on this video at <a h
     </div>
 
 
+    <div class="centered-container">
+      <div class="icon-text-container">
+
+
+      <a href="/"><svg data-slot="icon" aria-hidden="true" fill="none" stroke-width="1.5" height="40px" width="40px" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+
+      <a href=waste.html><img src="images/wastemanagemen64_.png" alt="Waste Management" class="centered-icon" border=0></a>
+
+      </div>
+    </div>
+
+
   </div>
 
-<footer class="bg-slate-800">
-      <div class="border-t border-gray-500 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
-          <p class="text-gray-400">open &copy; 2025 Appro Community Connect
-          <br>
-          Sharing knowledge & expertise benefits vulnerable communities.
+
+
+  </main>
+
+  <aside class="sticky top-20 right-4 w-64 hidden md:block">
+    <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+      <h3 class="font-bold mb-2">Sections</h3>
+      <ul class="space-y-2">
+        <li><a href="#salinity" class="text-blue-600 hover:underline">Salinity</a></li>
+        <li><a href="#hydropanels" class="text-indigo-700 hover:underline">Hydropanels</a></li>
+        <li><a href="#desalination" class="text-indigo-600 hover:underline">Desalination</a></li>
+        <li><a href="#contaminants" class="text-stone-600 hover:underline">Contaminants</a></li>
+        <li><a href="#rainwater" class="text-stone-600 hover:underline">Rainwater</a></li>
+      </ul>
+    </div>
+  </aside>
+
+
+
+<footer class="bg-slate-800 text-gray-300 py-8">
+  <div class="container mx-auto px-4">
+    <div class="border-t border-gray-700 pt-6 flex flex-col md:flex-row md:justify-between md:items-center">
+      <div class="mb-4 md:mb-0 flex items-center">
+        <a href="/" class="mr-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 hover:text-white">
+            <path d="M12 2.5c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10-4.477-10-10-10z"></path>
+            <path d="M15.5 8.5l-4 4 4 4"></path>
+            <path d="M8.5 15.5l4-4-4-4"></path>
+            <path d="M16 16.5l-1.5-1.5"></path>
+            <path d="M8 16.5l1.5-1.5"></path>
+            <path d="M14.146 7.146l1.414-1.414"></path>
+            <path d="M9.854 7.146l-1.414-1.414"></path>
+          </svg>
+        </a>
+        <div>
+          <h1 class="text-xl font-bold mb-1">
+            <a href="/">Appro Community Connector</a>
+          </h1>
+          <p class="text-sm">
+            &copy; 2025 Appro Community Connector<br>
+            Sharing knowledge & expertise benefits vulnerable communities.
           </p>
-          <div class="flex space-x-4 mt-4 md:mt-0">
-              <a href="#privacy" id="privacy-link-footer" class="text-gray-400 hover:text-white">Privacy Policy</a>
-              <a href="#terms" id="terms-link-footer" class="text-gray-400 hover:text-white">Terms of Service</a>
-              <a href="#cookies" class="text-gray-400 hover:text-white">Cookie Policy</a>
-          </div>
+        </div>
       </div>
-
+      <div class="flex space-x-4">
+        <a href="#privacy" id="privacy-link-footer" class="text-gray-400 hover:text-white">Privacy Policy</a>
+        <a href="#terms" id="terms-link-footer" class="text-gray-400 hover:text-white">Terms of Service</a>
+        <a href="#cookies" class="text-gray-400 hover:text-white">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
 </footer>
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
 
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
 </body>
 </html>
 
