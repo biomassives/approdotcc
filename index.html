@@ -104,6 +104,10 @@
 			<li></li>
                         <li><a href="water.html">water to drink</a></li>
                       </ul>
+                      <ul>
+			<li></li>
+                        <li><a href="solarcooking.html">cooking with sunshine</a></li>
+                      </ul>
 <!--
                       <ul>
 			<li></li>
@@ -127,15 +131,17 @@
 
  	 <div class="flex justify-center items-center py-4">
  	   <div class="flex space-x-4">
-             <img src="images/wastemanagement64_.png" width="64" height="64" alt="appro cc" title="Appro Community Connector" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
+             <a href="waste.html"><img src="images/wastemanagement64_.png" width="64" height="64" alt="waste to fuel" title="Waste to fuel" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
              <! img src="wastewater64_.png" width="64" height="64" alt="appro cc" title="Appro Community Connector" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
-             <img src="images/drinkingwater64_.png" width="64" height="64" alt="appro cc" title="Appro Community Connector" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
+             <a href="water.html" title="Water"><img src="images/drinkingwater64_.png" width="64" height="64" alt="appro cc" title="Drinking water" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
+             <a href="solarcooking.html" title="Solar Cooking"><img src="images/solarcooker-approcc.webp" width="64" height="64" alt="DIY Solar Cooker" title="DIY Solar Cooker" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
           </div>
         </div>
             <p class="text-xl text-gray-600 mb-8">
                 <a href="#infrarepair">Trash/ Waste</a>,
                 <!-- <a href="#wastewater">Wastewater</a>, -->
                 <a href="#watersec">Drinking Water</a>,
+                <a href="#solarcooker">Solar Cooking</a>
             </p>
 
    
@@ -167,6 +173,34 @@
      <p>
      <BR><BR>
      </p>
+
+            <div class="audio-player mt-8 w-full max-w-lg mx-auto">
+              <div class="player-header">
+                  <img class="thumbnail" id="thumbnailImg" src="/images/briquette.webp" alt="Audio thumbnail">
+                  <div class="led-display">
+                      <div class="filename-text" id="filenameContainer">
+                          <span class="scrolling-text" id="filenameDisplay">Loading file...</span>
+                      </div>
+                  </div>
+                  <div class="controls-top">
+                      <button class="play-btn" id="playPauseBtn">▶</button>
+                      <a href="#" class="download-link" id="downloadLink" title="Download">▼</a>
+                  </div>
+              </div>
+              <div class="progress-container" id="progressContainer">
+                  <div class="progress-bar" id="progressBar"></div>
+              </div>
+              <div class="player-controls">
+                  <div class="time-display">
+                      <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                  </div>
+              </div>
+              <audio id="audioElement" src="/av/Solar Cooker - English.m4a"></audio>
+          </div>
+     <p>
+     <BR><BR>
+     </p>
+
 
   <div class="max-w-5xl mx-auto">
     

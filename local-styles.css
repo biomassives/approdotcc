@@ -1,0 +1,308 @@
+/* local-styles.css */
+
+/* --- General Body and Font Styles --- */
+body {
+    font-family: 'Inter', sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    background-color: #f9fafb; /* Light gray background */
+    margin: 0;
+    padding: 0;
+    color: #1f2937; /* Default text color (dark gray) */
+}
+
+/* --- Main Container & Layout --- */
+.container {
+    width: 100%;
+    max-width: 72rem; /* Equivalent to max-w-6xl */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+main.content-area {
+    width: 100%;
+    max-width: 56rem; /* Equivalent to max-w-4xl */
+    margin: 2rem auto; /* mt-8 and centered */
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+}
+
+/* --- Header & Navigation --- */
+header#main-navigation {
+    background-color: #ea580c; /* bg-orange-600 */
+    color: #ffffff;
+    padding: 1.25rem; /* p-5 */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+}
+
+header#main-navigation .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 72rem; /* max-w-6xl */
+    margin: 0 auto;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 1rem; /* Add gap for wrapped items */
+}
+
+header#main-navigation h1 {
+    font-size: 1.5rem; /* text-2xl */
+    line-height: 2rem;
+    font-weight: 700; /* font-bold */
+}
+
+header#main-navigation nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem; /* space-x-6 */
+    flex-wrap: wrap; /* Allow nav links to wrap */
+}
+
+header#main-navigation nav a {
+    font-size: 1.125rem; /* text-lg */
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+header#main-navigation nav a:hover {
+    color: #fef08a; /* hover:text-yellow-200 */
+}
+
+/* --- Content Elements --- */
+.content-title {
+    font-size: 1.875rem; /* text-3xl */
+    line-height: 2.25rem;
+    font-weight: 700;
+    color: #1f2937; /* text-gray-800 */
+    text-align: center;
+    margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.icons-section {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem; /* space-x-10 */
+    margin-bottom: 1.5rem; /* mb-6 */
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-background {
+    background-color: #e5e7eb; /* bg-gray-200 */
+    padding: 1rem;
+    border-radius: 9999px; /* rounded-full */
+}
+
+.icon-svg {
+    width: 3rem; /* w-12 */
+    height: 3rem; /* h-12 */
+    color: #374151; /* text-gray-700 */
+}
+
+.icons-caption {
+    text-align: center;
+    color: #4b5563; /* text-gray-600 */
+    font-size: 1.125rem; /* text-lg */
+    margin-bottom: 2rem; /* mb-8 */
+}
+
+/* --- Audio Player --- */
+.audio-player-container {
+    background-color: #f9fafb; /* bg-gray-50 */
+    border: 1px solid #e5e7eb; /* border border-gray-200 */
+    border-radius: 0.5rem; /* rounded-lg */
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* space-x-4 */
+    max-width: 36rem; /* max-w-lg */
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* shadow-sm */
+}
+
+.audio-thumbnail {
+    width: 4rem; /* w-16 */
+    height: 4rem; /* h-16 */
+    border-radius: 0.375rem; /* rounded-md */
+    object-fit: cover;
+}
+
+.audio-info {
+    flex-grow: 1;
+}
+
+.audio-title {
+    font-weight: 600; /* font-semibold */
+    color: #1f2937; /* text-gray-800 */
+}
+
+.audio-controls {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+/* --- Header Right Section --- */
+.header-right-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Space between language switcher and donate button */
+}
+
+/* --- Language Switcher Styles --- */
+.language-switcher {
+    position: relative; /* Establishes a positioning context for the dropdown */
+    display: inline-block;
+}
+
+.lang-button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 0.5rem 1rem; /* 8px 16px */
+    border-radius: 0.375rem; /* 6px */
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* 8px */
+    transition: background-color 0.2s ease-in-out;
+}
+
+.lang-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.lang-button .globe-icon {
+    width: 1.25rem; /* 20px */
+    height: 1.25rem; /* 20px */
+}
+
+.language-dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    right: 0;
+    top: calc(100% + 5px); /* Position below the button with a small gap */
+    background-color: #ffffff;
+    color: #1f2937; /* Dark text for readability */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 0.375rem; /* 6px */
+    z-index: 10;
+    padding: 0.5rem 0;
+    list-style-type: none;
+    margin: 0;
+}
+
+.language-dropdown.show {
+    display: block;
+}
+
+.language-dropdown li a {
+    color: #1f2937;
+    padding: 0.75rem 1.5rem; /* 12px 24px */
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.language-dropdown li a:hover {
+    background-color: #f3f4f6; /* A light gray for hover effect */
+}
+
+/* --- Donate Button Styles --- */
+.donate-button {
+    background-color: #fef08a; /* A bright yellow */
+    color: #b45309; /* A contrasting dark orange for text */
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.375rem;
+    font-size: 0.9rem;
+    font-weight: 700; /* bold */
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.donate-button:hover {
+    background-color: #fde047; /* A slightly brighter yellow on hover */
+}
+
+/* --- Donation Modal Styles --- */
+.modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay.show {
+    display: flex; /* Use flex to center the modal content */
+}
+
+.modal-content {
+    background-color: #ffffff;
+    color: #1f2937;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.modal-close-button {
+    color: #9ca3af; /* gray-400 */
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.modal-close-button:hover {
+    color: #1f2937; /* gray-800 */
+}
+
+.modal-content h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste to Fuel Page</title>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col items-center p-4">
+
+    <!-- This is the element where the navigation will be appended -->
+    <header id="main-navigation" class="w-full max-w-4xl mb-8">
+        <!-- The JavaScript will inject the <nav> element here -->
+    </header>
+
+    <main class="w-full max-w-4xl bg-white p-8 rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold text-gray-800 mb-4">Waste to Fuel Initiatives</h1>
+        <p class="text-gray-700 leading-relaxed">
+            Explore our innovative approaches to converting waste into sustainable energy sources.
+            Our projects focus on reducing landfill waste and creating valuable resources,
+            contributing to a circular economy and a cleaner planet. This page details our
+            specific programs and technologies in the waste-to-fuel sector.
+        </p>
+        <p class="text-gray-700 leading-relaxed mt-4">
+            We are committed to transparency in our biodiversity token initiatives and developing
+            accessible educational tools, aligning with your interest in teachable, vanilla JS tech.
+        </p>
+        <!-- You can add more content specific to the 'waste.html' page here -->
+    </main>
+
+    <!--
+        Include your navigation script at the end of the body.
+        For demonstration, I'm embedding it directly here.
+        In a real project, you would save the JavaScript below as 'nav-include.js'
+        and link it like: <script src="nav-include.js"></script>
+    -->
+    <script>
+        // nav-include.js
+        // This script dynamically generates and appends a navigation menu
+        // to a specified DOM element, ensuring the current page's link
+        // is completely omitted from the navigation.
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Define your navigation items.
+            // Ensure the 'href' values match the actual filenames of your pages.
+            const navItems = [
+                { text: 'Home', href: 'index.html' },
+                { text: 'Waste to Fuel', href: 'waste.html' },
+                { text: 'Water to Drink', href: 'water.html' },
+                { text: 'Cook from Sunlight', href: 'cook.html' },
+                // Add more navigation items as needed
+            ];
+
+            // The ID of the DOM element where the navigation should be appended.
+            // Make sure an element with this ID exists in your HTML.
+            const targetElementId = 'main-navigation';
+
+            const navContainer = document.getElementById(targetElementId);
+
+            // Check if the target container exists before proceeding.
+            if (navContainer) {
+                // Get the current page's filename from the URL in a more robust way.
+                // This handles various URL structures (e.g., file paths, server paths, root paths).
+                const currentPath = window.location.pathname;
+                let currentPageFilename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+
+                // Special handling for root URL (e.g., "http://localhost/" or "https://example.com/")
+                // If the path is empty or ends with a slash, assume 'index.html' as the default.
+                if (currentPageFilename === '' && (currentPath === '/' || currentPath.endsWith('/'))) {
+                    currentPageFilename = 'index.html';
+                }
+
+                // Create the main <nav> element.
+                const navElement = document.createElement('nav');
+                // Apply Tailwind CSS classes for styling the navigation bar.
+                navElement.className = 'breadcrumbs w-full text-left p-4 bg-white rounded-lg shadow-md';
+
+                // Create the <ul> element to hold the list of navigation links.
+                const ulElement = document.createElement('ul');
+                // Apply Tailwind CSS classes for a responsive flex layout of list items.
+                // On small screens, items stack vertically (flex-col), then horizontally (sm:flex-row).
+                // Space-y-2 adds vertical spacing, space-x-4 adds horizontal spacing on larger screens.
+                ulElement.className = 'flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 justify-center';
+
+                // Iterate over each navigation item to create its corresponding list item and link.
+                navItems.forEach(item => {
+                    // Extract filename from item.href
+                    const itemFilename = item.href.substring(item.href.lastIndexOf('/') + 1);
+
+                    // Skip adding the link if it's the current page (case-insensitive comparison)
+                    if (currentPageFilename.toLowerCase() === itemFilename.toLowerCase()) {
+                        return; // Skip this iteration
+                    }
+
+                    const liElement = document.createElement('li');
+                    // Basic styling for each list item.
+                    liElement.className = 'text-lg font-medium';
+
+                    const aElement = document.createElement('a');
+                    aElement.href = item.href; // Set the link destination
+                    aElement.textContent = item.text; // Set the link text
+                    // Tailwind classes for link styling: gray text, hover effects (blue text, light blue background), padding, rounded corners.
+                    aElement.className = 'text-gray-700 hover:text-blue-500 transition-colors duration-200 px-3 py-1 rounded-md hover:bg-blue-50';
+                    liElement.appendChild(aElement); // Add the link to the list item
+
+                    ulElement.appendChild(liElement); // Add the list item to the unordered list
+                });
+
+                navElement.appendChild(ulElement); // Add the unordered list to the nav element
+                navContainer.appendChild(navElement); // Append the complete nav to the target container
+            } else {
+                // Log an error if the target element for navigation is not found, useful for debugging.
+                console.error(`Navigation target element with ID '${targetElementId}' not found. Please ensure your HTML has a <div id="${targetElementId}">.`);
+            }
+        });
+    </script>
+</body>
+</html>
+

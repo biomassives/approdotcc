@@ -1,0 +1,349 @@
+* local-styles-rtl.css */
+
+/* --- General Body and Font Styles --- */
+body {
+    font-family: 'Inter', 'Cairo', sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    background-color: #f9fafb;
+    margin: 0;
+    padding: 0;
+    color: #1f2937;
+}
+
+/* --- Main Container & Layout --- */
+.container {
+    width: 100%;
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+main.content-area {
+    width: 100%;
+    max-width: 56rem;
+    margin: 2rem auto;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Header & Navigation --- */
+header#main-navigation {
+    background-color: #ea580c;
+    color: #ffffff;
+    padding: 1rem 1.25rem; /* Adjusted padding */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+header#main-navigation .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 80rem; /* Wider for new layout */
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header-logo a {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+header#main-navigation nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+header#main-navigation nav a {
+    font-size: 1rem; /* Slightly smaller for a cleaner look */
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+}
+
+header#main-navigation nav a:hover {
+    color: #fef08a;
+    border-bottom-color: #fef08a;
+}
+
+/* --- Content Elements --- */
+.content-title {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    color: #1f2937;
+    text-align: center;
+    margin-bottom: 2rem; /* Increased margin */
+}
+
+/* UPDATED: Icon styles */
+.icons-section {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* Reduced gap */
+    margin-bottom: 1rem; /* Reduced margin */
+    text-align: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1.5rem;
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px; /* Give a fixed width for alignment */
+}
+
+.icon-background {
+    background-color: #e5e7eb;
+    padding: 0.75rem; /* Smaller padding */
+    border-radius: 9999px;
+}
+
+.icon-svg {
+    width: 2.5rem; /* Smaller icon */
+    height: 2.5rem; /* Smaller icon */
+    color: #374151;
+}
+
+.icons-caption {
+    text-align: center;
+    color: #4b5563;
+    font-size: 1rem; /* Smaller font size */
+    margin-top: 0.5rem;
+}
+
+/* --- Audio Player --- */
+.audio-player-container {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 36rem;
+    margin: 2rem auto 0; /* Added top margin */
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.audio-thumbnail {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.375rem;
+    object-fit: cover;
+}
+
+.audio-info {
+    flex-grow: 1;
+}
+
+.audio-title {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.audio-controls {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+/* --- Header Right Section --- */
+.header-right-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* --- Language Switcher Styles --- */
+.language-switcher {
+    position: relative;
+    display: inline-block;
+}
+
+.lang-button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.lang-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.lang-button .globe-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.language-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 5px);
+    background-color: #ffffff;
+    color: #1f2937;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 0.375rem;
+    z-index: 10;
+    padding: 0.5rem 0;
+    list-style-type: none;
+    margin: 0;
+}
+
+.language-dropdown.show {
+    display: block;
+}
+
+.language-dropdown li a {
+    color: #1f2937;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.language-dropdown li a:hover {
+    background-color: #f3f4f6;
+}
+
+/* --- Donate Button Styles --- */
+.donate-button {
+    background-color: #fef08a;
+    color: #b45309;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.375rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.donate-button:hover {
+    background-color: #fde047;
+}
+
+/* --- Donation Modal Styles --- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    color: #1f2937;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.modal-close-button {
+    color: #9ca3af;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.modal-close-button:hover {
+    color: #1f2937;
+}
+
+.modal-content h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+/* --- RTL Specific Styles --- */
+[dir="rtl"] .header-left {
+    order: 1; /* Move logo/nav to the right */
+}
+
+[dir="rtl"] .header-right-controls {
+    order: -1; /* Move controls to the left */
+}
+
+[dir="rtl"] .language-dropdown {
+    right: auto;
+    left: 0;
+}
+
+[dir="rtl"] .language-dropdown li a {
+    text-align: right;
+}
+
+[dir="rtl"] .modal-close-button {
+    right: auto;
+    left: 1rem;
+}
+
+[dir="rtl"] .audio-player-container {
+    text-align: right;
+}
+
