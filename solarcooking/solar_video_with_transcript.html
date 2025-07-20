@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Archive.org Stream with Transcript</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: sans-serif; background: #111; color: #fff; padding: 2rem; text-align: center; }
+    .container { max-width: 800px; margin: auto; }
+    img { max-width: 100%; height: auto; margin-bottom: 1rem; border-radius: 8px; cursor: pointer; }
+    .download-link { display: inline-block; padding: 0.6rem 1.2rem; background: #2d7dd2; color: white; text-decoration: none; border-radius: 5px; transition: background 0.3s; }
+    .download-link:hover { background: #1b5fa6; }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.85);
+    }
+    .modal-content {
+      background-color: #222;
+      margin: 5% auto;
+      padding: 1rem;
+      border: 1px solid #888;
+      width: 90%;
+      max-width: 800px;
+      position: relative;
+    }
+    .close {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    video { width: 100%; max-height: 450px; }
+    #transcriptContainer {
+      max-height: 200px;
+      overflow-y: auto;
+      margin-top: 1rem;
+      background: #333;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="av/test_output.ia_thumb.jpg" alt="Item Tile" id="thumbnail">
+    <a class="download-link" href="https://archive.org/download/test_output2/test_output2_archive.torrent" download>
+      📥 Download via Torrent
+    </a>
+  </div>
+
+  <div id="videoModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <video id="videoPlayer" controls autoplay crossorigin="anonymous">
+        <source src="../av/test_output2.ia.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div id="transcriptContainer"></div>
+    </div>
+  </div>
+
+  <script>
+    const thumbnail = document.getElementById('thumbnail');
+    const modal = document.getElementById('videoModal');
+    const closeModal = document.getElementById('closeModal');
+    const video = document.getElementById('videoPlayer');
+
+    thumbnail.addEventListener('click', () => {
+      modal.style.display = 'block';
+      video.play();
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.style.display = 'none';
+      video.pause();
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        video.pause();
+      }
+    });
+
+    const transcript = [
+  {
+    "start": 0.0,
+    "end": 13.84,
+    "text": "from the sun. So basically, the solar oven, where you can cook using just the sun's light,"
+  },
+  {
+    "start": 14.8,
+    "end": 20.88,
+    "text": "the solar heat and the light from the sun. So basically, everything that you need is here."
+  },
+  {
+    "start": 20.88,
+    "end": 31.2,
+    "text": "This is the final product. As you can see, this is basically cardboard with aluminum coating on it,"
+  },
+  {
+    "start": 31.2,
+    "end": 38.88,
+    "text": "something reflective. We're going to make this also as a DIY, do it yourself so you can see how we"
+  },
+  {
+    "start": 38.88,
+    "end": 44.24,
+    "text": "use it, how we make it, but I'll probably make it using cardboard and aluminum foil, which is"
+  },
+  {
+    "start": 44.24,
+    "end": 49.76,
+    "text": "easier to use. Either way, this is the final product so you can see aluminum, so basically,"
+  },
+  {
+    "start": 49.76,
+    "end": 57.2,
+    "text": "cardboard with aluminum or some sorts of reflective coating. You need a little bit of like a cloth"
+  },
+  {
+    "start": 57.2,
+    "end": 65.84,
+    "text": "on which you place a black container to cook the food in. The black container should be inside"
+  },
+  {
+    "start": 65.84,
+    "end": 71.92,
+    "text": "a plastic bag and that will stay on top of this and I'll show you how all of that comes together."
+  },
+  {
+    "start": 71.92,
+    "end": 76.88,
+    "text": "And for now, I just wanted to show you the materials. There's a couple of clips over there,"
+  },
+  {
+    "start": 76.88,
+    "end": 82.8,
+    "text": "and this to give you a form factor of how big this solar, solar oven is. The blue scale"
+  },
+  {
+    "start": 82.8,
+    "end": 89.92,
+    "text": "bar is one foot, so you can kind of get to see how roughly each one of the edges are in terms of"
+  },
+  {
+    "start": 92.0,
+    "end": 99.52,
+    "text": "sides. Okay, so with these, as the final product, I'll assemble this and then I'll show that and"
+  },
+  {
+    "start": 99.52,
+    "end": 105.28,
+    "text": "then we will start our building in half and structure. One important piece I missed out is that you see"
+  },
+  {
+    "start": 105.28,
+    "end": 114.08,
+    "text": "these slits that are made at an angle, so that's where the edges, this edge is going to go in"
+  },
+  {
+    "start": 114.08,
+    "end": 119.28,
+    "text": "and that edge is going to go in, so just want to make sure that you can get an idea of the slits."
+  },
+  {
+    "start": 119.28,
+    "end": 128.8,
+    "text": "So this is roughly made with, I'd say roughly six inches in length and they're made diagonal."
+  },
+  {
+    "start": 129.92,
+    "end": 135.44,
+    "text": "All right, so the next piece is where I have actually taken the solar oven as you can see"
+  },
+  {
+    "start": 135.44,
+    "end": 139.68,
+    "text": "and put the edges into the slits and then the bottom of the slits as you can see,"
+  },
+  {
+    "start": 139.68,
+    "end": 146.32,
+    "text": "put the paper paper out at least adjustable. So as the sun moves, you can make this digger,"
+  },
+  {
+    "start": 147.28,
+    "end": 154.48,
+    "text": "let me further in or you can have it hide and sink it and kind of have some adjustment"
+  },
+  {
+    "start": 154.48,
+    "end": 162.4,
+    "text": "depending on how the sun is rotating. Okay, all right, so the next piece I have"
+  },
+  {
+    "start": 163.04,
+    "end": 171.92,
+    "text": "taken up black should be a black container. For me, it's a black base, but the top is obviously"
+  },
+  {
+    "start": 171.92,
+    "end": 178.48,
+    "text": "glass, you can make that black as well, put all of that into a plastic bag, wrap it up,"
+  },
+  {
+    "start": 178.48,
+    "end": 190.56,
+    "text": "basically fold it in and put it on top of just a cloth. And yeah, so as you can see the sunlight"
+  },
+  {
+    "start": 190.56,
+    "end": 197.44,
+    "text": "is going to reflect off all the edges and fall in and it's targeted into the solar oven."
+  },
+  {
+    "start": 197.52,
+    "end": 202.16,
+    "text": "Right now, as you can see, this base is quite flat, so ideally it needs to be a little bit more"
+  },
+  {
+    "start": 202.16,
+    "end": 208.08,
+    "text": "heightened, so let me go ahead and make that adjustment. All right, so I have made this more"
+  },
+  {
+    "start": 208.08,
+    "end": 217.44,
+    "text": "expanded as it has adjusted the base to make it so and I know it's a little, it's not very sunny"
+  },
+  {
+    "start": 217.44,
+    "end": 226.32,
+    "text": "over here, but you can already see that the oven is made and the sunlight it can simply reflect"
+  },
+  {
+    "start": 226.32,
+    "end": 232.88,
+    "text": "in. From what I understand, depending on where you are, this was used very successfully"
+  },
+  {
+    "start": 232.88,
+    "end": 245.84,
+    "text": "in Africa. Temperatures can get up to quite high, more than 250 to 80 Fahrenheit, so this can"
+  },
+  {
+    "start": 245.84,
+    "end": 253.04,
+    "text": "become very hot. All right, all right, so you can see I put the as main solar oven on the side."
+  },
+  {
+    "start": 253.04,
+    "end": 262.56,
+    "text": "I have here cardboard, aluminum foil, a double-sided tape, ruler, and some, I'm sorry,"
+  },
+  {
+    "start": 264.16,
+    "end": 271.2,
+    "text": "scissors and knives just to stop me making that same thing, the same solar oven."
+  },
+  {
+    "start": 272.4,
+    "end": 278.96,
+    "text": "And I'm going to use obviously aluminum foil in place of the reflective coating just to make it easy"
+  },
+  {
+    "start": 279.68,
+    "end": 288.64,
+    "text": "to replicate. So as you can see I've made the cutouts on this big cardboard, so it's roughly"
+  },
+  {
+    "start": 289.6,
+    "end": 297.52,
+    "text": "this cardboard is four feet, three feet, I'm sorry, three feet on the shorter edge and four feet"
+  },
+  {
+    "start": 297.52,
+    "end": 303.36,
+    "text": "on the longer edge. All right, as you can see I've kind of drawn out the contour outline"
+  },
+  {
+    "start": 303.44,
+    "end": 317.12,
+    "text": "from the template, or this is the template from the actual solar oven. So before I start cutting,"
+  },
+  {
+    "start": 317.12,
+    "end": 322.32,
+    "text": "I thought I'll give you some rough dimensions right below that given you, tried to give you a"
+  },
+  {
+    "start": 323.36,
+    "end": 330.56,
+    "text": "you know some sense of what's going on. You can see the angle at which this line is cut, so"
+  },
+  {
+    "start": 331.36,
+    "end": 339.12,
+    "text": "over here you can get a sense so this is 12 inches or one foot and so this is probably 18 inches"
+  },
+  {
+    "start": 339.84,
+    "end": 350.32,
+    "text": "and you have this, you have that to be the same, but on this edge you have roughly 12 inches,"
+  },
+  {
+    "start": 350.32,
+    "end": 359.76,
+    "text": "but that's curving out. And then over here you have 12 inches like that on a bit more, maybe"
+  },
+  {
+    "start": 359.92,
+    "end": 368.4,
+    "text": "14 inches to the edge. Over here this is maybe 12 inches, a little bit more, or just exactly 12"
+  },
+  {
+    "start": 368.4,
+    "end": 375.44,
+    "text": "inches, and then it again slants down to the other side. So just give a sense of the relative"
+  },
+  {
+    "start": 375.44,
+    "end": 389.36,
+    "text": "dimensions and the curves. And then this right here is 12 inches, let's say another eight"
+  },
+  {
+    "start": 389.36,
+    "end": 397.2,
+    "text": "inches or maybe 20 inches, and then you have that slant as well, and then this curves around"
+  },
+  {
+    "start": 398.56,
+    "end": 405.36,
+    "text": "and then curves out as you can see. Just to give you a sense of the curve, so maybe"
+  },
+  {
+    "start": 406.32,
+    "end": 414.48,
+    "text": "like this, this is 12 inches, and I get to the edge before this right here is approximately"
+  },
+  {
+    "start": 415.12,
+    "end": 421.92,
+    "text": "that's actually approximately five inches, and then I've said six before, this is five,"
+  },
+  {
+    "start": 422.64,
+    "end": 425.44,
+    "text": "as is this, so this will be a sneak. Yeah."
+  },
+  {
+    "start": 425.84,
+    "end": 445.44,
+    "text": "So yeah, I just need to know the relative side lengths and the slant angles a little bit,"
+  },
+  {
+    "start": 445.44,
+    "end": 454.32,
+    "text": "I hope the video is helping with clarifying that. I'm going to use this ruler to kind of give you"
+  },
+  {
+    "start": 455.44,
+    "end": 462.72,
+    "text": "those relative lengths as well. All right, so as you can see, I've made the cut out,"
+  },
+  {
+    "start": 466.24,
+    "end": 470.24,
+    "text": "it's perhaps not very not perfect, but I hope it'll do the job."
+  },
+  {
+    "start": 471.12,
+    "end": 480.08,
+    "text": "All right, so I've kind of made mine, as you can see, perhaps not as elegant as the one we got,"
+  },
+  {
+    "start": 480.08,
+    "end": 486.48,
+    "text": "by the way, the one we got was used by engineers for those orders in Africa, but yeah,"
+  },
+  {
+    "start": 487.12,
+    "end": 493.2,
+    "text": "it looks like it's pretty good, it's contained, it can be select, so that's all fine. I got to now"
+  },
+  {
+    "start": 493.2,
+    "end": 498.64,
+    "text": "put on the aluminum foil on the cardboard. As you can see, I'm also using the paper clips more"
+  },
+  {
+    "start": 498.64,
+    "end": 509.2,
+    "text": "for holding the cutouts in. So yeah, this is my rendering of a solar oven. As you can see,"
+  },
+  {
+    "start": 509.2,
+    "end": 520.56,
+    "text": "I've used aluminum foil, double sided tape, pair of scissors and a knife, and it's definitely not"
+  },
+  {
+    "start": 520.64,
+    "end": 529.68,
+    "text": "perfect, but I believe it's functional. And yes, and I'm holding the back of the clips as you can see,"
+  },
+  {
+    "start": 530.48,
+    "end": 538.8,
+    "text": "and in the middle, I can put the cooking part, although that is. So as you can see, first you put"
+  },
+  {
+    "start": 538.8,
+    "end": 543.92,
+    "text": "a... some sort of a cloth on the bottom, obviously, to protect both the tin foil as well as,"
+  },
+  {
+    "start": 544.88,
+    "end": 553.04,
+    "text": "you know, just to ensure that the interface is dispermed out. And then the parts, you can wrap it up,"
+  },
+  {
+    "start": 553.04,
+    "end": 560.24,
+    "text": "seeing a plastic bag, and you can put it on top of the pot. I believe it should still work"
+  },
+  {
+    "start": 560.24,
+    "end": 565.44,
+    "text": "without a plastic wrap, but it becomes way more effective, obviously, with the passive wrap,"
+  },
+  {
+    "start": 565.44,
+    "end": 573.28,
+    "text": "because the heat is out-trapped, and your food can cook quicker. Also, this is not only for food"
+  },
+  {
+    "start": 573.28,
+    "end": 580.48,
+    "text": "vegetables, but also for the water. Like I said, from reports that I know of this being"
+  },
+  {
+    "start": 580.48,
+    "end": 586.72,
+    "text": "in some various regions in Africa, the heat can... temperature can reach up to 350. Very"
+  },
+  {
+    "start": 586.72,
+    "end": 591.2,
+    "text": "night, but that's all we've seen here, the Sahara on here a bit later. But either way, that's"
+  },
+  {
+    "start": 591.2,
+    "end": 597.04,
+    "text": "very, very hot, even if it reaches half of that. So you can definitely, effectively, cook"
+  },
+  {
+    "start": 598.0,
+    "end": 607.44,
+    "text": "any food, one water, heat water, do all of that. Yes, why does it very cloudy and windy day here?"
+  },
+  {
+    "start": 610.0,
+    "end": 614.56,
+    "text": "I believe that this demo had shown how to make solar oven"
+  },
+  {
+    "start": 616.72,
+    "end": 619.76,
+    "text": "and how to get it to help you."
+  },
+  {
+    "start": 619.76,
+    "end": 626.72,
+    "text": "So, Keith, thank you."
+  }
+];
+
+    const transcriptContainer = document.getElementById('transcriptContainer');
+
+    transcript.forEach(function(segment, idx) {
+      const p = document.createElement('p');
+      p.textContent = segment.text;
+      p.setAttribute('data-start', segment.start);
+      p.setAttribute('data-end', segment.end);
+      p.setAttribute('id', 'transcript-' + idx);
+      p.style.margin = '0.5rem 0';
+      transcriptContainer.appendChild(p);
+    });
+
+    video.addEventListener('timeupdate', function() {
+      const currentTime = video.currentTime;
+
+      transcript.forEach(function(segment, idx) {
+        const el = document.getElementById('transcript-' + idx);
+        if (currentTime >= segment.start && currentTime <= segment.end) {
+          el.style.background = '#2d7dd2';
+          el.style.color = '#fff';
+          el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          el.style.background = 'transparent';
+          el.style.color = '#ccc';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
