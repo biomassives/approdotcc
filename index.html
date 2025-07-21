@@ -222,7 +222,7 @@
 
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-  <div id="solar-cooker" class="color-panel bg-yellow-100 text-yellow-900 rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between shadow-md border-2 border-yellow-300 hover:bg-yellow-200 transition duration-200" data-color="sunshine">
+  <div id="solar_cooker" class="color-panel bg-yellow-100 text-yellow-900 rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between shadow-md border-2 border-yellow-300 hover:bg-yellow-200 transition duration-200" data-color="sunshine">
     <h2 class="text-2xl font-bold text-orange-600">Solar Cookers</h2>
     <p class="text-yellow-900 mb-3">Harnessing sunlight for clean, fuel-free cooking solutions.</p>
     <div class="hover-content text-orange-800 font-medium hidden">
@@ -232,10 +232,9 @@
       <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M6.05 17.95l-1.414 1.414M18.364 18.364l-1.414-1.414M6.05 6.05L4.636 7.464M12 7a5 5 0 100 10 5 5 0 000-10z" />
     </svg>
   </div>
-</div>
 
-<div id="mycelium_use" class="color-panel bg-stone-600 rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="mycelium">
-  <h2 class="text-2xl font-semibold text-orange-300">Edible House?</h2>
+<div id="mycelium_use" class="color-panel bg-slate-600 rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="mycelium">
+  <h2 class="text-2xl font-semibold text-yellow-400">Edible House?</h2>
   <p class="text-white mb-3">Oyster mushroom panels, Hansel & Gretel concept – improved mycelial cake as emergency food.</p>
   <div class="hover-content text-blue-800 font-medium hidden">
     Click to explore project
@@ -245,6 +244,20 @@
   </svg>
 </div>
 
+</div>
+
+<a href="soakpit.html">
+  <div id="soakpit_panel" class="color-panel bg-stone-600 rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="soakpit">
+    <h2 class="text-2xl font-semibold text-orange-300">Sanitary latrine & Soak pit</h2>
+    <p class="text-white mb-3">Improved greywater drainage and sanitation using affordable soak pit systems.</p>
+    <div class="hover-content text-blue-800 font-medium hidden">
+      Click to learn more
+    </div>
+    <svg class="icon-bg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4 12h16M4 16h16M4 8h16" />
+    </svg>
+  </div>
+</a>
 
 
 
@@ -349,6 +362,9 @@ document.getElementById('water').addEventListener('click', function() {
   });
   document.getElementById('mycelium_use').addEventListener('click', function() {
     window.location.href = "mycelium.html"; 
+  });
+  document.getElementById('soakpit_panel').addEventListener('click', function() {
+    window.location.href = "soakpit.html"; 
   });
  
 
