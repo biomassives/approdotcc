@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="qu">
+<head>
+  <meta charset="utf-8">
+  <title>Mycelial Food Security - qu</title>
+  <script defer src="/header.js"></script>
+  <link rel="stylesheet" href="/local-styles.css">
+</head>
+<body>
+  <h1>Mycelial Food Security (qu)</h1>
+  <div id="transcript">Loading transcript...</div>
+
+  <script>
+    fetch('/solarcooking/lang/vid1_qu.txt')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('transcript').textContent = data;
+      })
+      .catch(err => {
+        document.getElementById('transcript').textContent = 'Transcript not available.';
+      });
+  </script>
+</body>
+</html>

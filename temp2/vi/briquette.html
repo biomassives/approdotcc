@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Fuel Briquette (vi)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/js/tailwind-3.4.16.es"></script>
+</head>
+<body class="bg-white text-gray-900">
+    <header class="bg-orange-600 text-white p-4 flex justify-between items-center">
+        <h1 class="text-xl font-bold"><a href="/">Appro Community Connector</a></h1>
+        <div>
+            <label for="languageSelect">🌐 Language:</label>
+            <select id="languageSelect" class="text-black px-2 py-1 rounded">
+                <option value="en" >English</option>
+                <option value="vi" selected>Vietnamese</option>
+                <option value="ar" >Arabic</option>
+                <option value="sw" >Swahili</option>
+                <option value="yo" >Yoruba</option>
+                <option value="am" >Amharic</option>
+                <option value="uk" >Ukrainian</option>
+                <option value="es" >Spanish</option>
+                <option value="ja" >Japanese</option>
+                <option value="qu" >Quechua</option>
+                <option value="sh" >Serbo-Croatian</option>
+                <option value="we" >Wolof</option>
+                <option value="lu" >Luo</option>
+                <option value="ha" >Hausa</option>
+                <option value="fa" >Dari</option>
+            </select>
+        </div>
+    </header>
+
+    <main class="p-6">
+        <h2 class="text-2xl font-semibold mb-4">Fuel Briquette (vi)</h2>
+        <p>This is a placeholder for the <strong>Fuel Briquette</strong> page in <strong>Vietnamese</strong>.</p>
+        <p><a href="/index.html" class="text-blue-600 underline">Back to homepage</a></p>
+    </main>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const langSelector = document.getElementById("languageSelect");
+        langSelector.value = "vi";
+        langSelector.addEventListener("change", () => {
+            const newLang = langSelector.value;
+            const currentPage = "briquette.html";
+            window.location.href = `/${newLang}/${currentPage}`;
+        });
+    });
+    </script>
+</body>
+</html>

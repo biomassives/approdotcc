@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Appro Community Connector - الموصل المجتمعي</title>
+      <script src="js/tailwind-3.4.16.es"></script>
+      <script src="js/flowbite.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+      <link rel="stylesheet" href="style.css">
+      <meta property="og:image" content="/images/briquette.webp">
+      <meta property="og:description" content="تحويل القمامة إلى وقود والمياه إلى صالحة للشرب">
+      <meta property="og:title" content="Appro - الموصل المجتمعي">
+      <meta name="description" content="موصل التكنولوجيا الملائمة والهندسة والعلوم">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      <meta name="apple-mobile-web-app-title" content="Approvideo Hub">
+      <meta name="application-name" content="Approvideo Hub">
+      <meta name="theme-color" content="#047857">
+      <meta name="License" content="GPLv3">
+      <meta name="msapplication-TileColor" content="#047857">
+      <meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
+      <link rel="icon" type="image/png" href="/images/favicon.ico">
+      <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+      <style>
+            body {
+            font-family: sans-serif;
+            margin: 20px;
+            }
+            h1 {
+            text-align: right;
+            margin-bottom: 30px;
+            }
+            .item-container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .item-container h2 {
+            margin-top: 0;
+            color: #333;
+            }
+            .item-container h3 {
+            margin-top: 10px;
+            color: #555;
+            }
+            .item-container p, .item-container ul, .item-container ol {
+            line-height: 1.6;
+            }
+            .item-container ul, .item-container ol {
+            padding-right: 20px;
+            }
+
+            .header {
+            display: flex;
+            align-items: center; /* 📏 محاذاة العناصر عموديًا في المنتصف */
+            padding: 10px;       /* 💅 تعديل حسب الحاجة */
+            }
+
+            .logo {
+            margin-left: 20px;  /* ↔️ يخلق مسافة بين الشعار ومسارات التنقل */
+            }
+
+            .breadcrumbs ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            }
+
+            .breadcrumbs li + li::before {
+            content: "<<";
+            margin: 0 10px;
+            color: #ffffff;       /*🎨 غير اللون حسب الرغبة */
+            }
+
+      </style>
+</head>
+<body>
+    <body class="bg-gray-50 min-h-screen">
+        <div id="app" class="flex flex-col">
+                <header class="header flex flex-col items-start bg-orange-600 text-white p-4 shadow-md">
+                    <div class="logo flex items-start">
+                        <h1 class="text-xl font-bold"><a href=/>Appro الموصل المجتمعي</a></h1>
+                    </div>
+                    <nav class="breadcrumbs w-full and text-right" >
+                      <ul>
+            <li></li>
+                            <li><a href="waste.html">النفايات إلى وقود</a></li>
+                          </ul>
+                          <ul>
+            <li></li>
+                            <li><a href="water.html">مياه للشرب</a></li>
+                          </ul>
+                          <ul>
+            <li></li>
+                            <li><a href="solarcooking.html">الطبخ بالطاقة الشمسية</a></li>
+                          </ul>
+</nav>
+
+                </header>
+        </div>
+
+
+<main>
+
+
+            <div id="dashboard-logged-out" class="text-center">
+
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">مرجع التكنولوجيا الملائمة</h2>
+            <p class="text-xl text-gray-600 mb-8">
+            </p>
+
+      <div class="flex justify-center items-center py-4">
+        <div class="flex space-x-4">
+            <a href="waste.html"><img src="images/wastemanagement64_.png" width="64" height="64" alt="النفايات إلى وقود" title="النفايات إلى وقود" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
+            <! img src="wastewater64_.png" width="64" height="64" alt="appro cc" title="Appro الموصل المجتمعي" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
+            <a href="water.html" title="ماء"><img src="images/drinkingwater64_.png" width="64" height="64" alt="appro cc" title="مياه صالحة للشرب" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
+            <a href="solarcooking.html" title="الطبخ الشمسي"><img src="images/solarcooker-approcc.webp" width="64" height="64" alt="طباخ شمسي DIY" title="طباخ شمسي DIY" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
+          </div>
+        </div>
+            <p class="text-xl text-gray-600 mb-8">
+                  <a href="#infrarepair">القمامة / النفايات</a>,
+                  <a href="#watersec">مياه الشرب</a>,
+                  <a href="#solarcooker">الطبخ الشمسي</a>
+            </p>
+
+    
+
+
+            <div class="audio-player mt-8 w-full max-w-lg mx-auto">
+              <div class="player-header">
+                  <img class="thumbnail" id="thumbnailImg" src="/images/briquette.webp" alt="صورة مصغرة للصوت">
+                  <div class="led-display">
+                      <div class="filename-text" id="filenameContainer">
+                          <span class="scrolling-text" id="filenameDisplay">جار تحميل الملف...</span>
+                      </div>
+                  </div>
+                  <div class="controls-top">
+                      <button class="play-btn" id="playPauseBtn">▶</button>
+                      <a href="#" class="download-link" id="downloadLink" title="تحميل">▼</a>
+                  </div>
+              </div>
+              <div class="progress-container" id="progressContainer">
+                  <div class="progress-bar" id="progressBar"></div>
+              </div>
+              <div class="player-controls">
+                  <div class="time-display">
+                      <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                  </div>
+              </div>
+              <audio id="audioElement" src="/av/approvideo_fuel-briquette-ar.mp3"></audio>
+          </div>
+      <p>
+      <BR><BR>
+      </p>
+
+            <div class="audio-player mt-8 w-full max-w-lg mx-auto">
+              <div class="player-header">
+                  <img class="thumbnail" id="thumbnailImg" src="/images/briquette.webp" alt="صورة مصغرة للصوت">
+                  <div class="led-display">
+                      <div class="filename-text" id="filenameContainer">
+                          <span class="scrolling-text" id="filenameDisplay">جار تحميل الملف...</span>
+                      </div>
+                  </div>
+                  <div class="controls-top">
+                      <button class="play-btn" id="playPauseBtn">▶</button>
+                      <a href="#" class="download-link" id="downloadLink" title="تحميل">▼</a>
+                  </div>
+              </div>
+              <div class="progress-container" id="progressContainer">
+                  <div class="progress-bar" id="progressBar"></div>
+              </div>
+              <div class="player-controls">
+                  <div class="time-display">
+                      <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                  </div>
+              </div>
+              <audio id="audioElement" src="/av/Solar Cooker - English.m4a"></audio>
+          </div>
+      <p>
+      <BR><BR>
+      </p>
+
+
+  <div class="max-w-5xl mx-auto">
+      <img src="av/test_output.ia_thumb.jpg" alt="صورة البلاط">
+
+    <video id="videoPlayer" controls crossorigin="anonymous">
+      <source src="av/test_output2.ia.mp4" type="video/mp4">
+      متصفحك لا يدعم علامة الفيديو.
+    </video>
+
+    <a class="download-link" href="https://archive.org/download/test_output2/test_output2_archive.torrent" download>
+      📥 تحميل عبر تورنت
+    </a>
+
+
+  </div>
+
+
+
+
+
+  <div class="max-w-5xl mx-auto">
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      <div id="water" class="color-panel bg-teal-950 text-white rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="frankincense">
+        <h2 class="text-2xl font-semibold text-lime-300">أمن المياه</h2>
+        <p class="text-white mb-3">مياه شرب آمنة، صرف صحي نظيف</p>
+        <div class="hover-content text-blue-800 font-medium hidden">
+          تحميل فيديو يوتيوب
+        </div>
+        <svg class="icon-bg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 11.5v-7m0 0l-3 3m3-3l3 3m-12 9.5h16.5M12 18.5c-4.65 0-8.5-3.85-8.5-8.5 0-1.05.22-2.05.6-2.96m17.4 2.96c0 1.05-.22 2.05-.6 2.96M12 18.5c4.65 0 8.5-3.85 8.5-8.5 0-1.05-.22-2.05-.6-2.96M5.63 7.04L4.5 7.5m15-3l-1.1.55"></path>
+        </svg>
+      </div>
+      
+      
+      <div id="briquette_use" class="color-panel bg-stone-600 rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="myhrr">
+        <h2 class="text-2xl font-semibold text-orange-300">قوالب الوقود</h2>
+        <p class="text-white mb-3">التدفئة من نفايات نشارة الخشب، الورق،...</p>
+        <div class="hover-content text-blue-800 font-medium hidden">
+          انقر لتحميل الفيديو
+        </div>
+        <svg class="icon-bg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path>
+        </svg>
+      </div>
+    </div>
+<div id="video-section" class="hidden mt-8 transition-all duration-300 ease-in-out">
+      <h2 id="selected-color-title" class="text-2xl font-bold text-center mb-4"></h2>
+      <div class="video-container" id="video-container"></div>
+    </div>
+  </div>
+
+
+  <div class="flex justify-center items-center py-4">
+  <div class="flex space-x-4">
+    <a href="waste.html"><img src="images/wastemanagement64_.png" width="64" height="64" alt="appro cc" title="Appro الموصل المجتمعي" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300" boder=0></a>
+    <!img src="wasstewater256.gif" width="64" height="64" alt="appro cc" title="Appro الموصل المجتمعي" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
+    <a href="water.html"><img src="images/drinkingwater64_.png" width="64" height="64" alt="appro cc" title="Appro الموصل المجتمعي" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300" border=0></a>
+  </div>
+</div>
+
+
+
+</main>
+<footer class="bg-gray-800 text-white py-8">
+  <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+
+          <div>
+        <img src="images/foote_logo_appro_dark220.webp" width="220" height="117" alt="appro cc" title="Appro الموصل المجتمعي">
+
+              <ul class="space-y-2 text-gray-400">
+
+              </ul>
+          </div>
+          <div>
+              <ul class="space-y-2 text-gray-400">
+
+              </ul>
+          </div>
+          <div>
+              <div class="flex space-x-4 mb-4">
+              </div>
+              <p class="text-gray-400">
+                  
+                    
+                  <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                      </svg>
+                  </button>
+              </p>
+          </div>
+          </div>
+      </div>
+
+      <div class="border-t border-gray-500 mt-8 pt-6 flex flex-col md:flex-roorw justify-between items-center">
+          <p class="text-gray-400">مفتوح © 2025 Appro الموصل المجتمعي
+          <br>
+          مشاركة المعرفة والخبرة تفيد المجتمعات الضعيفة.
+          </p>
+          <div class="flex space-x-4 mt-4 md:mt-0">
+              <a href="#privacy" id="privacy-link-footer" class="text-gray-400 hover:text-white">سياسة الخصوصية</a>
+              <a href="#terms" id="terms-link-footer" class="text-gray-400 hover:text-white">شروط الخدمة</a>
+              <a href="#cookies" class="text-gray-400 hover:text-white">سياسة ملفات الارتباط</a>
+          </div>
+      </div>
+                  <a href=/>
+<img src="images/favicon.webp" alt="Appro(priate technology) الموصل المجتمعي">
+<svg dataSlot="icon" aria-hidden="true" fill="none" strokeWidth={1.5} stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" strokeLinecap="round" strokeLinejoin="round" />
+</svg></a>            
+
+</footer>
+
+<script>
+
+document.getElementById('water').addEventListener('click', function() {
+    window.location.href = "water.html";
+  });
+  document.getElementById('briquette_use').addEventListener('click', function() {
+    window.location.href = "waste.html";
+  });
+ 
+
+ document.addEventListener('DOMContentLoaded', function() {
+       // // نجيب العناصر يا حبيب قلبي 🕵️‍♂️✨
+       const audioElement = document.getElementById('audioElement');
+       const playPauseBtn = document.getElementById('playPauseBtn');
+       const progressBar = document.getElementById('progressBar');
+       const progressContainer = document.getElementById('progressContainer');
+       const currentTimeElement = document.getElementById('currentTime');
+       const durationElement = document.getElementById('duration');
+       const filenameDisplay = document.getElementById('filenameDisplay');
+       const filenameContainer = document.getElementById('filenameContainer');
+       const downloadLink = document.getElementById('downloadLink');
+       const thumbnailImg = document.getElementById('thumbnailImg');
+       
+       // // يلا نبدأ! 🚀
+       let isPlaying = false;
+      
+       // // نستخرج اسم الملف ونعرضه بشكل حلو 📁💅
+       function extractFilename(src) {
+         // // ناخذ اسم الملف بس من المسار الطويل ده ✂️
+         const fullPath = src.split('/');
+         const filename = fullPath[fullPath.length - 1];
+        
+         // // نحفظ اسم الملف الأصلي عشان التحميل 💾
+         const originalFilename = filename;
+        
+         // // نشيل الامتداد ونغير الشرطات بمسافات عشان يبقى شكله أنيق 🧹
+         const cleanName = filename.split('.')[0].replace(/-/g, ' ');
+        
+         // // نكبر أول حرف في كل كلمة عشان الفخامة 🎩
+         return {
+           display: cleanName.split('_').map(word =>
+             word.charAt(0).toUpperCase() + word.slice(1)
+           ).join(' '),
+           original: originalFilename
+         };
+       }
+      
+       // // نظبط عرض اسم الملف ورابط التحميل 🛠️
+       const fileInfo = extractFilename(audioElement.src);
+       filenameDisplay.textContent = fileInfo.display;
+       downloadLink.href = audioElement.src;
+       downloadLink.download = fileInfo.original;
+       downloadLink.setAttribute('title', 'تحميل ' + fileInfo.original);
+      
+       // // نتأكد لو النص محتاج يتحرك عشان طويل شوية 📜
+       function checkScroll() {
+         if (filenameDisplay.offsetWidth > filenameContainer.offsetWidth) {
+           filenameContainer.classList.add('scrolling');
+         } else {
+           filenameContainer.classList.remove('scrolling');
+         }
+       }
+      
+       // // نستدعي الدالة دي بعد ما كل حاجة تحمل ⏳
+       setTimeout(checkScroll, 100);
+      
+       // // نغير الصورة المصغرة حسب نوع الصوت 🖼️🎶
+       // // في تطبيق حقيقي، هتعرف ده من بيانات الملف نفسه 🤓
+       // // دلوقتي هنستخدم طريقة بسيطة وخلاص 😉
+       if (fileInfo.original.includes('briquette')) {
+         thumbnailImg.src = "/images/briquette.webp";
+         thumbnailImg.alt = "صوت قوالب الوقود";
+       } else {
+         thumbnailImg.src = "/images/briquette.webp";
+         thumbnailImg.alt = "صورة مصغرة للصوت";
+       }
+       
+       // // نظبط شكل الوقت بالدقايق والثواني ⏰
+       function formatTime(seconds) {
+         const minutes = Math.floor(seconds / 60);
+         seconds = Math.floor(seconds % 60);
+         return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+       }
+       
+       // // نعرض مدة المقطع لما بياناته تحمل 🎧
+       audioElement.addEventListener('loadedmetadata', function() {
+         durationElement.textContent = formatTime(audioElement.duration);
+       });
+       
+       // // زر التشغيل والإيقاف ▶️⏸️
+       playPauseBtn.addEventListener('click', function() {
+         if (isPlaying) {
+           audioElement.pause();
+           playPauseBtn.textContent = '▶';
+         } else {
+           audioElement.play()
+             .catch(error => {
+               console.error('التشغيل فشل 😭:', error);
+               filenameDisplay.textContent = 'خطأ في تحميل الصوت';
+               // // ممكن نحط رسالة بديلة هنا لو حبينا 🆘
+             });
+           playPauseBtn.textContent = '❚❚';
+         }
+         isPlaying = !isPlaying;
+       });
+       
+       // // نحدث شريط التقدم والوقت الحالي وهو شغال 📊🏃‍♂️
+       audioElement.addEventListener('timeupdate', function() {
+         const progress = (audioElement.currentTime / audioElement.duration) * 100;
+         progressBar.style.width = `${progress}%`;
+         currentTimeElement.textContent = formatTime(audioElement.currentTime);
+       });
+       
+       // // نسمح للمستخدم يقدم ويأخر بالضغط على الشريط 🖱️👆
+       progressContainer.addEventListener('click', function(e) {
+         const rect = progressContainer.getBoundingClientRect();
+         const pos = (e.clientX - rect.left) / rect.width;
+         audioElement.currentTime = pos * audioElement.duration;
+       });
+       
+       // // نعيد المشغل لوضعه الأصلي لما الصوت يخلص 🔄
+       audioElement.addEventListener('ended', function() {
+         progressBar.style.width = '0%';
+         playPauseBtn.textContent = '▶';
+         isPlaying = false;
+         audioElement.currentTime = 0;
+       });
+       
+       // // نتعامل مع الأخطاء لو حصلت 😥
+       audioElement.addEventListener('error', function() {
+         console.error('خطأ في الصوت 🔇:', audioElement.error);
+         filenameDisplay.textContent = 'خطأ: الملف غير موجود';
+         filenameDisplay.style.color = '#000000';
+         downloadLink.style.display = 'none';
+       });
+      
+       // // نوقف حركة النص لما الصوت يخلص 🛑
+       audioElement.addEventListener('ended', function() {
+         // // نوقف الأنيميشن لو شغال 🎬
+         filenameContainer.classList.remove('scrolling');
+         setTimeout(checkScroll, 100);
+       });
+      
+       // // حركة النص تبدأ لما الماوس يجي عليه وتقف لما يمشي، عشان يبقى سهل الاستخدام 🥰
+       filenameContainer.addEventListener('mouseenter', function() {
+         if (filenameDisplay.offsetWidth > filenameContainer.offsetWidth) {
+           filenameContainer.classList.add('scrolling');
+         }
+       });
+      
+       filenameContainer.addEventListener('mouseleave', function() {
+         filenameContainer.classList.remove('scrolling');
+         setTimeout(() => {
+           checkScroll();
+         }, 2000);
+       });
+      
+       // // التعامل مع تغيير حجم الشاشة بمرونة 💻📱
+     });
+
+</script>
+
+</body>
+</html>

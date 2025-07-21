@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Appro - З'єднувач Громади</title>
+      <script src="../js/tailwind-3.4.16.es"></script>
+      <script src="../js/flowbite.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+      <link rel="stylesheet" href="../style.css">
+      <meta property="og:image" content="images/sunflower_field.webp">
+      <meta property="og:description" content="Відродження традицій: перетворюємо відходи на добриво для саду та забезпечуємо чисту воду.">
+      <meta property="og:title" content="Appro - З'єднувач Української Громади">
+      <meta name="description" content="Поєднання відповідних технологій, інженерії та науки для України.">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      <meta name="apple-mobile-web-app-title" content="ApproVideo Hub UA">
+      <meta name="application-name" content="ApproVideo Hub UA">
+      <meta name="theme-color" content="#0057B7">
+      <meta name="License" content="GPLv3">
+      <meta name="msapplication-TileColor" content="#FFD700">
+      <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
+      <link rel="icon" type="image/png" href="images/favicon.ico">
+      <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+      <style>
+            /* 🌻 Загальні стилі сторінки, як візерунок на вишиванці 🧵 */
+            body { font-family: sans-serif; margin: 20px; }
+            h1 { text-align: left; margin-bottom: 30px; }
+            .item-container { border: 1px solid #ddd; padding: 20px; margin-bottom: 20px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+            .header { display: flex; align-items: center; padding: 10px; }
+            .logo { margin-right: 20px; }
+            .breadcrumbs ul { display: flex; list-style: none; margin: 0; padding: 0; }
+            .breadcrumbs li + li::before { content: ">>"; margin: 0 10px; color: #ffffff; }
+      </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div id="app" class="flex flex-col">
+        <header class="header flex flex-col items-start bg-blue-600 text-white p-4 shadow-md">
+            <div class="logo flex items-start">
+                <h1 class="text-xl font-bold"><a href=/>Appro З'єднувач Громади</a></h1>
+            </div>
+            <nav class="breadcrumbs w-full and text-left" >
+              <ul>
+                  <li></li>
+                  <li><a href="vidkhody.html">Відходи в Добриво</a></li>
+              </ul>
+              <ul>
+                  <li></li>
+                  <li><a href="voda.html">Чиста Вода</a></li>
+              </ul>
+              <ul>
+                  <li></li>
+                  <li><a href="solar-kukhnia.html">Сонячна Кухня</a></li>
+              </ul>
+            </nav>
+        </header>
+    </div>
+
+<main class="container mx-auto px-4 py-8">
+    <div id="dashboard-logged-out" class="text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Технології для Родючої Землі 🌻</h2>
+        <p class="text-xl text-gray-600 mb-8">
+            Рішення, натхненні українською винахідливістю та любов'ю до землі.
+        </p>
+
+        <div class="flex justify-center items-center py-4">
+            <div class="flex space-x-4">
+                <a href="vidkhody.html"><img src="images/compost_ua.webp" width="64" height="64" alt="Відходи в добриво" title="Створення компосту для саду" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
+                <a href="voda.html" title="Вода"><img src="images/well_water_ua.webp" width="64" height="64" alt="Чиста Вода" title="Фільтри для криничної води" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
+                <a href="solar-kukhnia.html" title="Сонячна Кухня"><img src="images/solar_oven_ua.webp" width="64" height="64" alt="Сонячна Кухня" title="Збудуй власну сонячну піч" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
+            </div>
+        </div>
+        <p class="text-xl text-gray-600 mb-8">
+              <a href="#kompost">Домашній Компост</a>,
+              <a href="#voda">Питна Вода</a>,
+              <a href="#solar-kukhnia">Сонячні Печі</a>
+        </p>
+
+        <div class="audio-player mt-8 w-full max-w-lg mx-auto">
+          <div class="player-header">
+              <img class="thumbnail" id="thumbnailImg" src="images/garden_audio_thumb.webp" alt="Аудіо про сад">
+              <div class="led-display">
+                  <div class="filename-text" id="filenameContainer">
+                      <span class="scrolling-text" id="filenameDisplay">Завантаження файлу...</span>
+                  </div>
+              </div>
+              <div class="controls-top">
+                  <button class="play-btn" id="playPauseBtn">▶</button>
+                  <a href="#" class="download-link" id="downloadLink" title="Завантажити">▼</a>
+              </div>
+          </div>
+          <div class="progress-container" id="progressContainer">
+              <div class="progress-bar" id="progressBar"></div>
+          </div>
+          <div class="player-controls">
+              <div class="time-display">
+                  <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+              </div>
+          </div>
+          <audio id="audioElement" src="av/kompost-dlia-sadu-ua.mp3"></audio>
+        </div>
+        <br>
+
+        <div class="max-w-5xl mx-auto mt-8">
+            <h3 class="text-2xl font-bold text-center mb-4">Відео: Як збудувати сонячну піч</h3>
+            <video id="videoPlayer" controls crossorigin="anonymous" poster="images/solar_oven_video_thumb.webp">
+              <source src="av/solar-oven-ua.mp4" type="video/mp4">
+              Ваш браузер не підтримує тег video.
+            </video>
+            <a class="download-link" href="https://archive.org/download/solar-oven-ua/solar-oven-ua_archive.torrent" download>
+              📥 Завантажити Відео через Torrent
+            </a>
+        </div>
+    </div>
+
+    <div class="mt-16 p-6 border-4 border-dashed border-yellow-400 rounded-lg bg-blue-50">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Необхідні файли для теки `/uk` 📂</h2>
+        <p class="text-center text-gray-600 mb-8">
+            Слава Україні! Щоб ця сторінка працювала як годиться і мала гарний вигляд, переконайтеся, що у вас є наступні файли в теці <code>/uk/</code>. Я використав приклади назв файлів, натхненні Україною. 🇺🇦
+        </p>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-xl font-semibold mb-3">Сторінки HTML 📄</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li><code>index.html</code> (ця сама сторінка!)</li>
+                    <li><code>vidkhody.html</code> (Детальна сторінка про компостування)</li>
+                    <li><code>voda.html</code> (Сторінка про фільтри для води, збір дощової води)</li>
+                    <li><code>solar-kukhnia.html</code> (Інструкції зі створення сонячних кухонь)</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-3">Зображення 🖼️ (в теці <code>/uk/images/</code>)</h3>
+                 <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li><code>favicon.ico</code>, <code>favicon-16x16.png</code>, і т.д. (іконки сайту)</li>
+                    <li><code>sunflower_field.webp</code> (головне зображення для соцмереж)</li>
+                    <li><code>compost_ua.webp</code> (іконка для розділу відходів)</li>
+                    <li><code>well_water_ua.webp</code> (іконка для розділу води)</li>
+                    <li><code>solar_oven_ua.webp</code> (іконка для сонячної кухні)</li>
+                    <li><code>garden_audio_thumb.webp</code> (мініатюра для аудіо-плеєра)</li>
+                    <li><code>solar_oven_video_thumb.webp</code> (постер для відео)</li>
+                    <li><code>kalyna.webp</code>, <code>leleka.webp</code> (додаткові зображення для декору 🕊️)</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-3">Медіафайли 🎧🎥 (в теці <code>/uk/av/</code>)</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li><code>kompost-dlia-sadu-ua.mp3</code> (Аудіо українською про компост)</li>
+                    <li><code>solar-oven-ua.mp4</code> (Відео українською про сонячні печі)</li>
+                    <li><code>ochystka-vody-ua.m4a</code> (Інший приклад аудіо/відео)</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-3">Файли стилів та скриптів 💅💻</h3>
+                 <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>Зазвичай, ці файли (CSS, JS) є спільними і не потребують розміщення в теці <code>/uk/</code>, якщо у вас немає специфічних стилів для української версії.</li>
+                    <li>Ця сторінка посилається на <code>../js/</code> та <code>../style.css</code>. Це правильна практика! 👍</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-gray-800 text-white py-8 mt-12">
+    <div class="container mx-auto px-4 text-center">
+      <p>Відкрито © 2025 Appro З'єднувач Громади</p>
+      <p class="text-gray-400 mt-2">Ділимося знаннями заради процвітання нашої землі.</p>
+      <div class="flex justify-center space-x-4 mt-4">
+          <a href="#privacy" class="text-gray-400 hover:text-white">Політика конфіденційності</a>
+          <a href="#terms" class="text-gray-400 hover:text-white">Умови надання послуг</a>
+      </div>
+  </div>
+</footer>
+
+<script>
+//  Borscht 🍲 JavaScript зазвичай не потребує перекладу, але коментарі - так! 🥟
+document.addEventListener('DOMContentLoaded', function() {
+      // // Отримуємо елементи аудіо-плеєра, до роботи! 💪
+      const audioElement = document.getElementById('audioElement');
+      const playPauseBtn = document.getElementById('playPauseBtn');
+      const progressBar = document.getElementById('progressBar');
+      const progressContainer = document.getElementById('progressContainer');
+      const currentTimeElement = document.getElementById('currentTime');
+      const durationElement = document.getElementById('duration');
+      const filenameDisplay = document.getElementById('filenameDisplay');
+      const downloadLink = document.getElementById('downloadLink');
+      
+      // // Витягуємо назву файлу і робимо її гарною 💅
+      function extractFilename(src) {
+        const filename = src.split('/').pop(); // Магія, щоб отримати назву!
+        downloadLink.href = src;
+        downloadLink.download = filename;
+        const cleanName = filename.split('.')[0].replace(/-/g, ' ');
+        return cleanName.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+      }
+      
+      filenameDisplay.textContent = extractFilename(audioElement.src);
+      
+      // // Форматуємо час, щоб було зручно 🕰️
+      function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+      }
+      
+      // // Коли аудіо завантажиться, показуємо його тривалість
+      audioElement.addEventListener('loadedmetadata', () => {
+        durationElement.textContent = formatTime(audioElement.duration);
+      });
+      
+      // // Кнопка play/pause ▶️⏸️
+      playPauseBtn.addEventListener('click', () => {
+        if (audioElement.paused) {
+          audioElement.play();
+          playPauseBtn.textContent = '❚❚';
+        } else {
+          audioElement.pause();
+          playPauseBtn.textContent = '▶';
+        }
+      });
+      
+      // // Оновлюємо смугу прогресу, поки грає музика 🎶
+      audioElement.addEventListener('timeupdate', () => {
+        const progress = (audioElement.currentTime / audioElement.duration) * 100;
+        progressBar.style.width = `${progress}%`;
+        currentTimeElement.textContent = formatTime(audioElement.currentTime);
+      });
+
+      // // Скидання, коли аудіо закінчилося 🔄
+      audioElement.addEventListener('ended', () => {
+          progressBar.style.width = '0%';
+          playPauseBtn.textContent = '▶';
+          audioElement.currentTime = 0;
+      });
+});
+</script>
+
+</body>
+</html>

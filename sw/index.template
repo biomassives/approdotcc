@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Appro Community Connector</title>
+      <script src="js/tailwind-3.4.16.es"></script>
+      <script src="js/flowbite.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+      <link rel="stylesheet" href="style.css">
+      <meta property="og:image" content="/images/briquette.webp">
+      <meta property="og:description" content="trash to fuel and water to drinkable">
+      <meta property="og:title" content="Appro - Community Connector">   
+      <meta name="description" content="Appropriate Technology Engineering and Science Connector">
+      <!-- PWA Tags -->
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      <meta name="apple-mobile-web-app-title" content="Approvideo Hub">
+      <meta name="application-name" content="Approvideo Hub">
+      <meta name="theme-color" content="#047857">
+      <meta name="License" content="GPLv3">
+      <meta name="msapplication-TileColor" content="#047857">
+      <meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
+      <!-- PWA Icons -->
+      <link rel="icon" type="image/png" href="/images/favicon.ico"> 
+      <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+      <style>
+            body {
+            font-family: sans-serif;
+            margin: 20px;
+            }
+            h1 {
+            text-align: left;
+            margin-bottom: 30px;
+            }
+            .item-container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .item-container h2 {
+            margin-top: 0;
+            color: #333;
+            }
+            .item-container h3 {
+            margin-top: 10px;
+            color: #555;
+            }
+            .item-container p, .item-container ul, .item-container ol {
+            line-height: 1.6;
+            }
+            .item-container ul, .item-container ol {
+            padding-left: 20px;
+            }
+
+            .header {
+            display: flex;
+            align-items: center; /* Aligns items vertically centered */
+            padding: 10px;       /* Adjust as needed */
+            }
+
+            .logo {
+            margin-right: 20px;  /* Creates spacing between logo and breadcrumbs */
+            }
+
+            .breadcrumbs ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            }
+
+            .breadcrumbs li + li::before {
+            content: ">>";
+            margin: 0 10px;
+            color: #ffffff;         /* Change color as desired */
+            }
+
+      </style>
+</head>
+<body>
+    <body class="bg-gray-50 min-h-screen">
+        <div id="app" class="flex flex-col">
+                <header class="header flex flex-col items-start bg-orange-600 text-white p-4 shadow-md">
+                    <div class="logo flex items-start">
+                        <h1 class="text-xl font-bold"><a href=/>Appro Community Connector</a></h1>
+                    </div>
+                    <nav class="breadcrumbs w-full and text-left" >
+                      <ul>
+			<li></li>
+                        <li><a href="waste.html">waste to fuel</a></li>
+                      </ul>
+                      <ul>
+			<li></li>
+                        <li><a href="water.html">water to drink</a></li>
+                      </ul>
+                      <ul>
+			<li></li>
+                        <li><a href="solarcooking.html">cooking with sunshine</a></li>
+                      </ul>
+<!--
+                      <ul>
+			<li></li>
+                        <li><a href="wastewater.html">wastewater to manage</a></li>
+                      </ul>
+-->
+                    </nav>
+
+                </header>
+        </div>
+
+
+<main>
+
+
+            <div id="dashboard-logged-out" class="text-center">
+
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Appropriate Technology Reference</h2>
+            <p class="text-xl text-gray-600 mb-8">
+            </p>
+
+ 	 <div class="flex justify-center items-center py-4">
+ 	   <div class="flex space-x-4">
+             <a href="waste.html"><img src="images/wastemanagement64_.png" width="64" height="64" alt="waste to fuel" title="Waste to fuel" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
+             <! img src="wastewater64_.png" width="64" height="64" alt="appro cc" title="Appro Community Connector" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
+             <a href="water.html" title="Water"><img src="images/drinkingwater64_.png" width="64" height="64" alt="appro cc" title="Drinking water" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
+             <a href="solarcooking.html" title="Solar Cooking"><img src="images/solarcooker-approcc.webp" width="64" height="64" alt="DIY Solar Cooker" title="DIY Solar Cooker" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
+          </div>
+        </div>
+            <p class="text-xl text-gray-600 mb-8">
+                <a href="#infrarepair">Trash/ Waste</a>,
+                <!-- <a href="#wastewater">Wastewater</a>, -->
+                <a href="#watersec">Drinking Water</a>,
+                <a href="#solarcooker">Solar Cooking</a>
+            </p>
+
+   
+
+
+            <div class="audio-player mt-8 w-full max-w-lg mx-auto">
+              <div class="player-header">
+                  <img class="thumbnail" id="thumbnailImg" src="/images/briquette.webp" alt="Audio thumbnail">
+                  <div class="led-display">
+                      <div class="filename-text" id="filenameContainer">
+                          <span class="scrolling-text" id="filenameDisplay">Loading file...</span>
+                      </div>
+                  </div>
+                  <div class="controls-top">
+                      <button class="play-btn" id="playPauseBtn">▶</button>
+                      <a href="#" class="download-link" id="downloadLink" title="Download">▼</a>
+                  </div>
+              </div>
+              <div class="progress-container" id="progressContainer">
+                  <div class="progress-bar" id="progressBar"></div>
+              </div>
+              <div class="player-controls">
+                  <div class="time-display">
+                      <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                  </div>
+              </div>
+              <audio id="audioElement" src="/av/approvideo_fuel-briquette-ar.mp3"></audio>
+          </div>
+     <p>
+     <BR><BR>
+     </p>
+
+            <div class="audio-player mt-8 w-full max-w-lg mx-auto">
+              <div class="player-header">
+                  <img class="thumbnail" id="thumbnailImg" src="/images/briquette.webp" alt="Audio thumbnail">
+                  <div class="led-display">
+                      <div class="filename-text" id="filenameContainer">
+                          <span class="scrolling-text" id="filenameDisplay">Loading file...</span>
+                      </div>
+                  </div>
+                  <div class="controls-top">
+                      <button class="play-btn" id="playPauseBtn">▶</button>
+                      <a href="#" class="download-link" id="downloadLink" title="Download">▼</a>
+                  </div>
+              </div>
+              <div class="progress-container" id="progressContainer">
+                  <div class="progress-bar" id="progressBar"></div>
+              </div>
+              <div class="player-controls">
+                  <div class="time-display">
+                      <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                  </div>
+              </div>
+              <audio id="audioElement" src="/av/Solar Cooker - English.m4a"></audio>
+          </div>
+     <p>
+     <BR><BR>
+     </p>
+
+
+  <div class="max-w-5xl mx-auto">
+       <!-- Tile image -->
+    <img src="av/test_output.ia_thumb.jpg" alt="Item Tile">
+
+    <!-- Video player -->
+    <video id="videoPlayer" controls crossorigin="anonymous">
+      <source src="av/test_output2.ia.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Torrent download -->
+    <a class="download-link" href="https://archive.org/download/test_output2/test_output2_archive.torrent" download>
+      📥 Download via Torrent
+    </a>
+
+
+  </div>
+
+
+
+
+
+  <div class="max-w-5xl mx-auto">
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      <div id="water" class="color-panel bg-teal-950 text-white rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="frankincense">
+        <h2 class="text-2xl font-semibold text-lime-300">Water Security</h2>
+        <p class="text-white mb-3">Safe drinking water, hygenic sanitation</p>
+        <div class="hover-content text-blue-800 font-medium hidden">
+          Load youtube video
+        </div>
+        <svg class="icon-bg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 11.5v-7m0 0l-3 3m3-3l3 3m-12 9.5h16.5M12 18.5c-4.65 0-8.5-3.85-8.5-8.5 0-1.05.22-2.05.6-2.96m17.4 2.96c0 1.05-.22 2.05-.6 2.96M12 18.5c4.65 0 8.5-3.85 8.5-8.5 0-1.05-.22-2.05-.6-2.96M5.63 7.04L4.5 7.5m15-3l-1.1.55"></path>
+        </svg>
+      </div>
+      
+      
+      <div id="briquette_use" class="color-panel bg-stone-600 rounded-lg p-6 cursor-pointer h-48 flex flex-col justify-between" data-color="myhrr">
+        <h2 class="text-2xl font-semibold text-orange-300">Fuel Briquette</h2>
+        <p class="text-white mb-3">Heating from waste sawdust, paper,... </p>
+        <div class="hover-content text-blue-800 font-medium hidden">
+          Click to load video
+        </div>
+        <svg class="icon-bg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path>
+        </svg>
+      </div>
+    </div>
+<!--
+      <div class="color-panel bg-lime-900 rounded-lg p-6 cursor-pointer h-48 flex flex-full justify-between" data-color="gold">
+        <h2 class="text-2xl font-semibold text-cyan-300">Waste Water</h2>
+        <p class="text-white mb-3">Improvisational Safety and management</p>
+        <div class="hover-content text-blue-800 font-medium hidden">
+          Click to load video
+        </div>
+        <svg class="icon-bg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path>
+        </svg>
+      </div>
+    </div>
+-->  
+ 
+    <div id="video-section" class="hidden mt-8 transition-all duration-300 ease-in-out">
+      <h2 id="selected-color-title" class="text-2xl font-bold text-center mb-4"></h2>
+      <div class="video-container" id="video-container"></div>
+    </div>
+  </div>
+
+
+  <div class="flex justify-center items-center py-4">
+  <div class="flex space-x-4">
+    <a href="waste.html"><img src="images/wastemanagement64_.png" width="64" height="64" alt="appro cc" title="Appro Community Connector" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300" boder=0></a>
+    <!img src="wasstewater256.gif" width="64" height="64" alt="appro cc" title="Appro Community Connector" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300">
+    <a href="water.html"><img src="images/drinkingwater64_.png" width="64" height="64" alt="appro cc" title="Appro Community Connector" class="hover:border-2 hover:border-blue-500 rounded-md transition-all duration-300" border=0></a>
+  </div>
+</div>
+
+
+
+</main>
+<footer class="bg-gray-800 text-white py-8">
+  <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+
+          <div>
+		<img src="images/foote_logo_appro_dark220.webp" width="220" height="117" alt="appro cc" title="Appro Community Connector">
+
+              <ul class="space-y-2 text-gray-400">
+
+              </ul>
+          </div>
+          <div>
+              <ul class="space-y-2 text-gray-400">
+
+              </ul>
+          </div>
+          <div>
+              <div class="flex space-x-4 mb-4">
+              </div>
+              <p class="text-gray-400">
+                  
+                      
+                  <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                      </svg>
+                  </button>
+              </p>
+          </div>
+          </div>
+      </div>
+
+      <div class="border-t border-gray-500 mt-8 pt-6 flex flex-col md:flex-roorw justify-between items-center">
+          <p class="text-gray-400">open &copy; 2025 Appro Community Connector
+          <br>
+          Sharing knowledge & expertise benefits vulnerable communities.
+          </p>
+          <div class="flex space-x-4 mt-4 md:mt-0">
+              <a href="#privacy" id="privacy-link-footer" class="text-gray-400 hover:text-white">Privacy Policy</a>
+              <a href="#terms" id="terms-link-footer" class="text-gray-400 hover:text-white">Terms of Service</a>
+              <a href="#cookies" class="text-gray-400 hover:text-white">Cookie Policy</a>
+          </div>
+      </div>
+                        <a href=/>
+<img src="images/favicon.webp" alt="Appro(priate technology) Community Connector"> 
+<svg dataSlot="icon" aria-hidden="true" fill="none" strokeWidth={1.5} stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" strokeLinecap="round" strokeLinejoin="round" />
+</svg></a>           
+
+</footer>
+
+<script>
+
+document.getElementById('water').addEventListener('click', function() {
+    window.location.href = "water.html";
+  });
+  document.getElementById('briquette_use').addEventListener('click', function() {
+    window.location.href = "waste.html"; 
+  });
+ 
+
+ document.addEventListener('DOMContentLoaded', function() {
+      // Get elements
+      const audioElement = document.getElementById('audioElement');
+      const playPauseBtn = document.getElementById('playPauseBtn');
+      const progressBar = document.getElementById('progressBar');
+      const progressContainer = document.getElementById('progressContainer');
+      const currentTimeElement = document.getElementById('currentTime');
+      const durationElement = document.getElementById('duration');
+      const filenameDisplay = document.getElementById('filenameDisplay');
+      const filenameContainer = document.getElementById('filenameContainer');
+      const downloadLink = document.getElementById('downloadLink');
+      const thumbnailImg = document.getElementById('thumbnailImg');
+     
+      // Initialize
+      let isPlaying = false;
+      
+      // Extract and display filename from the audio source
+      function extractFilename(src) {
+        // Get just the filename from the path
+        const fullPath = src.split('/');
+        const filename = fullPath[fullPath.length - 1];
+        
+        // Store original filename for download
+        const originalFilename = filename;
+        
+        // Remove extension and replace hyphens with spaces
+        const cleanName = filename.split('.')[0].replace(/-/g, ' ');
+        
+        // Capitalize words for nicer display
+        return {
+          display: cleanName.split('_').map(word => 
+            word.charAt(0).toUpperCase() + word.slice(1)
+          ).join(' '),
+          original: originalFilename
+        };
+      }
+      
+      // Set up filename display and download link
+      const fileInfo = extractFilename(audioElement.src);
+      filenameDisplay.textContent = fileInfo.display;
+      downloadLink.href = audioElement.src;
+      downloadLink.download = fileInfo.original;
+      downloadLink.setAttribute('title', 'Download ' + fileInfo.original);
+      
+      // Check if text needs scrolling
+      function checkScroll() {
+        if (filenameDisplay.offsetWidth > filenameContainer.offsetWidth) {
+          filenameContainer.classList.add('scrolling');
+        } else {
+          filenameContainer.classList.remove('scrolling');
+        }
+      }
+      
+      // Call checkScroll after rendering
+      setTimeout(checkScroll, 100);
+      
+      // Set thumbnail image based on audio type
+      // In a real application, you would determine this based on audio metadata
+      // For now, we'll use a basic approach
+      if (fileInfo.original.includes('briquette')) {
+        thumbnailImg.src = "/images/briquette.webp";
+        thumbnailImg.alt = "Briquette Audio";
+      } else {
+        thumbnailImg.src = "/images/briquette.webp"; 
+        thumbnailImg.alt = "Audio Thumbnail";
+      }
+     
+      // Format time in MM:SS
+      function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        seconds = Math.floor(seconds % 60);
+        return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+      }
+     
+      // Set up duration display once metadata is loaded
+      audioElement.addEventListener('loadedmetadata', function() {
+        durationElement.textContent = formatTime(audioElement.duration);
+      });
+     
+      // Toggle play/pause
+      playPauseBtn.addEventListener('click', function() {
+        if (isPlaying) {
+          audioElement.pause();
+          playPauseBtn.textContent = '▶';
+        } else {
+          audioElement.play()
+            .catch(error => {
+              console.error('Playback failed:', error);
+              filenameDisplay.textContent = 'Error loading audio';
+              // Provide fallback or error message if needed
+            });
+          playPauseBtn.textContent = '❚❚';
+        }
+        isPlaying = !isPlaying;
+      });
+     
+      // Update progress bar and current time during playback
+      audioElement.addEventListener('timeupdate', function() {
+        const progress = (audioElement.currentTime / audioElement.duration) * 100;
+        progressBar.style.width = `${progress}%`;
+        currentTimeElement.textContent = formatTime(audioElement.currentTime);
+      });
+     
+      // Allow seeking by clicking on progress bar
+      progressContainer.addEventListener('click', function(e) {
+        const rect = progressContainer.getBoundingClientRect();
+        const pos = (e.clientX - rect.left) / rect.width;
+        audioElement.currentTime = pos * audioElement.duration;
+      });
+     
+      // Reset player when audio ends
+      audioElement.addEventListener('ended', function() {
+        progressBar.style.width = '0%';
+        playPauseBtn.textContent = '▶';
+        isPlaying = false;
+        audioElement.currentTime = 0;
+      });
+     
+      // Handle errors
+      audioElement.addEventListener('error', function() {
+        console.error('Audio error:', audioElement.error);
+        filenameDisplay.textContent = 'Error: File not found';
+        filenameDisplay.style.color = '#000000';
+        downloadLink.style.display = 'none';
+      });
+      
+      // Reset scrolling when audio ends
+      audioElement.addEventListener('ended', function() {
+        // Reset scrolling animation if needed
+        filenameContainer.classList.remove('scrolling');
+        setTimeout(checkScroll, 100);
+      });
+      
+      // Start scrolling on mouseover and pause on mouseout for better user experience
+      filenameContainer.addEventListener('mouseenter', function() {
+        if (filenameDisplay.offsetWidth > filenameContainer.offsetWidth) {
+          filenameContainer.classList.add('scrolling');
+        }
+      });
+      
+      filenameContainer.addEventListener('mouseleave', function() {
+        filenameContainer.classList.remove('scrolling');
+        setTimeout(() => {
+          checkScroll();
+        }, 2000);
+      });
+      
+      // Responsive handling for window resize
+    });
+
+</script>
+
+</body>
+</html>
+
+
+
