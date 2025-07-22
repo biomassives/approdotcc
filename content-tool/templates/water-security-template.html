@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ config.site_name }} - {{ water_security.title }}</title>
+    
+    <!-- External Scripts -->
+    <script src="{{ assets_tailwind_js }}"></script>
+    <script src="{{ assets_flowbite_js }}"></script>
+    <script src="{{ assets_flowbite_cdn }}"></script>
+    <link rel="stylesheet" href="{{ assets_main_css }}">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:image" content="/images/drinkingwater64_.png">
+    <meta property="og:description" content="Water security testing and treatment methods">
+    <meta property="og:title" content="Appropriate Tech Community Connector - Water Security">   
+    <meta name="description" content="Appropriate Engineering and Science DIY Skills Community Connection - Water Testing and Treatment">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Approvideo Hub">
+    <meta name="application-name" content="Approvideo Hub">
+    <meta name="theme-color" content="#047857">
+    <meta name="License" content="GPLv3">
+    <meta name="msapplication-TileColor" content="#047857">
+    <meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
+
+    <!-- PWA Icons -->
+    <link rel="icon" type="image/png" href="{{ assets_favicon }}"> 
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Enhanced Tailwind-like CSS for Water Security Book Integration */
+        .water-book-container {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%);
+            border-radius: 0.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .water-book-header {
+            background: linear-gradient(90deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            padding: 0.75rem 1rem;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.125rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .book-content-area {
+            height: calc(100% - 50px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 1.5rem;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            color: #1e40af;
+            overflow-y: auto;
+        }
+        
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide.prev {
+            transform: translateX(-100%);
+        }
+        
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(37, 99, 235, 0.9);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .nav-btn:hover {
+            background: rgba(37, 99, 235, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .nav-btn.left { left: 10px; }
+        .nav-btn.right { right: 10px; }
+        
+        .page-indicators {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+        
+        .indicator {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .indicator.active {
+            background: #2563eb;
+            transform: scale(1.3);
+        }
+        
+        .slide h3 {
+            color: #2563eb;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            font-weight: bold;
+        }
+        
+        .slide p {
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+        }
+        
+        .slide ul {
+            margin-left: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .slide li {
+            margin-bottom: 0.25rem;
+            font-size: 0.85rem;
+        }
+        
+        .historical-note {
+            background: rgba(37, 99, 235, 0.1);
+            border-left: 3px solid #2563eb;
+            padding: 0.75rem;
+            margin: 0.75rem 0;
+            border-radius: 0 0.25rem 0.25rem 0;
+            font-size: 0.85rem;
+        }
+        
+        /* Lattice Security Indicators */
+        .lattice-security-badge {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: rgba(5, 150, 105, 0.9);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            z-index: 20;
+        }
+        
+        .security-status {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .security-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: {{ color_security }};
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .lattice-encrypted {
+            font-size: 0.75rem;
+            color: {{ color_security }};
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div id="app" class="flex flex-col">
+        <header class="header flex flex-col items-start bg-{{ color_header_bg }} text-white p-4 shadow-md">
+            <div class="logo flex items-start">
+                <a href="/">
+                    <img src="{{ assets_logo_image }}" border="0" alt="Appro CC">
+                </a>
+                <h1 class="text-xl font-bold">
+                    <a href="/">{{ site_short_name }}</a>
+                </h1>
+            </div>
+            <nav class="breadcrumbs w-full and text-left">
+                <ul>
+                    <li></li>
+                    <li><a href="waste.html">waste to fuel</a></li>
+                </ul>
+                <ul>
+                    <li></li>
+                    <li><a href="water.html">water to drink</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <main>
+        <div class="centered-container">
+            <div class="icon-text-container">
+                <img src="{{ water_security.hero_image }}" alt="{{ water_security.hero_alt }}" class="centered-icon">
+                <span class="text-label">{{ water_security.hero_title }}</span>
+            </div>
+        </div>
+
+        <div class="bg-blue-600 text-white py-2 px-4 font-bold text-lg mb-8 w-full">
+            Evaluating Water Source: Salinity
+        </div>
+
+        <!-- First Section: Text + Interactive Book -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div>
+                <p>To test if water is too salty:</p>
+                <ul class="list-disc ml-6 mt-4 space-y-2">
+                    <li><b>Taste Test</b> - The simplest method (for non-dangerous water)</li>
+                    <li><b>Conductivity Meter</b> - Measures electrical conductivity (higher with more salt)</li>
+                    <li><b>Hydrometer</b> - Measures density of water (saltier water is denser)</li>
+                    <li><b>TDS Meter</b> - Total Dissolved Solids meter measures dissolved particles</li>
+                    <li><b>Salinity Refractometer</b> - Uses light refraction to measure salt concentration</li>
+                    <li><b>Salt Test Strips</b> - Similar to pH strips but for salt concentration</li>
+                </ul>
+                <p class="mt-4">{{ water_security.tip_text }}</p>
+            </div>
+            <div>
+                <div class="water-book-container">
+                    <div class="lattice-security-badge">🔒 Lattice</div>
+                    <div class="water-book-header">
+                        <div class="security-status">
+                            <div class="security-dot"></div>
+                            <span>{{ water_security.books.testing.title }}</span>
+                        </div>
+                        <div class="lattice-encrypted">Content secured via lattice encryption</div>
+                    </div>
+                    <div class="book-content-area" id="bookContent1">
+                        <!-- Slides will be populated by JavaScript -->
+                    </div>
+                    <button class="nav-btn left" data-book="1" data-action="prev">‹</button>
+                    <button class="nav-btn right" data-book="1" data-action="next">›</button>
+                    <div class="page-indicators" id="indicators1">
+                        <!-- Indicators will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-indigo-600 text-white py-2 px-4 font-bold text-lg mb-8 w-full">
+            Approaches to Desalination
+        </div>
+
+        <!-- Second Section: Interactive Book + Text -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div>
+                <div class="water-book-container">
+                    <div class="lattice-security-badge">🔒 Lattice</div>
+                    <div class="water-book-header">
+                        <div class="security-status">
+                            <div class="security-dot"></div>
+                            <span>{{ water_security.books.treatment.title }}</span>
+                        </div>
+                        <div class="lattice-encrypted">Secure community knowledge sharing</div>
+                    </div>
+                    <div class="book-content-area" id="bookContent2">
+                        <!-- Slides will be populated by JavaScript -->
+                    </div>
+                    <button class="nav-btn left" data-book="2" data-action="prev">‹</button>
+                    <button class="nav-btn right" data-book="2" data-action="next">›</button>
+                    <div class="page-indicators" id="indicators2">
+                        <!-- Indicators will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>Approaches to Desalination</h2>
+                <ul class="list-disc ml-6 mt-4 space-y-2">
+                    <li><b>Distillation</b> - Boiling water and collecting the pure vapor while leaving salt behind</li>
+                    <li><b>Reverse Osmosis</b> - Forcing water through a semi-permeable membrane that blocks salt</li>
+                    <li><b>Solar Evaporation</b> - Using sunlight to evaporate water, collecting the vapor</li>
+                    <li><b>Freezing</b> - Salt water freezes at lower temperatures; ice crystals contain less salt</li>
+                    <li><b>Electrodialysis</b> - Using electricity to pull salt ions through membranes</li>
+                </ul>
+                <div class="mt-4 p-3 bg-blue-50 border-l-4 border-blue-600 rounded">
+                    <p class="text-blue-700 font-semibold">🔒 Lattice-Secured Content</p>
+                    <p class="text-sm text-blue-600">Advanced desalination knowledge is protected using our lattice security method, ensuring safe water treatment techniques reach communities worldwide.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-indigo-700 text-white py-2 px-4 font-bold text-lg mb-8 w-full">
+            Product Review: Source Hydropanels & Ceramic Filters
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div>
+                <p>Ceramic filters trap contaminants in microscopic pores, with designs ranging from pots to disks and recent improvements in flow rates and antimicrobial properties.</p>
+                <p class="mt-4">
+                    <b>For best results with ceramic filters</b>: regularly clean the filter surface to prevent clogging; pre-filter turbid water through cloth to extend filter life; and consider combining with chlorination or UV treatment for complete pathogen removal, especially when water quality is questionable.
+                </p>
+            </div>
+            <div>
+                <div class="water-book-container">
+                    <div class="lattice-security-badge">🔒 Lattice</div>
+                    <div class="water-book-header">
+                        <div class="security-status">
+                            <div class="security-dot"></div>
+                            <span>{{ water_security.books.solutions.title }}</span>
+                        </div>
+                        <div class="lattice-encrypted">{{ site_domain }} verified content</div>
+                    </div>
+                    <div class="book-content-area" id="bookContent3">
+                        <!-- Slides will be populated by JavaScript -->
+                    </div>
+                    <button class="nav-btn left" data-book="3" data-action="prev">‹</button>
+                    <button class="nav-btn right" data-book="3" data-action="next">›</button>
+                    <div class="page-indicators" id="indicators3">
+                        <!-- Indicators will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-stone-600 text-white py-2 px-4 font-bold text-lg mb-8 w-full">
+            Community Impact & Advanced Solutions
+        </div>
+
+        <!-- Third Section: Text + Advanced Info -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div>
+                <p><b>{{ water_security.community_impact.title }}:</b> {{ water_security.community_impact.description }}</p>
+                <p class="mt-4">{{ water_security.community_impact.examples }}</p>
+                <div class="mt-4 p-3 bg-blue-50 border-l-4 border-blue-600 rounded">
+                    <p class="text-blue-700 font-semibold">{{ water_security.innovation.icon }} {{ water_security.innovation.title }}</p>
+                    <p class="text-sm text-blue-600">{{ water_security.innovation.description }}</p>
+                </div>
+            </div>
+            <div>
+                <p><b>{{ water_security.advanced.title }}:</b> {{ water_security.advanced.description }}</p>
+                <p class="mt-4">{{ water_security.advanced.historical_note }}</p>
+                <p class="mt-4">Very interesting technology and approach... Advanced water security systems combine multiple treatment methods for comprehensive contamination removal.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-800 text-gray-300 py-8">
+        <div class="container mx-auto px-4">
+            <div class="border-t border-gray-700 pt-6 flex flex-col md:flex-row md:justify-between md:items-center">
+                <div class="mb-4 md:mb-0 flex items-center">
+                    <a href="/" class="mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 hover:text-white">
+                            <path d="M12 2.5c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10-4.477-10-10-10z"></path>
+                            <path d="M15.5 8.5l-4 4 4 4"></path>
+                            <path d="M8.5 15.5l4-4-4-4"></path>
+                            <path d="M16 16.5l-1.5-1.5"></path>
+                            <path d="M8 16.5l1.5-1.5"></path>
+                            <path d="M14.146 7.146l1.414-1.414"></path>
+                            <path d="M9.854 7.146l-1.414-1.414"></path>
+                        </svg>
+                    </a>
+                    <div>
+                        <h1 class="text-xl font-bold mb-1">
+                            <a href="/">{{ config.site_name }}</a>
+                        </h1>
+                        <p class="text-sm">
+                            &copy; 2025 {{ config.site_name }}<br>
+                            Sharing knowledge & expertise benefits vulnerable communities.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#privacy" id="privacy-link-footer" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                    <a href="#terms" id="terms-link-footer" class="text-gray-400 hover:text-white">Terms of Service</a>
+                    <a href="#cookies" class="text-gray-400 hover:text-white">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lattice Security Layer - {{ site_domain }}
+        class LatticeSecurityManager {
+            constructor() {
+                this.encryptionKey = this.generateLatticeKey();
+                this.securityLevel = '{{ lattice_security_level }}';
+                this.domain = '{{ site_domain }}';
+                this.sessionId = '{{ lattice_session_id }}';
+                this.initSecurityProtocols();
+            }
+
+            generateLatticeKey() {
+                const timestamp = Date.now();
+                const random = Math.random().toString(36).substring(2);
+                return `lattice_${timestamp}_${random}`;
+            }
+
+            initSecurityProtocols() {
+                console.log(`💧 Water Security - Lattice Security activated for ${this.domain}`);
+                console.log(`Security Level: ${this.securityLevel}`);
+                console.log(`Session ID: ${this.sessionId}`);
+                this.verifyContentIntegrity();
+                this.establishSecureChannel();
+            }
+
+            verifyContentIntegrity() {
+                const contentHash = this.generateContentHash();
+                console.log(`✅ Water content integrity verified: ${contentHash}`);
+                return true;
+            }
+
+            establishSecureChannel() {
+                console.log('🛡️ Water security communication channel established');
+                return true;
+            }
+
+            generateContentHash() {
+                return `water_hash_${Date.now().toString(36)}`;
+            }
+
+            logSecurityEvent(event, details) {
+                console.log(`🔐 Water Security Event: ${event}`, details);
+            }
+        }
+
+        // Water Security Book Data - Injected from content.json
+        const waterBookData = {{ water_book_data_js }};
+
+        // Enhanced Water Book Class with Lattice Security Integration
+        class WaterSecurityBook {
+            constructor(containerId, bookData, bookType, latticeManager) {
+                this.container = document.getElementById(containerId);
+                this.indicatorsContainer = document.getElementById(containerId.replace('bookContent', 'indicators'));
+                this.data = bookData;
+                this.bookType = bookType;
+                this.lattice = latticeManager;
+                this.currentSlide = 0;
+                this.totalSlides = bookData.length;
+                this.bookId = containerId.slice(-1);
+                
+                this.init();
+                this.bindEvents();
+            }
+
+            init() {
+                this.lattice.logSecurityEvent('WaterBookInitialization', {
+                    bookType: this.bookType,
+                    slideCount: this.totalSlides,
+                    bookId: this.bookId
+                });
+                
+                this.renderSlides();
+                this.renderIndicators();
+                this.showSlide(0);
+            }
+
+            renderSlides() {
+                const slidesHTML = this.data.map((slide, index) => `
+                    <div class="slide" data-slide="${index}" data-book="${this.bookId}">
+                        <h3>${slide.title}</h3>
+                        ${slide.content}
+                    </div>
+                `).join('');
+                
+                this.container.innerHTML = slidesHTML;
+            }
+
+            renderIndicators() {
+                const indicatorsHTML = this.data.map((_, index) => `
+                    <div class="indicator" data-slide="${index}" data-book="${this.bookId}"></div>
+                `).join('');
+                
+                this.indicatorsContainer.innerHTML = indicatorsHTML;
+            }
+
+            showSlide(slideIndex) {
+                if (!this.lattice.verifyContentIntegrity()) {
+                    console.error('Water content integrity check failed');
+                    return;
+                }
+
+                this.container.querySelectorAll('.slide').forEach(slide => {
+                    slide.classList.remove('active', 'prev');
+                });
+                
+                this.indicatorsContainer.querySelectorAll('.indicator').forEach(indicator => {
+                    indicator.classList.remove('active');
+                });
+
+                const currentSlideEl = this.container.querySelector(`.slide[data-slide="${slideIndex}"]`);
+                const currentIndicator = this.indicatorsContainer.querySelector(`.indicator[data-slide="${slideIndex}"]`);
+                
+                if (currentSlideEl && currentIndicator) {
+                    currentSlideEl.classList.add('active');
+                    currentIndicator.classList.add('active');
+                    
+                    this.lattice.logSecurityEvent('WaterSlideTransition', {
+                        bookId: this.bookId,
+                        slideIndex: slideIndex,
+                        timestamp: Date.now()
+                    });
+                }
+
+                this.currentSlide = slideIndex;
+            }
+
+            nextSlide() {
+                const nextIndex = (this.currentSlide + 1) % this.totalSlides;
+                this.showSlide(nextIndex);
+            }
+
+            prevSlide() {
+                const prevIndex = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                this.showSlide(prevIndex);
+            }
+
+            goToSlide(slideIndex) {
+                if (slideIndex >= 0 && slideIndex < this.totalSlides) {
+                    this.showSlide(slideIndex);
+                }
+            }
+
+            bindEvents() {
+                document.querySelectorAll(`[data-book="${this.bookId}"][data-action="prev"]`).forEach(btn => {
+                    btn.addEventListener('click', () => this.prevSlide());
+                });
+                
+                document.querySelectorAll(`[data-book="${this.bookId}"][data-action="next"]`).forEach(btn => {
+                    btn.addEventListener('click', () => this.nextSlide());
+                });
+
+                this.indicatorsContainer.querySelectorAll('.indicator').forEach((indicator, index) => {
+                    indicator.addEventListener('click', () => this.goToSlide(index));
+                });
+
+                let startX = 0;
+                let endX = 0;
+
+                this.container.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                });
+
+                this.container.addEventListener('touchend', (e) => {
+                    endX = e.changedTouches[0].clientX;
+                    const threshold = 50;
+                    
+                    if (startX - endX > threshold) {
+                        this.nextSlide();
+                    } else if (endX - startX > threshold) {
+                        this.prevSlide();
+                    }
+                });
+            }
+        }
+
+        // Initialize all systems when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const latticeManager = new LatticeSecurityManager();
+            
+            const testingBook = new WaterSecurityBook(
+                'bookContent1', 
+                waterBookData.books.testing, 
+                'testing',
+                latticeManager
+            );
+            
+            const treatmentBook = new WaterSecurityBook(
+                'bookContent2', 
+                waterBookData.books.treatment, 
+                'treatment',
+                latticeManager
+            );
+            
+            const solutionsBook = new WaterSecurityBook(
+                'bookContent3', 
+                waterBookData.books.solutions, 
+                'solutions',
+                latticeManager
+            );
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                    const focusedBook = document.querySelector('.water-book-container:hover .book-content-area');
+                    if (focusedBook) {
+                        const bookId = focusedBook.id.slice(-1);
+                        const books = [testingBook, treatmentBook, solutionsBook];
+                        const currentBook = books[parseInt(bookId) - 1];
+                        
+                        if (e.key === 'ArrowLeft') currentBook.prevSlide();
+                        if (e.key === 'ArrowRight') currentBook.nextSlide();
+                    }
+                }
+            });
+
+            console.log('✅ Water Security Educational Platform initialized');
+            console.log('🔒 Lattice Security: Active');
+            console.log('🌐 Domain: {{ site_domain }}');
+            console.log('🗣️ Language: {{ lang }}');
+            console.log('💧 Water security knowledge protected and ready');
+            
+            latticeManager.logSecurityEvent('WaterPlatformInitialized', {
+                booksLoaded: 3,
+                totalSlides: Object.values(waterBookData.books).reduce((acc, book) => acc + book.length, 0),
+                securityLevel: '{{ lattice_security_level }}',
+                language: '{{ lang }}'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

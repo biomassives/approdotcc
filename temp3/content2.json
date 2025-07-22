@@ -1,0 +1,76 @@
+{
+  "en": {
+    "site_name": "Appro Community Connector",
+    "navigation": { … },
+    "assets": { … },
+    "footer": { … },
+
+    "soakpit": {
+      /* your soakpit fields… */
+    },
+
+    // ◀── Place your mycelium block right here:
+    "mycelium": {
+      "title": "Mycelium Use",
+      "intro": "Mycelium helps remediate waste and build soil.",
+      "mycelium_videos": [
+        {
+          "title": "Paul Stamets – Environmental Remediation using Mycelium",
+          "description": "Mycologist Paul Stamets explains how fungi break down pollutants in oil-contaminated soil.",
+          "video_link": "https://www.youtube.com/watch?v=lJHXkfNCl5E",
+          "transcription_link": "https://www.youtube.com/api/timedtext?lang=en&v=lJHXkfNCl5E",
+          "check_data_link": "https://www.youtube.com/watch?v=lJHXkfNCl5E"
+        },
+        {
+          "title": "Using Fungi to Clean Contaminated Sites",
+          "description": "Example projects showcasing mycoremediation to treat toxic and contaminated sites.",
+          "video_link": "https://www.youtube.com/watch?v=w4k5pkL5Me4",
+          "transcription_link": "https://www.youtube.com/api/timedtext?lang=en&v=w4k5pkL5Me4",
+          "check_data_link": "https://www.youtube.com/watch?v=w4k5pkL5Me4"
+        }
+      ]
+    },
+
+    "biodiversity_page": {
+      /* your biodiversity fields… */
+    }
+  },
+
+  "sp": {
+    "site_name": "Centro de Appro-Tech",
+    "navigation": { … },
+    "assets": { … },
+    "footer": { … },
+
+    "soakpit": {
+      /* your soakpit fields… */
+    },
+
+    // ◀── And the same for Spanish:
+    "mycelium": {
+      "title": "Uso de Micelio",
+      "intro": "El micelio ayuda a tratar desechos y mejorar el suelo.",
+      "mycelium_videos": [
+        {
+          "title": "Paul Stamets – Environmental Remediation using Mycelium",
+          "description": "El micólogo Paul Stamets explica cómo los hongos degradan contaminantes en suelos contaminados con petróleo.",
+          "video_link": "https://www.youtube.com/watch?v=lJHXkfNCl5E",
+          "transcription_link": "https://www.youtube.com/api/timedtext?lang=es&v=lJHXkfNCl5E",
+          "check_data_link": "https://www.youtube.com/watch?v=lJHXkfNCl5E"
+        },
+        {
+          "title": "Using Fungi to Clean Contaminated Sites",
+          "description": "Proyectos de micorremediación para tratar sitios tóxicos y contaminados.",
+          "video_link": "https://www.youtube.com/watch?v=w4k5pkL5Me4",
+          "transcription_link": "https://www.youtube.com/api/timedtext?lang=es&v=w4k5pkL5Me4",
+          "check_data_link": "https://www.youtube.com/watch?v=w4k5pkL5Me4"
+        }
+      ]
+    },
+
+    "biodiversity_page": {
+      /* your biodiversity fields… */
+    }
+  }
+}
+

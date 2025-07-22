@@ -1,0 +1,816 @@
+{
+  "en": {
+    "site_name": {
+      "title": "Appro Community Connector",
+      "intro_text": "Sharing knowledge & expertise benefits vulnerable communities."
+    },
+    "navigation": {
+      "home_url": "/",
+      "links": [
+        {
+          "title": "Waste to Fuel",
+          "url": "waste.html"
+        },
+        {
+          "title": "Water to Drink",
+          "url": "water.html"
+        },
+        {
+          "title": "Cooking with Sunshine",
+          "url": "solarcooking.html"
+        }
+      ],
+      "icons": [
+        {
+          "url": "index.html",
+          "src": "/images/favicon.webp",
+          "alt": "Home"
+        },
+        {
+          "url": "waste.html",
+          "src": "/images/wastemanagement64_.png",
+          "alt": "Waste"
+        },
+        {
+          "url": "water.html",
+          "src": "/images/drinkingwater64_.png",
+          "alt": "Water"
+        }
+      ]
+    },
+    "assets": {
+      "main_css": "/soaky.css",
+      "favicon": "/images/favicon.webp",
+      "title": "",
+      "intro_text": ""
+    },
+    "footer": {
+      "text": "<p>&copy; 2025 Appro Community Connector • Sharing knowledge benefits vulnerable communities.</p>",
+      "title": "",
+      "intro_text": ""
+    },
+    "soakpit": {
+      "title": "Soak Pit Wastewater Solutions",
+      "soakpit_title": "Soak Pit Wastewater Solutions",
+      "soakpit_intro": "Natural filtration for greywater disposal—simple, effective, and low-cost.",
+      "description": "A soak pit filters greywater naturally by letting it seep into the soil. Ideal for handwashing stations, kitchen waste, and low-volume greywater reuse.",
+      "hero_image": "/images/wasstewater256.png",
+      "hero_alt": "Wastewater Management Icon",
+      "video_section_title": "Soak Pit Animation",
+      "video_link": "https://archive.org/download/soakpit-demo/soakpit-demo.mp4",
+      "video_poster": "/images/soakpit_thumb.jpg",
+      "tips_title": "Construction Tips",
+      "tips": [
+        "Dig a pit about 1 m wide × 1 m deep, then fill with stones or gravel.",
+        "Line the bottom with sand to slow down filtration and prevent wash-through.",
+        "Insert a perforated drum or plastic basket to stop solids from clogging the pit.",
+        "Cover with a concrete slab or secure metal mesh for child and animal safety."
+      ],
+      "panels": [
+        {
+          "title": "Why Use Soak Pits?",
+          "summary": "They require no electricity or chemicals, work off-grid, and recharge groundwater.",
+          "image_url": "/images/soakpit_panel1.jpg"
+        },
+        {
+          "title": "How It Works",
+          "summary": "Greywater enters the pit, percolates through sand and gravel layers, and is purified by soil microbes.",
+          "image_url": "/images/soakpit_panel2.jpg"
+        },
+        {
+          "title": "Maintenance",
+          "summary": "Inspect the inlet monthly, remove debris from the filter basket, and add fresh gravel every 2–3 years.",
+          "image_url": "/images/soakpit_panel3.jpg"
+        }
+      ],
+      "intro_text": ""
+    },
+    "mycelium": {
+      "title": "Mycelium Use",
+      "intro": "Mycelium helps remediate waste and build soil.",
+      "mycelium_videos": [
+        {
+          "title": "Paul Stamets – Environmental Remediation using Mycelium",
+          "description": "Mycologist Paul Stamets explains how fungi break down pollutants in oil-contaminated soil.",
+          "video_link": "https://www.youtube.com/watch?v=lJHXkfNCl5E",
+          "transcription_link": "https://www.youtube.com/api/timedtext?lang=en&v=lJHXkfNCl5E",
+          "check_data_link": "https://www.youtube.com/watch?v=lJHXkfNCl5E"
+        },
+        {
+          "title": "Using Fungi to Clean Contaminated Sites",
+          "description": "Example projects showcasing mycoremediation to treat toxic and contaminated sites.",
+          "video_link": "https://www.youtube.com/watch?v=w4k5pkL5Me4",
+          "transcription_link": "https://www.youtube.com/api/timedtext?lang=en&v=w4k5pkL5Me4",
+          "check_data_link": "https://www.youtube.com/watch?v=w4k5pkL5Me4"
+        }
+      ],
+      "intro_text": ""
+    },
+    "water_security": {
+      "title": "Household Water Security",
+      "intro": "Low-cost methods to collect, purify, and store safe drinking water for households and small communities.",
+      "hero_image": "/images/water_security256.png",
+      "hero_alt": "Water Security Icon",
+      "panels": [
+        {
+          "title": "Collection",
+          "summary": "Harvest rainwater from clean roofs using gutters and first-flush diverters.",
+          "image_url": "/images/water_collect.jpg"
+        },
+        {
+          "title": "Treatment",
+          "summary": "Use cloth pre-filtration, then boil, solar disinfection (SODIS), or biosand filtration.",
+          "image_url": "/images/water_treat.jpg"
+        },
+        {
+          "title": "Safe Storage",
+          "summary": "Store treated water in covered containers with a narrow mouth and tap to avoid re-contamination.",
+          "image_url": "/images/water_store.jpg"
+        }
+      ],
+      "videos": [
+        {
+          "title": "How to Build a Biosand Filter",
+          "description": "Step-by-step demonstration of a family-scale biosand water filter.",
+          "video_link": "https://www.youtube.com/watch?v=pqzqJ6y7iKQ",
+          "transcription_link": "https://www.youtube.com/api/timedtext?lang=en&v=pqzqJ6y7iKQ",
+          "check_data_link": "https://www.youtube.com/watch?v=pqzqJ6y7iKQ"
+        }
+      ],
+      "intro_text": ""
+    },
+    "biodiversity_page": {
+      "title": "On-Chain Biodiversity Monitoring",
+      "intro_text": "Using decentralized technology to promote transparency and education in biodiversity conservation efforts.",
+      "featured_species": [
+        {
+          "name": "Orangutan",
+          "status": "Critically Endangered",
+          "image_url": "/images/orangutan.jpg",
+          "description": "Found in the rainforests of Borneo and Sumatra, their populations have declined sharply due to deforestation."
+        },
+        {
+          "name": "Monarch Butterfly",
+          "status": "Endangered",
+          "image_url": "/images/monarch.jpg",
+          "description": "Known for their long-distance migration, their survival is threatened by habitat loss and climate change."
+        }
+      ],
+      "solar_cooking": {
+        "title": "How To Use & Build a Solar Cooker",
+        "hero_image": "/images/solar_cooker256.png",
+        "hero_alt": "Solar Cooker Icon",
+        "hero_title": "Cook With the Sun",
+        "main_title": "Solar Cooker Basics",
+        "intro_text": "Solar cooking uses reflective or insulating designs to trap sunlight as heat. It reduces fuel costs, smoke inhalation, and deforestation.",
+        "cooker_types": [
+          {
+            "name": "Panel Cooker",
+            "description": "Folds reflective panels around a dark pot—great for simmering."
+          },
+          {
+            "name": "Box Cooker",
+            "description": "Insulated box with glazing; reaches higher temperatures for baking."
+          },
+          {
+            "name": "Parabolic Dish",
+            "description": "Concentrates strong heat for frying or boiling quickly."
+          }
+        ],
+        "tip_text": "Use a dark, thin-walled pot with a clear lid. Reposition every 30–45 minutes to follow the sun.",
+        "advanced": {
+          "title": "Advanced Builds",
+          "description": "Add insulation (wool, straw) under the box, or a secondary glazing layer to boost temperature.",
+          "historical_note": "Solar cookers have been tested since the 18th century; modern materials make them far more efficient."
+        },
+        "impact": {
+          "title": "Community Impact",
+          "description": "Reduces fuelwood demand and indoor air pollution.",
+          "examples": "Solar lunch programs, disaster relief kitchens, and refugee camps use cookers to cut fuel costs."
+        },
+        "innovation": {
+          "icon": "⚙️",
+          "title": "Local Innovation",
+          "description": "Repurpose reflective rice sacks or metalized snack wrappers as panel surfaces."
+        },
+        "books_labels": {
+          "foundations": "Foundations",
+          "techniques": "Techniques",
+          "impact": "Impact"
+        },
+        "books": {
+          "foundations": [
+            {
+              "title": "Sunlight to Heat",
+              "content": "<p>Dark surfaces absorb radiation; clear covers trap it (greenhouse effect).</p>"
+            },
+            {
+              "title": "Safety First",
+              "content": "<p>Use gloves with parabolic dishes; keep children away from concentrated beams.</p>"
+            }
+          ],
+          "techniques": [
+            {
+              "title": "Preheat",
+              "content": "<p>Place the empty cooker facing the sun 20 minutes before cooking.</p>"
+            },
+            {
+              "title": "Moisture Control",
+              "content": "<p>Tight lids retain steam—improves heat transfer and food safety.</p>"
+            }
+          ],
+          "impact": [
+            {
+              "title": "Fuel Savings",
+              "content": "<p>Each meal cooked by sun can save ~0.5–1 kg of wood.</p>"
+            },
+            {
+              "title": "Climate Benefit",
+              "content": "<p>Lower soot emissions improve local air quality.</p>"
+            }
+          ]
+        }
+      },
+      "solar_oven": {
+        "title": "Building & Optimizing a Solar Oven",
+        "hero_image": "/images/solar_oven256.png",
+        "hero_alt": "Solar Oven Icon",
+        "hero_title": "Bake With Sunlight",
+        "main_title": "Solar Oven Guide",
+        "intro_text": "A solar oven (box cooker) uses insulation and glazing to trap heat for baking and slow cooking.",
+        "cooker_types": [
+          {
+            "name": "Cardboard Box",
+            "description": "Layered cardboard + foil reflectors—cheap and educational."
+          },
+          {
+            "name": "Wooden Box",
+            "description": "Durable frame with insulation; maintains stable heat."
+          },
+          {
+            "name": "Hybrid Booster",
+            "description": "Box plus parabolic or panel reflectors for higher peak temperature."
+          }
+        ],
+        "tip_text": "Elevate the pot on small stones to allow air circulation and even heating.",
+        "advanced": {
+          "title": "Performance Upgrades",
+          "description": "Seal air leaks, add a second glazing layer, or paint interior matte black.",
+          "historical_note": "Design refinements since the 1970s have doubled achievable temperatures."
+        },
+        "innovation": {
+          "icon": "🌞",
+          "title": "Thermal Storage",
+          "description": "Add black-painted stones to retain heat after clouds pass."
+        },
+        "books_labels": {
+          "foundations": "Foundations",
+          "techniques": "Techniques",
+          "impact": "Impact"
+        },
+        "books": {
+          "history": {
+            "title": "Fundamentals",
+            "slides": [
+              {
+                "title": "Core Components",
+                "content": "<p>Reflector, insulated chamber, glazing, dark absorber.</p>"
+              },
+              {
+                "title": "Heat Retention",
+                "content": "<p>Insulation slows losses; glass traps IR radiation.</p>"
+              }
+            ]
+          },
+          "evolution": {
+            "title": "Evolution",
+            "slides": [
+              {
+                "title": "Material Improvements",
+                "content": "<p>Modern foils and insulation enable higher temperatures.</p>"
+              },
+              {
+                "title": "Design Tweaks",
+                "content": "<p>Adjustable reflectors and gaskets increase efficiency.</p>"
+              }
+            ]
+          },
+          "techniques": {
+            "title": "Techniques",
+            "slides": [
+              {
+                "title": "Angle Adjustment",
+                "content": "<p>Tilt the reflector to keep midday sun centered on the pot.</p>"
+              },
+              {
+                "title": "Temperature Tracking",
+                "content": "<p>Use an oven thermometer; safe cooking &gt; 70°C internal food temp.</p>"
+              }
+            ]
+          },
+          "impact": {
+            "title": "Impact",
+            "slides": [
+              {
+                "title": "Health",
+                "content": "<p>Less smoke exposure reduces respiratory illness risk.</p>"
+              },
+              {
+                "title": "Economics",
+                "content": "<p>Lower spending on charcoal or gas frees household income.</p>"
+              }
+            ]
+          }
+        },
+        "foundations": [
+          {
+            "title": "Core Components",
+            "content": "<p>Reflector, insulated chamber, glazing, dark absorber.</p>"
+          },
+          {
+            "title": "Heat Retention",
+            "content": "<p>Insulation slows losses; glass traps IR radiation.</p>"
+          }
+        ],
+        "techniques": [
+          {
+            "title": "Angle Adjustment",
+            "content": "<p>Tilt the reflector to keep midday sun centered on the pot.</p>"
+          },
+          {
+            "title": "Temperature Tracking",
+            "content": "<p>Use a simple oven thermometer; safe cooking > 70°C internal food temp.</p>"
+          }
+        ],
+        "impact": [
+          {
+            "title": "Health",
+            "content": "<p>Less smoke exposure reduces respiratory illness risk.</p>"
+          },
+          {
+            "title": "Economics",
+            "content": "<p>Lower spending on charcoal or gas frees household income.</p>"
+          },
+          {
+            "title": "Local Benefits",
+            "description": "Provides clean cooking where fuelwood is scarce.",
+            "examples": "Schools use ovens for bread programs while teaching renewable energy."
+          }
+        ]
+      }
+    }
+  },
+  "sp": {
+    "site_name": "Centro de Appro-Tech",
+    "navigation": {
+      "home_url": "/",
+      "links": [
+        {
+          "title": "Residuos a Combustible",
+          "url": "waste.html"
+        },
+        {
+          "title": "Agua Potable",
+          "url": "water.html"
+        },
+        {
+          "title": "Cocina Solar",
+          "url": "solarcooking.html"
+        }
+      ],
+      "icons": [
+        {
+          "url": "index.html",
+          "src": "/images/favicon.webp",
+          "alt": "Inicio"
+        },
+        {
+          "url": "waste.html",
+          "src": "/images/wastemanagement64_.png",
+          "alt": "Residuos"
+        },
+        {
+          "url": "water.html",
+          "src": "/images/drinkingwater64_.png",
+          "alt": "Agua"
+        }
+      ]
+    },
+    "assets": {
+      "main_css": "/soaky.css",
+      "favicon": "/images/favicon.webp"
+    },
+    "footer": {
+      "text": "<p>&copy; 2025 Centro de Appro-Tech • Compartiendo conocimientos para comunidades vulnerables.</p>"
+    },
+    "soakpit": {
+      "title": "Soluciones de Pozos de Absorción",
+      "soakpit_title": "Soluciones de Pozos de Absorción",
+      "soakpit_intro": "Filtración natural de aguas grises—simple, eficaz y de bajo costo.",
+      "description": "Un pozo de absorción deja que las aguas grises se infiltren en el suelo, eliminando contaminantes de manera natural. Ideal para lavamanos, desechos de cocina y reutilización de bajo volumen.",
+      "hero_image": "/images/wasstewater256.png",
+      "hero_alt": "Icono de Gestión de Aguas Residuales",
+      "video_section_title": "Animación del Pozo de Absorción",
+      "video_link": "https://archive.org/download/soakpit-demo/soakpit-demo.mp4",
+      "video_poster": "/images/soakpit_thumb.jpg",
+      "tips_title": "Consejos de Construcción",
+      "tips": [
+        "Excavar un pozo de aprox. 1 m ancho × 1 m profundo y llenarlo con piedras o grava.",
+        "Forrar el fondo con arena para controlar la velocidad de filtración.",
+        "Colocar un tambor perforado o cesta de plástico para evitar obstrucciones.",
+        "Cubrir con una losa de concreto o malla metálica para seguridad."
+      ],
+      "panels": [
+        {
+          "title": "¿Por Qué Pozos de Absorción?",
+          "summary": "Funcionan sin electricidad ni químicos, operan desconectados y recargan el acuífero.",
+          "image_url": "/images/soakpit_panel1.jpg"
+        },
+        {
+          "title": "Cómo Funciona",
+          "summary": "El agua ingresa al pozo, pasa por capas de arena y grava, y es limpiada por microbios del suelo.",
+          "image_url": "/images/soakpit_panel2.jpg"
+        },
+        {
+          "title": "Mantenimiento",
+          "summary": "Inspeccionar la entrada cada mes, limpiar la cesta de sólidos y reponer grava cada 2–3 años.",
+          "image_url": "/images/soakpit_panel3.jpg"
+        }
+      ]
+    },
+    "mycelium": {
+      "title": "Uso de Micelio",
+      "intro": "El micelio ayuda a tratar desechos y mejorar el suelo.",
+      "mycelium_videos": [
+        {
+          "title": "Paul Stamets – Environmental Remediation using Mycelium",
+          "description": "El micólogo Paul Stamets explica cómo los hongos degradan contaminantes en suelos contaminados con petróleo.",
+          "video_link": "https://www.youtube.com/watch?v=lJHXkfNCl5E",
+          "transcription_link": "https://www.youtube.com/api/timedtext?lang=es&v=lJHXkfNCl5E",
+          "check_data_link": "https://www.youtube.com/watch?v=lJHXkfNCl5E"
+        },
+        {
+          "title": "Using Fungi to Clean Contaminated Sites",
+          "description": "Proyectos de micorremediación para tratar sitios tóxicos y contaminados.",
+          "video_link": "https://www.youtube.com/watch?v=w4k5pkL5Me4",
+          "transcription_link": "https://www.youtube.com/api/timedtext?lang=es&v=w4k5pkL5Me4",
+          "check_data_link": "https://www.youtube.com/watch?v=w4k5pkL5Me4"
+        }
+      ],
+      "intro_text": ""
+    },
+    "water_security": {
+      "title": "Seguridad Hídrica Doméstica",
+      "intro": "Métodos de bajo costo para recolectar, purificar y almacenar agua segura para familias y pequeñas comunidades.",
+      "hero_image": "/images/water_security256.png",
+      "hero_alt": "Icono de Seguridad del Agua",
+      "panels": [
+        {
+          "title": "Recolección",
+          "summary": "Captura agua de lluvia de techos limpios usando canaletas y dispositivos de primera descarga.",
+          "image_url": "/images/water_collect.jpg"
+        },
+        {
+          "title": "Tratamiento",
+          "summary": "Pre-filtrar con tela y luego hervir, desinfectar con sol (SODIS) o usar filtro biosand.",
+          "image_url": "/images/water_treat.jpg"
+        },
+        {
+          "title": "Almacenamiento Seguro",
+          "summary": "Guardar agua tratada en recipientes tapados con grifo para evitar recontaminación.",
+          "image_url": "/images/water_store.jpg"
+        }
+      ],
+      "videos": [
+        {
+          "title": "Cómo Construir un Filtro Biosand",
+          "description": "Demostración paso a paso de un filtro biosand a escala familiar.",
+          "video_link": "https://www.youtube.com/watch?v=pqzqJ6y7iKQ",
+          "transcription_link": "https://www.youtube.com/api/timedtext?lang=es&v=pqzqJ6y7iKQ",
+          "check_data_link": "https://www.youtube.com/watch?v=pqzqJ6y7iKQ"
+        }
+      ]
+    },
+    "biodiversity_page": {
+      "title": "Monitoreo de Biodiversidad On-Chain",
+      "intro_text": "Usando tecnología descentralizada para promover la transparencia y la educación en los esfuerzos de conservación de la biodiversidad.",
+      "featured_species": [
+        {
+          "name": "Orangután",
+          "status": "En Peligro Crítico",
+          "image_url": "/images/orangutan.jpg",
+          "description": "Se encuentran en las selvas de Borneo y Sumatra, sus poblaciones han disminuido drásticamente debido a la deforestación."
+        },
+        {
+          "name": "Mariposa Monarca",
+          "status": "En Peligro",
+          "image_url": "/images/monarch.jpg",
+          "description": "Conocida por su migración de larga distancia, su supervivencia está amenazada por la pérdida de hábitat y el cambio climático."
+        }
+      ]
+    },
+    "solar_cooker": {
+      "title": "Cómo Usar y Construir un Cocedor Solar",
+      "hero_image": "/images/solar_cooker256.png",
+      "hero_alt": "Icono de Cocción Solar",
+      "hero_title": "Cocina con el Sol",
+      "main_title": "Fundamentos del Cocedor Solar",
+      "intro_text": "La cocción solar aprovecha la luz para generar calor. Reduce costos de combustible, humo y deforestación.",
+      "cooker_types": [
+        {
+          "name": "Cocedor de Panel",
+          "description": "Paneles reflectantes alrededor de una olla oscura—ideal para guisos."
+        },
+        {
+          "name": "Horno de Caja",
+          "description": "Caja aislada con vidrio; alcanza temperaturas para hornear."
+        },
+        {
+          "name": "Parabólico",
+          "description": "Concentra calor fuerte para hervir o freír rápido."
+        }
+      ],
+      "tip_text": "Usa una olla oscura con tapa transparente. Reorienta cada 30–45 minutos.",
+      "advanced": {
+        "title": "Construcciones Avanzadas",
+        "description": "Añade aislamiento (lana, paja) o doble vidrio para mayor temperatura.",
+        "historical_note": "Los cocedores solares se prueban desde el siglo XVIII; los materiales modernos mejoran su eficiencia."
+      },
+      "impact": {
+        "title": "Impacto Comunitario",
+        "description": "Reduce la demanda de leña y la contaminación del aire interior.",
+        "examples": "Programas de almuerzo escolar y campamentos de refugiados usan cocción solar para ahorrar combustible."
+      },
+      "innovation": {
+        "icon": "⚙️",
+        "title": "Innovación Local",
+        "description": "Reutiliza sacos reflectantes de arroz o envolturas metalizadas como paneles."
+      },
+      "books_labels": {
+        "foundations": "Fundamentos",
+        "techniques": "Técnicas",
+        "impact": "Impacto"
+      },
+      "books": {
+        "foundations": [
+          {
+            "title": "Luz a Calor",
+            "content": "<p>Superficies oscuras absorben radiación; el vidrio la retiene.</p>"
+          },
+          {
+            "title": "Seguridad",
+            "content": "<p>Guantes para parabólicos; mantener a niños lejos del foco.</p>"
+          }
+        ],
+        "techniques": [
+          {
+            "title": "Precalentar",
+            "content": "<p>Coloca el cocedor vacío orientado al sol 20 minutos antes.</p>"
+          },
+          {
+            "title": "Control de Humedad",
+            "content": "<p>Tapas herméticas conservan vapor y mejoran la cocción.</p>"
+          }
+        ],
+        "impact": [
+          {
+            "title": "Ahorro de Combustible",
+            "content": "<p>Cada comida solar ahorra ~0.5–1 kg de leña.</p>"
+          },
+          {
+            "title": "Beneficio Climático",
+            "content": "<p>Menos hollín mejora la calidad del aire local.</p>"
+          }
+        ]
+      }
+    },
+    "solar_oven": {
+      "title": "Construcción y Optimización de un Horno Solar",
+      "hero_image": "/images/solar_oven256.png",
+      "hero_alt": "Icono de Horno Solar",
+      "hero_title": "Hornear con Luz Solar",
+      "main_title": "Guía de Horno Solar",
+      "intro_text": "Un horno solar (caja) usa aislamiento y vidrio para atrapar calor y cocinar lentamente.",
+      "cooker_types": [
+        {
+          "name": "Caja de Cartón",
+          "description": "Cartón y reflectores de aluminio—económico y educativo."
+        },
+        {
+          "name": "Caja de Madera",
+          "description": "Estructura duradera con aislamiento; calor estable."
+        },
+        {
+          "name": "Híbrido",
+          "description": "Caja con reflectores adicionales para mayor temperatura."
+        }
+      ],
+      "tip_text": "Eleva la olla sobre piedras pequeñas para permitir circulación de aire.",
+      "advanced": {
+        "title": "Mejoras de Rendimiento",
+        "description": "Sella fugas de aire, agrega doble vidrio o pinta interior negro mate.",
+        "historical_note": "Los diseños refinados desde los años 70 duplicaron temperaturas alcanzables."
+      },
+      "impact": {
+        "title": "Beneficios Locales",
+        "description": "Provee cocina limpia en zonas con escasez de leña.",
+        "examples": "Escuelas usan hornos para pan y enseñanza de energía renovable."
+      },
+      "innovation": {
+        "icon": "🌞",
+        "title": "Almacenamiento Térmico",
+        "description": "Añade piedras pintadas de negro para conservar calor cuando hay nubes."
+      },
+      "books_labels": {
+        "foundations": "Fundamentos",
+        "techniques": "Técnicas",
+        "impact": "Impacto"
+      },
+      "books": {
+        "foundations": [
+          {
+            "title": "Componentes Clave",
+            "content": "<p>Reflector, cámara aislada, vidrio, superficie oscura.</p>"
+          },
+          {
+            "title": "Retención de Calor",
+            "content": "<p>El aislamiento reduce pérdidas; el vidrio retiene radiación IR.</p>"
+          }
+        ],
+        "techniques": [
+          {
+            "title": "Ajuste de Ángulo",
+            "content": "<p>Inclina el reflector para mantener el sol centrado.</p>"
+          },
+          {
+            "title": "Monitoreo de Temperatura",
+            "content": "<p>Usa termómetro; alimentos seguros >70°C interno.</p>"
+          }
+        ],
+        "impact": [
+          {
+            "title": "Salud",
+            "content": "<p>Menos humo reduce riesgo respiratorio.</p>"
+          },
+          {
+            "title": "Economía",
+            "content": "<p>Menor gasto en carbón o gas libera ingresos.</p>"
+          }
+        ]
+      }
+    }
+  },
+ "ar": {
+      "solar_cooker": {
+        "title": "كيفية استخدام وبناء طباخ شمسي",
+        "hero_image": "/images/solar_cooker256.png",
+        "hero_alt": "أيقونة الطباخ الشمسي",
+        "hero_title": "الطهي بالطاقة الشمسية",
+        "main_title": "أساسيات الطباخ الشمسي",
+        "intro_text": "يستغل الطهي الشمسي ضوء الشمس لتوليد الحرارة. يساعد في خفض تكاليف الوقود وتقليل الدخان وإزالة الضغط عن الغابات.",
+        "cooker_types": [
+          {
+            "name": "طباخ الألواح",
+            "description": "ألواح عاكسة تُحيط بقدرٍ داكن — مناسب للطهي البطيء والغلي الخفيف."
+          },
+          {
+            "name": "طباخ الصندوق",
+            "description": "صندوق معزول بزجاج علوي؛ يصل إلى درجات أعلى للخبز."
+          },
+          {
+            "name": "الطبق القطعي المكافئ",
+            "description": "يركز الأشعة للحصول على حرارة قوية للقلي أو الغلي السريع."
+          }
+        ],
+        "tip_text": "استخدم قدراً داكناً ذو جدار رقيق وغطاء شفاف. أعد التوجيه كل 30–45 دقيقة لمتابعة حركة الشمس.",
+        "advanced": {
+          "title": "تصاميم متقدمة",
+          "description": "أضِف عزلًا (صوف، قش) أسفل الصندوق أو طبقة زجاج ثانية لزيادة الحرارة.",
+          "historical_note": "تم اختبار الطباخات الشمسية منذ القرن الثامن عشر؛ المواد الحديثة حسّنت كفاءتها كثيراً."
+        },
+        "impact": {
+          "title": "الأثر المجتمعي",
+          "description": "يقلل استهلاك الحطب والتعرض للدخان داخل المنزل.",
+          "examples": "برامج وجبات المدارس ومخيمات اللاجئين تستخدم الطهي الشمسي لتقليل تكاليف الوقود."
+        },
+        "innovation": {
+          "icon": "⚙️",
+          "title": "ابتكار محلي",
+          "description": "أعد استخدام أكياس الأرز العاكسة أو الأغلفة المعدنية كألواح."
+        },
+        "books_labels": {
+          "foundations": "الأساسيات",
+          "techniques": "التقنيات",
+          "impact": "الأثر"
+        },
+        "books": {
+          "foundations": [
+            {
+              "title": "من ضوء إلى حرارة",
+              "content": "<p>الأسطح الداكنة تمتص الإشعاع؛ والزجاج يحجزه (تأثير الدفيئة).</p>"
+            },
+            {
+              "title": "السلامة أولاً",
+              "content": "<p>استخدم قفازات مع الأطباق المكافئة؛ أبعد الأطفال عن البؤرة الساخنة.</p>"
+            }
+          ],
+          "techniques": [
+            {
+              "title": "التسخين المسبق",
+              "content": "<p>ضع الطباخ فارغاً باتجاه الشمس قبل الطهي بـ 20 دقيقة.</p>"
+            },
+            {
+              "title": "التحكم في الرطوبة",
+              "content": "<p>الأغطية المحكمة تحافظ على البخار وتحسن انتقال الحرارة.</p>"
+            }
+          ],
+          "impact": [
+            {
+              "title": "توفير الوقود",
+              "content": "<p>كل وجبة بالطاقة الشمسية قد توفر 0.5–1 كجم من الحطب.</p>"
+            },
+            {
+              "title": "فائدة مناخية",
+              "content": "<p>انبعاث سخام أقل يحسن جودة الهواء المحلي.</p>"
+            }
+          ]
+        }
+      },
+      "solar_oven": {
+        "title": "بناء وتحسين فرن شمسي",
+        "hero_image": "/images/solar_oven256.png",
+        "hero_alt": "أيقونة الفرن الشمسي",
+        "hero_title": "الخبز بضوء الشمس",
+        "main_title": "دليل الفرن الشمسي",
+        "intro_text": "الفرن الشمسي (فرن الصندوق) يستخدم العزل والزجاج لحبس الحرارة للخبز والطهي البطيء.",
+        "cooker_types": [
+          {
+            "name": "صندوق من الكرتون",
+            "description": "كرتون مع عواكس ألمنيوم — رخيص وتعليمي."
+          },
+          {
+            "name": "صندوق خشبي",
+            "description": "هيكل متين مع عزل؛ يحافظ على حرارة ثابتة."
+          },
+          {
+            "name": "هجين معزز",
+            "description": "صندوق مع عواكس إضافية لحرارة أعلى."
+          }
+        ],
+        "tip_text": "ارفع القدر على حصى صغيرة للسماح بدوران الهواء وتسخين متساوٍ.",
+        "advanced": {
+          "title": "تحسين الأداء",
+          "description": "أغلق الفجوات الهوائية، أضف طبقة زجاج ثانية، أو ادهن الداخل بلون أسود مطفي.",
+          "historical_note": "التحسينات منذ السبعينيات ضاعفت درجات الحرارة الممكنة."
+        },
+        "impact": {
+          "title": "فوائد محلية",
+          "description": "يوفر طهياً نظيفاً حيث الحطب شحيح.",
+          "examples": "تستخدمه المدارس لبرامج الخبز وتعليم الطاقة المتجددة."
+        },
+        "innovation": {
+          "icon": "🌞",
+          "title": "تخزين حراري",
+          "description": "أضف حجارة مطلية بالأسود للاحتفاظ بالحرارة أثناء مرور السحب."
+        },
+        "books_labels": {
+          "foundations": "الأساسيات",
+          "techniques": "التقنيات",
+          "impact": "الأثر"
+        },
+        "books": {
+          "foundations": [
+            {
+              "title": "المكوّنات الأساسية",
+              "content": "<p>عاكس، حجرة معزولة، زجاج، سطح ماص داكن.</p>"
+            },
+            {
+              "title": "الاحتفاظ بالحرارة",
+              "content": "<p>العزل يقلل الفقد؛ الزجاج يحبس الأشعة تحت الحمراء.</p>"
+            }
+          ],
+          "techniques": [
+            {
+              "title": "ضبط الزاوية",
+              "content": "<p>أمل العاكس ليبقى ضوء الظهيرة مركزاً على القدر.</p>"
+            },
+            {
+              "title": "مراقبة الحرارة",
+              "content": "<p>استخدم ترمومتر فرن؛ سلامة الطعام عند درجة داخلية تتجاوز 70°م.</p>"
+            }
+          ],
+          "impact": [
+            {
+              "title": "الصحة",
+              "content": "<p>انبعاث دخان أقل يقلل مخاطر أمراض التنفس.</p>"
+            },
+            {
+              "title": "الاقتصاد",
+              "content": "<p>تقليل شراء الفحم أو الغاز يوفّر دخلاً للأسرة.</p>"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

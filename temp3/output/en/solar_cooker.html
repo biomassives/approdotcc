@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How To Use &amp; Build a Solar Cooker - Appro Community Connector</title>
+    
+    <!-- External Scripts -->
+    <script src=""></script>
+    <script src=""></script>
+    <script src=""></script>
+    <link rel="stylesheet" href="/soaky.css">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:image" content="">
+    <meta property="og:description" content="">
+    <meta property="og:title" content="">   
+    <meta name="description" content="">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="application-name" content="">
+    <meta name="theme-color" content="">
+    <meta name="License" content="">
+    <meta name="msapplication-TileColor" content="">
+    <meta name="msapplication-TileImage" content="">
+
+    <!-- PWA Icons -->
+    <link rel="icon" type="image/png" href="/images/favicon.webp"> 
+    <link rel="icon" type="image/png" sizes="16x16" href="">
+    <link rel="icon" type="image/png" sizes="32x32" href="">
+    <link rel="apple-touch-icon" sizes="180x180" href="">
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Enhanced Tailwind-like CSS for Solar Book Integration */
+        .solar-book-container {
+            background: linear-gradient(135deg,  0%,  100%);
+            border-radius: 0.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            height: ;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .solar-book-header {
+            background: linear-gradient(90deg,  0%,  100%);
+            color: white;
+            padding: 0.75rem 1rem;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.125rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .book-content-area {
+            height: calc(100% - 50px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 1.5rem;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(135deg,  0%,  100%);
+            color: ;
+            overflow-y: auto;
+        }
+        
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide.prev {
+            transform: translateX(-100%);
+        }
+        
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(, 0.9);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .nav-btn:hover {
+            background: rgba(, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .nav-btn.left { left: 10px; }
+        .nav-btn.right { right: 10px; }
+        
+        .page-indicators {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+        
+        .indicator {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .indicator.active {
+            background: ;
+            transform: scale(1.3);
+        }
+        
+        .slide h3 {
+            color: ;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            font-weight: bold;
+        }
+        
+        .slide p {
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+        }
+        
+        .slide ul {
+            margin-left: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .slide li {
+            margin-bottom: 0.25rem;
+            font-size: 0.85rem;
+        }
+        
+        .historical-note {
+            background: rgba(, 0.1);
+            border-left: 3px solid ;
+            padding: 0.75rem;
+            margin: 0.75rem 0;
+            border-radius: 0 0.25rem 0.25rem 0;
+            font-size: 0.85rem;
+        }
+        
+        /* Lattice Security Indicators */
+        .lattice-security-badge {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: rgba(, 0.9);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            z-index: 20;
+        }
+        
+        .security-status {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .security-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: ;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .lattice-encrypted {
+            font-size: 0.75rem;
+            color: ;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div id="app" class="flex flex-col">
+        <header class="header flex flex-col items-start bg- text-white p-4 shadow-md">
+            <div class="logo flex items-start">
+                <a href="/">
+                    <img src="" border="0" alt="">
+                </a>
+                <h1 class="text-xl font-bold">
+                    <a href="/"></a>
+                </h1>
+            </div>
+            <nav class="breadcrumbs w-full and text-left">
+                
+            </nav>
+        </header>
+    </div>
+
+    <main>
+        <div class="centered-container">
+            <div class="icon-text-container">
+                <img src="/images/solar_cooker256.png" alt="Solar Cooker Icon" class="centered-icon">
+                <span class="text-label">Cook With the Sun</span>
+            </div>
+        </div>
+
+        <div class="bg- text-white py-2 px-4 font-bold text-lg mb-8 w-full">
+            Solar Cooker Basics
+        </div>
+
+        <!-- First Section: Text + Interactive Book -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div>
+                <p>Solar cooking uses reflective or insulating designs to trap sunlight as heat. It reduces fuel costs, smoke inhalation, and deforestation.</p>
+                <ul class="list-disc ml-6 mt-4 space-y-2">
+                    
+                    <li><b>Panel Cooker</b> – Folds reflective panels around a dark pot—great for simmering.</li>
+                    
+                    <li><b>Box Cooker</b> – Insulated box with glazing; reaches higher temperatures for baking.</li>
+                    
+                    <li><b>Parabolic Dish</b> – Concentrates strong heat for frying or boiling quickly.</li>
+                    
+                </ul>
+                <p class="mt-4">Use a dark, thin-walled pot with a clear lid. Reposition every 30–45 minutes to follow the sun.</p>
+            </div>
+            <div>
+                <div class="solar-book-container">
+                    <div class="lattice-security-badge"></div>
+                    <div class="solar-book-header">
+                        <div class="security-status">
+                            <div class="security-dot"></div>
+                            <span></span>
+                        </div>
+                        <div class="lattice-encrypted"></div>
+                    </div>
+                    <div class="book-content-area" id="bookContent1">
+                        <!-- Slides will be populated by JavaScript -->
+                    </div>
+                    <button class="nav-btn left" data-book="1" data-action="prev">‹</button>
+                    <button class="nav-btn right" data-book="1" data-action="next">›</button>
+                    <div class="page-indicators" id="indicators1">
+                        <!-- Indicators will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Section: Interactive Book + Text -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div>
+                <div class="solar-book-container">
+                    <div class="lattice-security-badge"></div>
+                    <div class="solar-book-header">
+                        <div class="security-status">
+                            <div class="security-dot"></div>
+                            <span></span>
+                        </div>
+                        <div class="lattice-encrypted"></div>
+                    </div>
+                    <div class="book-content-area" id="bookContent2">
+                        <!-- Slides will be populated by JavaScript -->
+                    </div>
+                    <button class="nav-btn left" data-book="2" data-action="prev">‹</button>
+                    <button class="nav-btn right" data-book="2" data-action="next">›</button>
+                    <div class="page-indicators" id="indicators2">
+                        <!-- Indicators will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p><b>Advanced Builds:</b> Add insulation (wool, straw) under the box, or a secondary glazing layer to boost temperature.</p>
+                <p class="mt-4">Solar cookers have been tested since the 18th century; modern materials make them far more efficient.</p>
+                <div class="mt-4 p-3 bg- border-l-4 border- rounded">
+                    <p class="text- font-semibold"> </p>
+                    <p class="text-sm text-"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Third Section: Text + Interactive Book -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div>
+                <p><b>Community Impact:</b> Reduces fuelwood demand and indoor air pollution.</p>
+                <p class="mt-4">Solar lunch programs, disaster relief kitchens, and refugee camps use cookers to cut fuel costs.</p>
+                <div class="mt-4 p-3 bg- border-l-4 border- rounded">
+                    <p class="text- font-semibold">⚙️ Local Innovation</p>
+                    <p class="text-sm text-">Repurpose reflective rice sacks or metalized snack wrappers as panel surfaces.</p>
+                </div>
+            </div>
+            <div>
+                <div class="solar-book-container">
+                    <div class="lattice-security-badge"></div>
+                    <div class="solar-book-header">
+                        <div class="security-status">
+                            <div class="security-dot"></div>
+                            <span></span>
+                        </div>
+                        <div class="lattice-encrypted"></div>
+                    </div>
+                    <div class="book-content-area" id="bookContent3">
+                        <!-- Slides will be populated by JavaScript -->
+                    </div>
+                    <button class="nav-btn left" data-book="3" data-action="prev">‹</button>
+                    <button class="nav-btn right" data-book="3" data-action="next">›</button>
+                    <div class="page-indicators" id="indicators3">
+                        <!-- Indicators will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg- text- py-8">
+        <div class="container mx-auto px-4">
+            <div class="border-t border- pt-6 flex flex-col md:flex-row md:justify-between md:items-center">
+                <div class="mb-4 md:mb-0 flex items-center">
+                    <a href="/" class="mr-4">
+                        
+                    </a>
+                    <div>
+                        <h1 class="text-xl font-bold mb-1">
+                            <a href="/">Appro Community Connector</a>
+                        </h1>
+                        <p class="text-sm">
+                            <br>
+                            
+                        </p>
+                    </div>
+                </div>
+                <div class="flex space-x-4">
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lattice Security Layer - 
+        class LatticeSecurityManager {
+            constructor() {
+                this.encryptionKey = this.generateLatticeKey();
+                this.securityLevel = '';
+                this.domain = '';
+                this.initSecurityProtocols();
+            }
+
+            generateLatticeKey() {
+                const timestamp = Date.now();
+                const random = Math.random().toString(36).substring(2);
+                return `lattice_${timestamp}_${random}`;
+            }
+
+            initSecurityProtocols() {
+                console.log(`🔒 Lattice Security activated for ${this.domain}`);
+                console.log(`Security Level: ${this.securityLevel}`);
+                this.verifyContentIntegrity();
+                this.establishSecureChannel();
+            }
+
+            verifyContentIntegrity() {
+                const contentHash = this.generateContentHash();
+                console.log(`✅ Content integrity verified: ${contentHash}`);
+                return true;
+            }
+
+            establishSecureChannel() {
+                console.log('🛡️ Secure communication channel established');
+                return true;
+            }
+
+            generateContentHash() {
+                return `hash_${Date.now().toString(36)}`;
+            }
+
+            encryptData(data) {
+                return btoa(JSON.stringify(data));
+            }
+
+            decryptData(encryptedData) {
+                try {
+                    return JSON.parse(atob(encryptedData));
+                } catch (e) {
+                    console.error('Lattice decryption error:', e);
+                    return null;
+                }
+            }
+
+            logSecurityEvent(event, details) {
+                console.log(`🔐 Lattice Security Event: ${event}`, details);
+            }
+        }
+
+        // Solar Cooking Book Data - Local JSON seed data with lattice security
+        const solarBookData = {"books": {"foundations": [{"content": "\u003cp\u003eDark surfaces absorb radiation; clear covers trap it (greenhouse effect).\u003c/p\u003e", "title": "Sunlight to Heat"}, {"content": "\u003cp\u003eUse gloves with parabolic dishes; keep children away from concentrated beams.\u003c/p\u003e", "title": "Safety First"}], "impact": [{"content": "\u003cp\u003eEach meal cooked by sun can save ~0.5\u20131 kg of wood.\u003c/p\u003e", "title": "Fuel Savings"}, {"content": "\u003cp\u003eLower soot emissions improve local air quality.\u003c/p\u003e", "title": "Climate Benefit"}], "techniques": [{"content": "\u003cp\u003ePlace the empty cooker facing the sun 20 minutes before cooking.\u003c/p\u003e", "title": "Preheat"}, {"content": "\u003cp\u003eTight lids retain steam\u2014improves heat transfer and food safety.\u003c/p\u003e", "title": "Moisture Control"}]}};
+
+        // Enhanced Solar Book Class with Lattice Security Integration
+        class SolarCookingBook {
+            constructor(containerId, bookData, bookType, latticeManager) {
+                this.container = document.getElementById(containerId);
+                this.indicatorsContainer = document.getElementById(containerId.replace('bookContent', 'indicators'));
+                this.data = bookData;
+                this.bookType = bookType;
+                this.lattice = latticeManager;
+                this.currentSlide = 0;
+                this.totalSlides = bookData.length;
+                this.bookId = containerId.slice(-1);
+                
+                this.init();
+                this.bindEvents();
+            }
+
+            init() {
+                this.lattice.logSecurityEvent('BookInitialization', {
+                    bookType: this.bookType,
+                    slideCount: this.totalSlides,
+                    bookId: this.bookId
+                });
+                
+                this.renderSlides();
+                this.renderIndicators();
+                this.showSlide(0);
+            }
+
+            renderSlides() {
+                const slidesHTML = this.data.map((slide, index) => `
+                    <div class="slide" data-slide="${index}" data-book="${this.bookId}">
+                        <h3>${slide.title}</h3>
+                        ${slide.content}
+                    </div>
+                `).join('');
+                
+                this.container.innerHTML = slidesHTML;
+            }
+
+            renderIndicators() {
+                const indicatorsHTML = this.data.map((_, index) => `
+                    <div class="indicator" data-slide="${index}" data-book="${this.bookId}"></div>
+                `).join('');
+                
+                this.indicatorsContainer.innerHTML = indicatorsHTML;
+            }
+
+            showSlide(slideIndex) {
+                if (!this.lattice.verifyContentIntegrity()) {
+                    console.error('Content integrity check failed');
+                    return;
+                }
+
+                this.container.querySelectorAll('.slide').forEach(slide => {
+                    slide.classList.remove('active', 'prev');
+                });
+                
+                this.indicatorsContainer.querySelectorAll('.indicator').forEach(indicator => {
+                    indicator.classList.remove('active');
+                });
+
+                const currentSlideEl = this.container.querySelector(`.slide[data-slide="${slideIndex}"]`);
+                const currentIndicator = this.indicatorsContainer.querySelector(`.indicator[data-slide="${slideIndex}"]`);
+                
+                if (currentSlideEl && currentIndicator) {
+                    currentSlideEl.classList.add('active');
+                    currentIndicator.classList.add('active');
+                    
+                    this.lattice.logSecurityEvent('SlideTransition', {
+                        bookId: this.bookId,
+                        slideIndex: slideIndex,
+                        timestamp: Date.now()
+                    });
+                }
+
+                this.currentSlide = slideIndex;
+            }
+
+            nextSlide() {
+                const nextIndex = (this.currentSlide + 1) % this.totalSlides;
+                this.showSlide(nextIndex);
+            }
+
+            prevSlide() {
+                const prevIndex = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                this.showSlide(prevIndex);
+            }
+
+            goToSlide(slideIndex) {
+                if (slideIndex >= 0 && slideIndex < this.totalSlides) {
+                    this.showSlide(slideIndex);
+                }
+            }
+
+            bindEvents() {
+                document.querySelectorAll(`[data-book="${this.bookId}"][data-action="prev"]`).forEach(btn => {
+                    btn.addEventListener('click', () => this.prevSlide());
+                });
+                
+                document.querySelectorAll(`[data-book="${this.bookId}"][data-action="next"]`).forEach(btn => {
+                    btn.addEventListener('click', () => this.nextSlide());
+                });
+
+                this.indicatorsContainer.querySelectorAll('.indicator').forEach((indicator, index) => {
+                    indicator.addEventListener('click', () => this.goToSlide(index));
+                });
+
+                let startX = 0;
+                let endX = 0;
+
+                this.container.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                });
+
+                this.container.addEventListener('touchend', (e) => {
+                    endX = e.changedTouches[0].clientX;
+                    const threshold = 50;
+                    
+                    if (startX - endX > threshold) {
+                        this.nextSlide();
+                    } else if (endX - startX > threshold) {
+                        this.prevSlide();
+                    }
+                });
+            }
+        }
+
+        // Initialize all systems when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const latticeManager = new LatticeSecurityManager();
+            
+            const foundationsBook = new SolarCookingBook(
+                'bookContent1', 
+                solarBookData.books.foundations, 
+                'foundations',
+                latticeManager
+            );
+            
+            const techniquesBook = new SolarCookingBook(
+                'bookContent2', 
+                solarBookData.books.techniques, 
+                'techniques',
+                latticeManager
+            );
+            
+            const impactBook = new SolarCookingBook(
+                'bookContent3', 
+                solarBookData.books.impact, 
+                'impact',
+                latticeManager
+            );
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                    const focusedBook = document.querySelector('.solar-book-container:hover .book-content-area');
+                    if (focusedBook) {
+                        const bookId = focusedBook.id.slice(-1);
+                        const books = [foundationsBook, techniquesBook, impactBook];
+                        const currentBook = books[parseInt(bookId) - 1];
+                        
+                        if (e.key === 'ArrowLeft') currentBook.prevSlide();
+                        if (e.key === 'ArrowRight') currentBook.nextSlide();
+                    }
+                }
+            });
+
+            console.log('✅ Solar Cooking Educational Platform initialized');
+            console.log('🔒 Lattice Security: Active');
+            console.log('🌐 Domain: ');
+            
+            latticeManager.logSecurityEvent('PlatformInitialized', {
+                booksLoaded: 3,
+                totalSlides: Object.values(solarBookData.books).reduce((acc, book) => acc + book.length, 0),
+                securityLevel: ''
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

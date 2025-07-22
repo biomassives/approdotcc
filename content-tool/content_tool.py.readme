@@ -1,0 +1,33 @@
+# List languages/pages
+python content_tool.py list content.json
+
+# Add a new page skeleton
+python content_tool.py ensure content.json --lang en --page solar_cooker
+
+# Set a field (simple string)
+python content_tool.py edit content.json --lang en --page solar_cooker --field title --value "Solar Cooker Basics"
+
+# Set a JSON field (array/object)
+python content_tool.py edit content.json --lang en --page solar_cooker --field videos --value '[{"title":"Intro","video_link":"https://..."}]'
+
+# Mycelium videos example (two entries)
+python content_tool.py edit content.json --lang en --page mycelium --field mycelium_videos --value '[
+  {"title":"Paul Stamets – Environmental Remediation using Mycelium","video_link":"https://www.youtube.com/watch?v=lJHXkfNCl5E"},
+  {"title":"Using Fungi to Clean Contaminated Sites","video_link":"https://www.youtube.com/watch?v=w4k5pkL5Me4"}
+]'
+
+# Guided wizard to fill missing values
+python content_tool.py wizard content.json
+
+# Delete a page
+python content_tool.py delete content.json --lang sp --page solar_oven
+
+# Split/merge
+python content_tool.py split content.json content_parts
+python content_tool.py merge content_parts content.json
+
+# Export SQL for all pages
+python content_tool.py export-sql content.json > seed.sql
+
+# Interactive mode
+python content_tool.py shell content.json

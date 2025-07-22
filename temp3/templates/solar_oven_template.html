@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site_name }} - {{ solar_cooking.title }}</title>
+    
+    <script src="{{ assets_tailwind_js }}"></script>
+    <script src="{{ assets_flowbite_js }}"></script>
+    <link rel="stylesheet" href="{{ assets_main_css }}">
+    
+    <meta property="og:image" content="/images/solar-oven-og.png">
+    <meta property="og:description" content="Discover the evolution of solar ovens toward more durable, movable designs featuring cardboard reflectors.">
+    <meta property="og:title" content="Appropriate Technology - The Evolution of Solar Cooking">
+    <meta name="description" content="An exploration of the development of EWB solar ovens and the innovation of portable, efficient cardboard reflectors.">
+    
+    <meta name="theme-color" content="#ca8a04">
+    <link rel="icon" type="image/png" href="{{ assets_favicon }}">
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .solar-book-container {
+            background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%);
+            border-radius: 0.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+        .solar-book-header {
+            background: linear-gradient(90deg, #d97706 0%, #92400e 100%);
+            color: white;
+            padding: 0.75rem 1rem;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.125rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        .book-content-area {
+            height: calc(100% - 50px);
+            position: relative;
+            overflow: hidden;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 1.5rem;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);
+            color: #854d0e;
+            overflow-y: auto;
+        }
+        .slide.active { opacity: 1; transform: translateX(0); }
+        .slide.prev { transform: translateX(-100%); }
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(146, 64, 14, 0.9);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-btn:hover { background: rgba(146, 64, 14, 1); transform: translateY(-50%) scale(1.1); }
+        .nav-btn.left { left: 10px; }
+        .nav-btn.right { right: 10px; }
+        .page-indicators {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+        .indicator {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .indicator.active { background: #d97706; transform: scale(1.3); }
+        .slide h3 { color: #92400e; font-size: 1.25rem; margin-bottom: 0.75rem; font-weight: bold; }
+        .slide p { line-height: 1.6; margin-bottom: 0.75rem; font-size: 0.9rem; }
+        .slide ul { margin-left: 1.25rem; margin-bottom: 0.75rem; }
+        .slide li { margin-bottom: 0.25rem; font-size: 0.85rem; }
+        .historical-note {
+            background: rgba(217, 119, 6, 0.1);
+            border-left: 3px solid #d97706;
+            padding: 0.75rem;
+            margin: 0.75rem 0;
+            border-radius: 0 0.25rem 0.25rem 0;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div id="app" class="flex flex-col">
+        <header class="header flex flex-col items-start bg-{{ color_header_bg }} text-white p-4 shadow-md">
+            <div class="logo flex items-start">
+                <a href="/"><img src="{{ assets_logo_image }}" border="0" alt="Appro-Tech Hub"></a>
+                <h1 class="text-xl font-bold"><a href="/">{{ site_short_name }}</a></h1>
+            </div>
+            <nav class="breadcrumbs w-full text-left">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="solar.html">Solar Cooking</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <main class="container mx-auto p-4">
+        
+        <div class="text-center my-8">
+            <img src="{{ solar_cooking.hero_image }}" alt="{{ solar_cooking.hero_alt }}" class="mx-auto h-24 w-24 rounded-full shadow-lg">
+            <h1 class="text-4xl font-bold text-yellow-800 mt-4">{{ solar_cooking.hero_title }}</h1>
+        </div>
+
+        <div class="bg-yellow-600 text-white py-2 px-4 font-bold text-lg mb-8 w-full">
+            The History of Solar Cooking
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div>
+                <p>Understanding the history of solar cooking provides essential context for modern innovations. From simple hot boxes to lightweight panel cookers, the fundamental goal has always been to efficiently harness the sun's free and abundant energy.</p>
+                <ul class="list-disc ml-6 mt-4 space-y-2">
+                    <li><b>1767:</b> Horace-Bénédict de Saussure, a Swiss physicist, creates the first known solar oven.</li>
+                    <li><b>1950s:</b> A period of renewed academic and practical interest in refining solar cooker designs.</li>
+                    <li><b>1990s:</b> The development of low-cost, portable panel cookers for widespread humanitarian use.</li>
+                </ul>
+                <p class="mt-4">{{ solar_cooking.tip_text }}</p>
+            </div>
+            <div>
+                <div class="solar-book-container">
+                    <div class="solar-book-header">
+                        <span>{{ solar_cooking.books_labels.foundations }}</span>
+                    </div>
+                    <div class="book-content-area" id="bookContent1"></div>
+                    <button class="nav-btn left" data-book="1" data-action="prev">‹</button>
+                    <button class="nav-btn right" data-book="1" data-action="next">›</button>
+                    <div class="page-indicators" id="indicators1"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-amber-600 text-white py-2 px-4 font-bold text-lg mb-8 w-full">
+            The EWB Oven Evolution: Durability Meets Portability
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div>
+                <div class="solar-book-container">
+                    <div class="solar-book-header">
+                        <span>{{ solar_cooking.books.evolution.title }}</span>
+                    </div>
+                    <div class="book-content-area" id="bookContent2"></div>
+                    <button class="nav-btn left" data-book="2" data-action="prev">‹</button>
+                    <button class="nav-btn right" data-book="2" data-action="next">›</button>
+                    <div class="page-indicators" id="indicators2"></div>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-amber-800 mb-2">From Heavy Boxes to Foldable Reflectors</h2>
+                <p>The primary challenge in solar oven design has been to create a device that is both effective at reaching high temperatures and practical for people on the move. The evolution of the EWB oven demonstrates a clear progression towards lighter, more resilient materials. The cardboard reflector stands out as a game-changing innovation, providing the concentrating power of a parabola in a package that can be easily folded and transported.</p>
+                <div class="mt-4 p-3 bg-yellow-50 border-l-4 border-yellow-600 rounded">
+                    <p class="text-yellow-700 font-semibold">Key Innovation</p>
+                    <p class="text-sm text-yellow-600">Utilizing laminated cardboard for the main reflector panel makes the oven weather-resistant, lightweight, and surprisingly durable, effectively addressing the major drawbacks of earlier, heavier models.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-orange-600 text-white py-2 px-4 font-bold text-lg mb-8 w-full">
+            DIY: Build Your Own Portable Solar Oven
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+             <div>
+                <h2 class="text-2xl font-bold text-orange-800 mb-2">Appropriate Technology in Action</h2>
+                <p>Constructing your own solar oven is an excellent way to understand the scientific principles that make it work. The design is intentionally simple and forgiving, serving as a powerful demonstration of how everyday materials can be transformed into a highly effective piece of technology.</p>
+                <p class="mt-4">
+                    <b>Safety First:</b> Even a cardboard oven can become extremely hot! Temperatures inside can easily exceed 150°C (300°F). Always use oven mitts when handling the pot, and never leave children unattended with an operating solar oven.
+                </p>
+            </div>
+            <div>
+                <div class="solar-book-container">
+                    <div class="solar-book-header">
+                        <span>{{ solar_cooking.books.diy.title }}</span>
+                    </div>
+                    <div class="book-content-area" id="bookContent3"></div>
+                    <button class="nav-btn left" data-book="3" data-action="prev">‹</button>
+                    <button class="nav-btn right" data-book="3" data-action="next">›</button>
+                    <div class="page-indicators" id="indicators3"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-800 text-gray-300 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 {{ site_name }}</p>
+            <p>Sharing knowledge for a sustainable and empowered future.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Injected Book Data from the Server
+        const solarBookData = {{ solar_book_data_js|safe }};
+
+        class SolarCookerBook {
+            constructor(containerId, bookData) {
+                this.container = document.getElementById(containerId);
+                this.indicatorsContainer = document.getElementById(containerId.replace('bookContent', 'indicators'));
+                this.data = bookData;
+                this.currentSlide = 0;
+                this.totalSlides = bookData.length;
+                this.bookId = containerId.slice(-1);
+                
+                this.init();
+                this.bindEvents();
+            }
+
+            init() {
+                this.renderSlides();
+                this.renderIndicators();
+                this.showSlide(0);
+            }
+
+            renderSlides() {
+                const slidesHTML = this.data.map((slide, index) => `
+                    <div class="slide" data-slide="${index}" data-book="${this.bookId}">
+                        <h3>${slide.title}</h3>
+                        ${slide.content}
+                    </div>
+                `).join('');
+                this.container.innerHTML = slidesHTML;
+            }
+
+            renderIndicators() {
+                const indicatorsHTML = this.data.map((_, index) => `
+                    <div class="indicator" data-slide="${index}" data-book="${this.bookId}"></div>
+                `).join('');
+                this.indicatorsContainer.innerHTML = indicatorsHTML;
+            }
+
+            showSlide(slideIndex) {
+                this.container.querySelectorAll('.slide').forEach(slide => slide.classList.remove('active', 'prev'));
+                this.indicatorsContainer.querySelectorAll('.indicator').forEach(indicator => indicator.classList.remove('active'));
+
+                const currentSlideEl = this.container.querySelector(`.slide[data-slide="${slideIndex}"]`);
+                const currentIndicator = this.indicatorsContainer.querySelector(`.indicator[data-slide="${slideIndex}"]`);
+                
+                if (currentSlideEl && currentIndicator) {
+                    currentSlideEl.classList.add('active');
+                    currentIndicator.classList.add('active');
+                }
+
+                this.currentSlide = slideIndex;
+            }
+
+            nextSlide() {
+                this.showSlide((this.currentSlide + 1) % this.totalSlides);
+            }
+
+            prevSlide() {
+                this.showSlide((this.currentSlide - 1 + this.totalSlides) % this.totalSlides);
+            }
+
+            goToSlide(slideIndex) {
+                if (slideIndex >= 0 && slideIndex < this.totalSlides) {
+                    this.showSlide(slideIndex);
+                }
+            }
+
+            bindEvents() {
+                const leftButton = document.querySelector(`.nav-btn.left[data-book="${this.bookId}"]`);
+                const rightButton = document.querySelector(`.nav-btn.right[data-book="${this.bookId}"]`);
+
+                if(leftButton) leftButton.addEventListener('click', () => this.prevSlide());
+                if(rightButton) rightButton.addEventListener('click', () => this.nextSlide());
+
+                this.indicatorsContainer.querySelectorAll('.indicator').forEach((indicator, index) => {
+                    indicator.addEventListener('click', () => this.goToSlide(index));
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (solarBookData.history) new SolarCookerBook('bookContent1', solarBookData.history);
+            if (solarBookData.evolution) new SolarCookerBook('bookContent2', solarBookData.evolution);
+            if (solarBookData.diy) new SolarCookerBook('bookContent3', solarBookData.diy);
+            
+            console.log('☀️ Solar Cooking Educational Platform Initialized Successfully');
+        });
+    </script>
+</body>
+</html>

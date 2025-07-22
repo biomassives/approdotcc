@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default('en') }}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.soakpit_title | default(page.title) }} • {{ config.site_name }}</title>
+  <meta name="description" content="{{ page.meta_description | default(page.soakpit_intro) }}" />
+  <link rel="stylesheet" href="{{ assets.main_css | default('/soaky.css') }}" />
+  <meta property="og:image" content="{{ page.og_image | default('/images/wasstewater256.webp') }}">
+  <meta property="og:title" content="{{ page.og_title | default(page.title) }}">
+  <meta name="theme-color" content="{{ site.theme_color | default('#2c7a7b') }}" />
+</head>
+
+<body>
+  <header class="page-header">
+    <div class="logo">
+      <a href="{{ navigation.home_url | default('/') }}">
+        <img src="{{ assets.favicon | default('/images/favicon.webp') }}" alt="Home" width="32" />
+      </a>
+    </div>
+    <h1>{{ page.title | default('Soak Pit Wastewater Solutions') }}</h1>
+    <nav class="top-nav">
+      {% for link in navigation.links %}
+      <a href="{{ link.url }}">{{ link.title }}</a>
+      {% endfor %}
+    </nav>
+  </header>
+
+  <main class="content-wrapper">
+    <section class="hero">
+      <img src="{{ page.hero_image | default('/images/wasstewater256.png') }}" alt="{{ page.hero_alt | default('Wastewater Management Icon') }}" class="hero-icon" />
+      <h2>{{ page.soakpit_intro }}</h2>
+    </section>
+
+    <section class="description">
+      <p>{{ page.description | default(page.soakpit_intro) }}</p>
+    </section>
+
+    <section class="video-section">
+      <h3>{{ page.video_section_title | default('Soak Pit Animation') }}</h3>
+      <div class="video-container">
+        <video controls preload="metadata" width="100%" height="auto" poster="{{ page.video_poster | default('/images/soakpit_thumb.jpg') }}">
+          <source src="{{ page.video_link }}" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+      </div>
+    </section>
+
+    <section class="construction-tips">
+      <h3>{{ page.tips_title | default('Construction Tips') }}</h3>
+      <ul>
+        {% for tip in page.tips %}
+        <li>{{ tip }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <div class="home-icon-links">
+      {% for icon in navigation.icons %}
+      <a href="{{ icon.url }}"><img src="{{ icon.src }}" width="48" alt="{{ icon.alt }}" /></a>
+      {% endfor %}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>{{ footer.text | default('&copy; 2025 ' ~ config.site_name ~ ' • Sharing knowledge benefits vulnerable communities.') | safe }}</p>
+  </footer>
+</body>
+</html>
+

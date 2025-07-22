@@ -1,0 +1,446 @@
+{
+  "en": {
+    "config": {
+      "site_name": "Appro Community Connector",
+      "favicon": "/images/favicon.webp",
+      "main_css": "/soaky.css",
+      "navigation": {
+        "home_url": "/",
+        "links": [
+          {
+            "title": "Waste to Fuel",
+            "url": "waste.html"
+          },
+          {
+            "title": "Water to Drink",
+            "url": "water.html"
+          },
+          {
+            "title": "Cooking with Sunshine",
+            "url": "solarcooking.html"
+          }
+        ]
+      },
+      "footer": {
+        "text": "<p>© 2025 Appro Community Connector • Sharing knowledge benefits vulnerable communities.</p>"
+      }
+    },
+    "pages": [
+      {
+        "slug": "soakpit",
+        "title": "Soak Pit Wastewater Solutions",
+        "intro_text": "Natural filtration for greywater disposal—simple, effective, and low-cost.",
+        "videos": [
+          {
+            "title": "Soak Pit Animation",
+            "video_link": "https://archive.org/download/soakpit-demo/soakpit-demo.mp4",
+            "poster_image": "/images/soakpit_thumb.jpg"
+          }
+        ],
+        "content_blocks": [
+          {
+            "type": "hero",
+            "image_url": "/images/wasstewater256.png",
+            "alt_text": "Wastewater Management Icon"
+          },
+          {
+            "type": "panel_grid",
+            "panels": [
+              {
+                "title": "Why Use Soak Pits?",
+                "summary": "...",
+                "image_url": "..."
+              },
+              {
+                "title": "How It Works",
+                "summary": "...",
+                "image_url": "..."
+              },
+              {
+                "title": "Maintenance",
+                "summary": "...",
+                "image_url": "..."
+              }
+            ]
+          },
+          {
+            "type": "list",
+            "title": "Construction Tips",
+            "items": [
+              "Dig a pit about 1 m wide × 1 m deep, then fill with stones or gravel.",
+              "Line the bottom with sand to slow down filtration and prevent wash-through.",
+              "Insert a perforated drum or plastic basket to stop solids from clogging the pit.",
+              "Cover with a concrete slab or secure metal mesh for child and animal safety."
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "water_security",
+        "title": "Household Water Security",
+        "intro_text": "Low-cost methods to collect, purify, and store safe drinking water.",
+        "videos": [
+          {
+            "title": "How to Build a Biosand Filter",
+            "video_link": "https://www.youtube.com/watch?v=pqzqJ6y7iKQ",
+            "description": "Step-by-step demonstration of a family-scale biosand water filter."
+          }
+        ],
+        "content_blocks": [
+          {
+            "type": "hero",
+            "image_url": "/images/water_security256.png",
+            "alt_text": "Water Security Icon"
+          },
+          {
+            "type": "panel_grid",
+            "panels": [
+              {
+                "title": "Collection",
+                "summary": "...",
+                "image_url": "..."
+              },
+              {
+                "title": "Treatment",
+                "summary": "...",
+                "image_url": "..."
+              },
+              {
+                "title": "Safe Storage",
+                "summary": "...",
+                "image_url": "..."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "solar_cooker",
+        "title": "How To Use & Build a Solar Cooker",
+        "intro_text": "Solar cooking uses reflective or insulating designs to trap sunlight as heat.",
+        "videos": [],
+        "content_blocks": [
+          {
+            "type": "hero",
+            "image_url": "/images/solar_cooker256.png",
+            "alt_text": "Solar Cooker Icon"
+          },
+          {
+            "type": "key_value_list",
+            "title": "Cooker Types",
+            "items": [
+              {
+                "name": "Panel Cooker",
+                "description": "Folds reflective panels around a dark pot—great for simmering."
+              },
+              {
+                "name": "Box Cooker",
+                "description": "Insulated box with glazing; reaches higher temperatures for baking."
+              },
+              {
+                "name": "Parabolic Dish",
+                "description": "Concentrates strong heat for frying or boiling quickly."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sp": {
+    "config": {
+      "site_name": "Centro de Appro-Tech",
+      "favicon": "/images/favicon.webp",
+      "main_css": "/soaky.css",
+      "navigation": {
+        "home_url": "/",
+        "links": [
+          {
+            "title": "Residuos a Combustible",
+            "url": "waste.html"
+          },
+          {
+            "title": "Agua Potable",
+            "url": "water.html"
+          },
+          {
+            "title": "Cocina Solar",
+            "url": "solarcooking.html"
+          }
+        ]
+      },
+      "footer": {
+        "text": "<p>© 2025 Centro de Appro-Tech • Compartiendo conocimientos para comunidades vulnerables.</p>"
+      }
+    },
+    "pages": [
+      {
+        "slug": "soakpit",
+        "title": "Soluciones de Pozos de Absorción",
+        "intro_text": "Filtración natural de aguas grises—simple, eficaz y de bajo costo.",
+        "videos": [
+          {
+            "title": "Animación del Pozo de Absorción",
+            "video_link": "https://archive.org/download/soakpit-demo/soakpit-demo.mp4",
+            "poster_image": "/images/soakpit_thumb.jpg"
+          }
+        ],
+        "content_blocks": [
+          {
+            "type": "hero",
+            "image_url": "/images/wasstewater256.png",
+            "alt_text": "Icono de Gestión de Aguas Residuales"
+          },
+          {
+            "type": "panel_grid",
+            "panels": [
+              {
+                "title": "¿Por Qué Pozos de Absorción?",
+                "summary": "...",
+                "image_url": "..."
+              },
+              {
+                "title": "Cómo Funciona",
+                "summary": "...",
+                "image_url": "..."
+              },
+              {
+                "title": "Mantenimiento",
+                "summary": "...",
+                "image_url": "..."
+              }
+            ]
+          },
+          {
+            "type": "list",
+            "title": "Consejos de Construcción",
+            "items": [
+              "Excavar un pozo de aprox. 1 m ancho × 1 m profundo y llenarlo con piedras o grava.",
+              "Forrar el fondo con arena para controlar la velocidad de filtración.",
+              "Colocar un tambor perforado o cesta de plástico para evitar obstrucciones.",
+              "Cubrir con una losa de concreto o malla metálica para seguridad."
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "water_security",
+        "title": "Seguridad Hídrica Doméstica",
+        "intro_text": "Métodos de bajo costo para recolectar, purificar y almacenar agua segura.",
+        "videos": [
+          {
+            "title": "Cómo Construir un Filtro Biosand",
+            "video_link": "https://www.youtube.com/watch?v=pqzqJ6y7iKQ",
+            "description": "Demostración paso a paso de un filtro biosand a escala familiar."
+          }
+        ],
+        "content_blocks": [
+          {
+            "type": "hero",
+            "image_url": "/images/water_security256.png",
+            "alt_text": "Icono de Seguridad del Agua"
+          },
+          {
+            "type": "panel_grid",
+            "panels": [
+              {
+                "title": "Recolección",
+                "summary": "...",
+                "image_url": "..."
+              },
+              {
+                "title": "Tratamiento",
+                "summary": "...",
+                "image_url": "..."
+              },
+              {
+                "title": "Almacenamiento Seguro",
+                "summary": "...",
+                "image_url": "..."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "solar_cooker",
+        "title": "Cómo Usar y Construir un Cocedor Solar",
+        "intro_text": "La cocción solar aprovecha la luz para generar calor. Reduce costos de combustible, humo y deforestación.",
+        "videos": [],
+        "content_blocks": [
+          {
+            "type": "hero",
+            "image_url": "/images/solar_cooker256.png",
+            "alt_text": "Icono de Cocción Solar"
+          },
+          {
+            "type": "key_value_list",
+            "title": "Tipos de Cocedores",
+            "items": [
+              {
+                "name": "Cocedor de Panel",
+                "description": "Paneles reflectantes alrededor de una olla oscura—ideal para guisos."
+              },
+              {
+                "name": "Horno de Caja",
+                "description": "Caja aislada con vidrio; alcanza temperaturas para hornear."
+              },
+              {
+                "name": "Parabólico",
+                "description": "Concentra calor fuerte para hervir o freír rápido."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "ar": {
+    "config": {
+      "site_name": "رابط مجتمع آبرو",
+      "favicon": "/images/favicon.webp",
+      "main_css": "/soaky.css",
+      "navigation": {
+        "home_url": "/",
+        "links": [
+          {
+            "title": "من النفايات إلى وقود",
+            "url": "waste.html"
+          },
+          {
+            "title": "ماء صالح للشرب",
+            "url": "water.html"
+          },
+          {
+            "title": "الطهي بالطاقة الشمسية",
+            "url": "solarcooking.html"
+          }
+        ]
+      },
+      "footer": {
+        "text": "<p>© 2025 رابط مجتمع آبرو • مشاركة المعرفة تفيد المجتمعات الضعيفة.</p>"
+      }
+    },
+    "pages": [
+      {
+        "slug": "soakpit",
+        "title": "حلول حفرة الامتصاص للمياه العادمة",
+        "intro_text": "ترشيح طبيعي للتخلص من المياه الرمادية—بسيط وفعال ومنخفض التكلفة.",
+        "videos": [
+          {
+            "title": "رسوم متحركة لحفرة الامتصاص",
+            "video_link": "https://archive.org/download/soakpit-demo/soakpit-demo.mp4",
+            "poster_image": "/images/soakpit_thumb.jpg"
+          }
+        ],
+        "content_blocks": [
+          {
+            "type": "hero",
+            "image_url": "/images/wasstewater256.png",
+            "alt_text": "أيقونة إدارة المياه العادمة"
+          },
+          {
+            "type": "panel_grid",
+            "panels": [
+              {
+                "title": "لماذا نستخدم حفر الامتصاص؟",
+                "summary": "...",
+                "image_url": "..."
+              },
+              {
+                "title": "كيف تعمل",
+                "summary": "...",
+                "image_url": "..."
+              },
+              {
+                "title": "الصيانة",
+                "summary": "...",
+                "image_url": "..."
+              }
+            ]
+          },
+          {
+            "type": "list",
+            "title": "نصائح للبناء",
+            "items": [
+              "احفر حفرة بعرض 1 متر وعمق 1 متر، ثم املأها بالحجارة أو الحصى.",
+              "بطّن القاع بالرمل لإبطاء الترشيح.",
+              "ضع برميلًا مثقوبًا أو سلة بلاستيكية لمنع انسداد الحفرة بالمواد الصلبة.",
+              "غطها بلوح خرساني أو شبكة معدنية آمنة."
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "water_security",
+        "title": "الأمن المائي المنزلي",
+        "intro_text": "طرق منخفضة التكلفة لجمع وتنقية وتخزين مياه الشرب الآمنة.",
+        "videos": [
+          {
+            "title": "كيفية بناء مرشح رملي حيوي",
+            "video_link": "https://www.youtube.com/watch?v=pqzqJ6y7iKQ",
+            "description": "شرح تفصيلي خطوة بخطوة لمرشح مياه رملي حيوي بحجم عائلي."
+          }
+        ],
+        "content_blocks": [
+          {
+            "type": "hero",
+            "image_url": "/images/water_security256.png",
+            "alt_text": "أيقونة الأمن المائي"
+          },
+          {
+            "type": "panel_grid",
+            "panels": [
+              {
+                "title": "التجميع",
+                "summary": "...",
+                "image_url": "..."
+              },
+              {
+                "title": "المعالجة",
+                "summary": "...",
+                "image_url": "..."
+              },
+              {
+                "title": "التخزين الآمن",
+                "summary": "...",
+                "image_url": "..."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slug": "solar_cooker",
+        "title": "كيفية استخدام وبناء طباخ شمسي",
+        "intro_text": "يستخدم الطهي الشمسي تصميمات عاكسة أو عازلة لاحتجاز ضوء الشمس كحرارة.",
+        "videos": [],
+        "content_blocks": [
+          {
+            "type": "hero",
+            "image_url": "/images/solar_cooker256.png",
+            "alt_text": "أيقونة الطباخ الشمسي"
+          },
+          {
+            "type": "key_value_list",
+            "title": "أنواع الطباخات",
+            "items": [
+              {
+                "name": "طباخ الألواح",
+                "description": "ألواح عاكسة تُحيط بقدرٍ داكن — مناسب للطهي البطيء."
+              },
+              {
+                "name": "طباخ الصندوق",
+                "description": "صندوق معزول بزجاج علوي؛ يصل إلى درجات حرارة أعلى للخبز."
+              },
+              {
+                "name": "الطبق القطعي المكافئ",
+                "description": "يركز الأشعة للحصول على حرارة قوية للقلي أو الغلي السريع."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

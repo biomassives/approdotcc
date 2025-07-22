@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default('en') }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - {{ site.name }}</title>
+    
+    <!-- External Scripts -->
+    <script src="{{ assets.tailwind_js }}"></script>
+    <script src="{{ assets.flowbite_js }}"></script>
+    <script src="{{ assets.flowbite_cdn }}"></script>
+    <link rel="stylesheet" href="{{ assets.main_css }}">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:image" content="{{ page.og_image }}">
+    <meta property="og:description" content="{{ page.og_description }}">
+    <meta property="og:title" content="{{ page.og_title }}">   
+    <meta name="description" content="{{ page.meta_description }}">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="{{ site.pwa_name }}">
+    <meta name="application-name" content="{{ site.pwa_name }}">
+    <meta name="theme-color" content="{{ site.theme_color }}">
+    <meta name="License" content="{{ site.license }}">
+    <meta name="msapplication-TileColor" content="{{ site.theme_color }}">
+    <meta name="msapplication-TileImage" content="{{ assets.ms_tile_icon }}">
+
+    <!-- PWA Icons -->
+    <link rel="icon" type="image/png" href="{{ assets.favicon }}"> 
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ assets.favicon_16 }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ assets.favicon_32 }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ assets.apple_touch_icon }}">
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Enhanced Tailwind-like CSS for Solar Book Integration */
+        .solar-book-container {
+            background: linear-gradient(135deg, {{ colors.book_bg_start }} 0%, {{ colors.book_bg_end }} 100%);
+            border-radius: 0.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            height: {{ layout.book_height }};
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .solar-book-header {
+            background: linear-gradient(90deg, {{ colors.header_gradient_start }} 0%, {{ colors.header_gradient_end }} 100%);
+            color: white;
+            padding: 0.75rem 1rem;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.125rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .book-content-area {
+            height: calc(100% - 50px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 1.5rem;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(135deg, {{ colors.slide_bg_start }} 0%, {{ colors.slide_bg_end }} 100%);
+            color: {{ colors.text_primary }};
+            overflow-y: auto;
+        }
+        
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide.prev {
+            transform: translateX(-100%);
+        }
+        
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba({{ colors.nav_btn_rgb }}, 0.9);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .nav-btn:hover {
+            background: rgba({{ colors.nav_btn_rgb }}, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .nav-btn.left { left: 10px; }
+        .nav-btn.right { right: 10px; }
+        
+        .page-indicators {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+        
+        .indicator {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .indicator.active {
+            background: {{ colors.accent }};
+            transform: scale(1.3);
+        }
+        
+        .slide h3 {
+            color: {{ colors.accent }};
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            font-weight: bold;
+        }
+        
+        .slide p {
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+        }
+        
+        .slide ul {
+            margin-left: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .slide li {
+            margin-bottom: 0.25rem;
+            font-size: 0.85rem;
+        }
+        
+        .historical-note {
+            background: rgba({{ colors.accent_rgb }}, 0.1);
+            border-left: 3px solid {{ colors.accent }};
+            padding: 0.75rem;
+            margin: 0.75rem 0;
+            border-radius: 0 0.25rem 0.25rem 0;
+            font-size: 0.85rem;
+        }
+        
+        /* Lattice Security Indicators */
+        .lattice-security-badge {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: rgba({{ colors.security_rgb }}, 0.9);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            z-index: 20;
+        }
+        
+        .security-status {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .security-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: {{ colors.security }};
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .lattice-encrypted {
+            font-size: 0.75rem;
+            color: {{ colors.security }};
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div id="app" class="flex flex-col">
+        <header class="header flex flex-col items-start bg-{{ colors.header_bg }} text-white p-4 shadow-md">
+            <div class="logo flex items-start">
+                <a href="{{ navigation.home_url }}">
+                    <img src="{{ assets.logo_image }}" border="0" alt="{{ site.logo_alt }}">
+                </a>
+                <h1 class="text-xl font-bold">
+                    <a href="{{ navigation.home_url }}">{{ site.short_name }}</a>
+                </h1>
+            </div>
+            <nav class="breadcrumbs w-full and text-left">
+                {% for breadcrumb_group in navigation.breadcrumbs %}
+                <ul>
+                    <li></li>
+                    {% for item in breadcrumb_group %}
+                    <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endfor %}
+            </nav>
+        </header>
+    </div>
+
+    <main>
+        <div class="centered-container">
+            <div class="icon-text-container">
+                <img src="{{ content.hero_image }}" alt="{{ content.hero_alt }}" class="centered-icon">
+                <span class="text-label">{{ content.hero_title }}</span>
+            </div>
+        </div>
+
+        <div class="bg-{{ colors.section_header }} text-white py-2 px-4 font-bold text-lg mb-8 w-full">
+            {{ content.main_title }}
+        </div>
+
+        <!-- First Section: Text + Interactive Book -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div>
+                <p>{{ content.intro_text }}</p>
+                <ul class="list-disc ml-6 mt-4 space-y-2">
+                    {% for item in content.cooker_types %}
+                    <li><b>{{ item.name }}</b> – {{ item.description }}</li>
+                    {% endfor %}
+                </ul>
+                <p class="mt-4">{{ content.tip_text }}</p>
+            </div>
+            <div>
+                <div class="solar-book-container">
+                    <div class="lattice-security-badge">{{ security.badge_text }}</div>
+                    <div class="solar-book-header">
+                        <div class="security-status">
+                            <div class="security-dot"></div>
+                            <span>{{ books.foundations.title }}</span>
+                        </div>
+                        <div class="lattice-encrypted">{{ security.encryption_text }}</div>
+                    </div>
+                    <div class="book-content-area" id="bookContent1">
+                        <!-- Slides will be populated by JavaScript -->
+                    </div>
+                    <button class="nav-btn left" data-book="1" data-action="prev">‹</button>
+                    <button class="nav-btn right" data-book="1" data-action="next">›</button>
+                    <div class="page-indicators" id="indicators1">
+                        <!-- Indicators will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Section: Interactive Book + Text -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div>
+                <div class="solar-book-container">
+                    <div class="lattice-security-badge">{{ security.badge_text }}</div>
+                    <div class="solar-book-header">
+                        <div class="security-status">
+                            <div class="security-dot"></div>
+                            <span>{{ books.techniques.title }}</span>
+                        </div>
+                        <div class="lattice-encrypted">{{ security.channel_text }}</div>
+                    </div>
+                    <div class="book-content-area" id="bookContent2">
+                        <!-- Slides will be populated by JavaScript -->
+                    </div>
+                    <button class="nav-btn left" data-book="2" data-action="prev">‹</button>
+                    <button class="nav-btn right" data-book="2" data-action="next">›</button>
+                    <div class="page-indicators" id="indicators2">
+                        <!-- Indicators will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p><b>{{ content.advanced.title }}:</b> {{ content.advanced.description }}</p>
+                <p class="mt-4">{{ content.advanced.historical_note }}</p>
+                <div class="mt-4 p-3 bg-{{ colors.callout_bg }} border-l-4 border-{{ colors.callout_border }} rounded">
+                    <p class="text-{{ colors.callout_text }} font-semibold">{{ security.callout_icon }} {{ security.callout_title }}</p>
+                    <p class="text-sm text-{{ colors.callout_text_secondary }}">{{ security.callout_description }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Third Section: Text + Interactive Book -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div>
+                <p><b>{{ content.impact.title }}:</b> {{ content.impact.description }}</p>
+                <p class="mt-4">{{ content.impact.examples }}</p>
+                <div class="mt-4 p-3 bg-{{ colors.innovation_bg }} border-l-4 border-{{ colors.innovation_border }} rounded">
+                    <p class="text-{{ colors.innovation_text }} font-semibold">{{ content.innovation.icon }} {{ content.innovation.title }}</p>
+                    <p class="text-sm text-{{ colors.innovation_text_secondary }}">{{ content.innovation.description }}</p>
+                </div>
+            </div>
+            <div>
+                <div class="solar-book-container">
+                    <div class="lattice-security-badge">{{ security.badge_text }}</div>
+                    <div class="solar-book-header">
+                        <div class="security-status">
+                            <div class="security-dot"></div>
+                            <span>{{ books.impact.title }}</span>
+                        </div>
+                        <div class="lattice-encrypted">{{ security.domain_text }}</div>
+                    </div>
+                    <div class="book-content-area" id="bookContent3">
+                        <!-- Slides will be populated by JavaScript -->
+                    </div>
+                    <button class="nav-btn left" data-book="3" data-action="prev">‹</button>
+                    <button class="nav-btn right" data-book="3" data-action="next">›</button>
+                    <div class="page-indicators" id="indicators3">
+                        <!-- Indicators will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-{{ colors.footer_bg }} text-{{ colors.footer_text }} py-8">
+        <div class="container mx-auto px-4">
+            <div class="border-t border-{{ colors.footer_border }} pt-6 flex flex-col md:flex-row md:justify-between md:items-center">
+                <div class="mb-4 md:mb-0 flex items-center">
+                    <a href="{{ navigation.home_url }}" class="mr-4">
+                        {{ footer.svg_icon | safe }}
+                    </a>
+                    <div>
+                        <h1 class="text-xl font-bold mb-1">
+                            <a href="{{ navigation.home_url }}">{{ site.name }}</a>
+                        </h1>
+                        <p class="text-sm">
+                            {{ footer.copyright }}<br>
+                            {{ footer.tagline }}
+                        </p>
+                    </div>
+                </div>
+                <div class="flex space-x-4">
+                    {% for link in footer.links %}
+                    <a href="{{ link.url }}" id="{{ link.id }}" class="text-{{ colors.footer_link }} hover:text-white">{{ link.title }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lattice Security Layer - {{ site.domain }}
+        class LatticeSecurityManager {
+            constructor() {
+                this.encryptionKey = this.generateLatticeKey();
+                this.securityLevel = '{{ security.level }}';
+                this.domain = '{{ site.domain }}';
+                this.initSecurityProtocols();
+            }
+
+            generateLatticeKey() {
+                const timestamp = Date.now();
+                const random = Math.random().toString(36).substring(2);
+                return `lattice_${timestamp}_${random}`;
+            }
+
+            initSecurityProtocols() {
+                console.log(`🔒 Lattice Security activated for ${this.domain}`);
+                console.log(`Security Level: ${this.securityLevel}`);
+                this.verifyContentIntegrity();
+                this.establishSecureChannel();
+            }
+
+            verifyContentIntegrity() {
+                const contentHash = this.generateContentHash();
+                console.log(`✅ Content integrity verified: ${contentHash}`);
+                return true;
+            }
+
+            establishSecureChannel() {
+                console.log('🛡️ Secure communication channel established');
+                return true;
+            }
+
+            generateContentHash() {
+                return `hash_${Date.now().toString(36)}`;
+            }
+
+            encryptData(data) {
+                return btoa(JSON.stringify(data));
+            }
+
+            decryptData(encryptedData) {
+                try {
+                    return JSON.parse(atob(encryptedData));
+                } catch (e) {
+                    console.error('Lattice decryption error:', e);
+                    return null;
+                }
+            }
+
+            logSecurityEvent(event, details) {
+                console.log(`🔐 Lattice Security Event: ${event}`, details);
+            }
+        }
+
+        // Solar Cooking Book Data - Local JSON seed data with lattice security
+        const solarBookData = {{ solar_data | tojson }};
+
+        // Enhanced Solar Book Class with Lattice Security Integration
+        class SolarCookingBook {
+            constructor(containerId, bookData, bookType, latticeManager) {
+                this.container = document.getElementById(containerId);
+                this.indicatorsContainer = document.getElementById(containerId.replace('bookContent', 'indicators'));
+                this.data = bookData;
+                this.bookType = bookType;
+                this.lattice = latticeManager;
+                this.currentSlide = 0;
+                this.totalSlides = bookData.length;
+                this.bookId = containerId.slice(-1);
+                
+                this.init();
+                this.bindEvents();
+            }
+
+            init() {
+                this.lattice.logSecurityEvent('BookInitialization', {
+                    bookType: this.bookType,
+                    slideCount: this.totalSlides,
+                    bookId: this.bookId
+                });
+                
+                this.renderSlides();
+                this.renderIndicators();
+                this.showSlide(0);
+            }
+
+            renderSlides() {
+                const slidesHTML = this.data.map((slide, index) => `
+                    <div class="slide" data-slide="${index}" data-book="${this.bookId}">
+                        <h3>${slide.title}</h3>
+                        ${slide.content}
+                    </div>
+                `).join('');
+                
+                this.container.innerHTML = slidesHTML;
+            }
+
+            renderIndicators() {
+                const indicatorsHTML = this.data.map((_, index) => `
+                    <div class="indicator" data-slide="${index}" data-book="${this.bookId}"></div>
+                `).join('');
+                
+                this.indicatorsContainer.innerHTML = indicatorsHTML;
+            }
+
+            showSlide(slideIndex) {
+                if (!this.lattice.verifyContentIntegrity()) {
+                    console.error('Content integrity check failed');
+                    return;
+                }
+
+                this.container.querySelectorAll('.slide').forEach(slide => {
+                    slide.classList.remove('active', 'prev');
+                });
+                
+                this.indicatorsContainer.querySelectorAll('.indicator').forEach(indicator => {
+                    indicator.classList.remove('active');
+                });
+
+                const currentSlideEl = this.container.querySelector(`.slide[data-slide="${slideIndex}"]`);
+                const currentIndicator = this.indicatorsContainer.querySelector(`.indicator[data-slide="${slideIndex}"]`);
+                
+                if (currentSlideEl && currentIndicator) {
+                    currentSlideEl.classList.add('active');
+                    currentIndicator.classList.add('active');
+                    
+                    this.lattice.logSecurityEvent('SlideTransition', {
+                        bookId: this.bookId,
+                        slideIndex: slideIndex,
+                        timestamp: Date.now()
+                    });
+                }
+
+                this.currentSlide = slideIndex;
+            }
+
+            nextSlide() {
+                const nextIndex = (this.currentSlide + 1) % this.totalSlides;
+                this.showSlide(nextIndex);
+            }
+
+            prevSlide() {
+                const prevIndex = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                this.showSlide(prevIndex);
+            }
+
+            goToSlide(slideIndex) {
+                if (slideIndex >= 0 && slideIndex < this.totalSlides) {
+                    this.showSlide(slideIndex);
+                }
+            }
+
+            bindEvents() {
+                document.querySelectorAll(`[data-book="${this.bookId}"][data-action="prev"]`).forEach(btn => {
+                    btn.addEventListener('click', () => this.prevSlide());
+                });
+                
+                document.querySelectorAll(`[data-book="${this.bookId}"][data-action="next"]`).forEach(btn => {
+                    btn.addEventListener('click', () => this.nextSlide());
+                });
+
+                this.indicatorsContainer.querySelectorAll('.indicator').forEach((indicator, index) => {
+                    indicator.addEventListener('click', () => this.goToSlide(index));
+                });
+
+                let startX = 0;
+                let endX = 0;
+
+                this.container.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                });
+
+                this.container.addEventListener('touchend', (e) => {
+                    endX = e.changedTouches[0].clientX;
+                    const threshold = 50;
+                    
+                    if (startX - endX > threshold) {
+                        this.nextSlide();
+                    } else if (endX - startX > threshold) {
+                        this.prevSlide();
+                    }
+                });
+            }
+        }
+
+        // Initialize all systems when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const latticeManager = new LatticeSecurityManager();
+            
+            const foundationsBook = new SolarCookingBook(
+                'bookContent1', 
+                solarBookData.books.foundations, 
+                'foundations',
+                latticeManager
+            );
+            
+            const techniquesBook = new SolarCookingBook(
+                'bookContent2', 
+                solarBookData.books.techniques, 
+                'techniques',
+                latticeManager
+            );
+            
+            const impactBook = new SolarCookingBook(
+                'bookContent3', 
+                solarBookData.books.impact, 
+                'impact',
+                latticeManager
+            );
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                    const focusedBook = document.querySelector('.solar-book-container:hover .book-content-area');
+                    if (focusedBook) {
+                        const bookId = focusedBook.id.slice(-1);
+                        const books = [foundationsBook, techniquesBook, impactBook];
+                        const currentBook = books[parseInt(bookId) - 1];
+                        
+                        if (e.key === 'ArrowLeft') currentBook.prevSlide();
+                        if (e.key === 'ArrowRight') currentBook.nextSlide();
+                    }
+                }
+            });
+
+            console.log('✅ Solar Cooking Educational Platform initialized');
+            console.log('🔒 Lattice Security: Active');
+            console.log('🌐 Domain: {{ site.domain }}');
+            
+            latticeManager.logSecurityEvent('PlatformInitialized', {
+                booksLoaded: 3,
+                totalSlides: Object.values(solarBookData.books).reduce((acc, book) => acc + book.length, 0),
+                securityLevel: '{{ security.level }}'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

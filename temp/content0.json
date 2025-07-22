@@ -1,12 +1,12 @@
 {
   "en": {
     "lang": "en",
-    "soakpit_title": "SoakPit",
+    "soakpit_title": "Soak Pit",
     "soakpit_intro": "A soak pit helps manage wastewater through infiltration.",
     "soakpit_videos": [
       {
-        "title": "How to Make a Soakaway Pit (soakpit construction)",
-        "description": "Step-by-step tutorial showing how to build a soak pit to infiltrate gray water and prevent runoff.",
+        "title": "How to Make a Soakaway Pit (soak pit construction)",
+        "description": "Step‑by‑step tutorial showing how to build a soak pit to infiltrate graywater and prevent runoff.",
         "video_link": "https://www.youtube.com/watch?v=R1fjQL0SoE8",
         "transcription_link": "https://www.youtube.com/api/timedtext?lang=en&v=R1fjQL0SoE8",
         "check_data_link": "https://www.youtube.com/watch?v=R1fjQL0SoE8"
@@ -23,8 +23,8 @@
     "mycelium_intro": "Mycelium helps remediate waste and build soil.",
     "mycelium_videos": [
       {
-        "title": "Paul Stamets – Environmental Remediation using Mycelium",
-        "description": "Mycologist Paul Stamets explains how fungi break down pollutants in oil-contaminated soil.",
+        "title": "Paul Stamets – Environmental Remediation using Mycelium",
+        "description": "Mycologist Paul Stamets explains how fungi break down pollutants in oil‑contaminated soil.",
         "video_link": "https://www.youtube.com/watch?v=lJHXkfNCl5E",
         "transcription_link": "https://www.youtube.com/api/timedtext?lang=en&v=lJHXkfNCl5E",
         "check_data_link": "https://www.youtube.com/watch?v=lJHXkfNCl5E"
@@ -36,8 +36,48 @@
         "transcription_link": "https://www.youtube.com/api/timedtext?lang=en&v=w4k5pkL5Me4",
         "check_data_link": "https://www.youtube.com/watch?v=w4k5pkL5Me4"
       }
+    ]
+  },
+  "sp": {
+    "lang": "sp",
+    "soakpit_title": "Pozo de Absorción",
+    "soakpit_intro": "Un pozo de absorción maneja aguas residuales por infiltración.",
+    "soakpit_videos": [
+      {
+        "title": "How to Make a Soakaway Pit (soak pit construction)",
+        "description": "Tutorial paso a paso para construir un pozo de absorción y evitar el escurrimiento de aguas grises.",
+        "video_link": "https://www.youtube.com/watch?v=R1fjQL0SoE8",
+        "transcription_link": "https://www.youtube.com/api/timedtext?lang=es&v=R1fjQL0SoE8",
+        "check_data_link": "https://www.youtube.com/watch?v=R1fjQL0SoE8"
+      },
+      {
+        "title": "What is a Soak Pit? Working & Types",
+        "description": "Resumen de los tipos de pozos de absorción, su funcionamiento y aplicaciones.",
+        "video_link": "https://www.youtube.com/watch?v=OkURVGlGgRY",
+        "transcription_link": "https://www.youtube.com/api/timedtext?lang=es&v=OkURVGlGgRY",
+        "check_data_link": "https://www.youtube.com/watch?v=OkURVGlGgRY"
+      }
     ],
-    "biodiversity_page": {
+    "mycelium_title": "Uso de Micelio",
+    "mycelium_intro": "El micelio ayuda a tratar desechos y mejorar el suelo.",
+    "mycelium_videos": [
+      {
+        "title": "Paul Stamets – Environmental Remediation using Mycelium",
+        "description": "El micólogo Paul Stamets explica cómo los hongos degradan contaminantes en suelos contaminados con petróleo.",
+        "video_link": "https://www.youtube.com/watch?v=lJHXkfNCl5E",
+        "transcription_link": "https://www.youtube.com/api/timedtext?lang=es&v=lJHXkfNCl5E",
+        "check_data_link": "https://www.youtube.com/watch?v=lJHXkfNCl5E"
+      },
+      {
+        "title": "Using Fungi to Clean Contaminated Sites",
+        "description": "Proyectos de micorremediación para tratar sitios tóxicos y contaminados.",
+        "video_link": "https://www.youtube.com/watch?v=w4k5pkL5Me4",
+        "transcription_link": "https://www.youtube.com/api/timedtext?lang=es&v=w4k5pkL5Me4",
+        "check_data_link": "https://www.youtube.com/watch?v=w4k5pkL5Me4"
+      }
+    ]
+  },
+"biodiversity_page": {
       "title": "On-Chain Biodiversity Monitoring",
       "intro_text": "Using decentralized technology to promote transparency and education in biodiversity conservation efforts.",
       "featured_species": [
@@ -63,18 +103,8 @@
     "soakpit_intro": "Un pozo de absorción maneja aguas residuales por infiltración.",
     "soakpit_videos": [
       {
-        "title": "How to Make a Soakaway Pit (soakpit construction)",
-        "description": "Tutorial paso a paso para construir un pozo de absorción y evitar el escurrimiento de aguas grises.",
-        "video_link": "https://www.youtube.com/watch?v=R1fjQL0SoE8",
-        "transcription_link": "https://www.youtube.com/api/timedtext?lang=es&v=R1fjQL0SoE8",
-        "check_data_link": "https://www.youtube.com/watch?v=R1fjQL0SoE8"
-      },
-      {
-        "title": "What is a Soak Pit? Working & Types",
-        "description": "Resumen de los tipos de pozos de absorción, su funcionamiento y aplicaciones.",
-        "video_link": "https://www.youtube.com/watch?v=OkURVGlGgRY",
-        "transcription_link": "https://www.youtube.com/api/timedtext?lang=es&v=OkURVGlGgRY",
-        "check_data_link": "https://www.youtube.com/watch?v=OkURVGlGgRY"
+        "title": "How to Make a Soakaway Pit (soak pit construction)",
+        "video_link": "https://www.youtube.com/watch?v=R1fjQL0SoE8"
       }
     ],
     "mycelium_title": "Uso de Micelio",
@@ -82,17 +112,7 @@
     "mycelium_videos": [
       {
         "title": "Paul Stamets – Environmental Remediation using Mycelium",
-        "description": "El micólogo Paul Stamets explica cómo los hongos degradan contaminantes en suelos contaminados con petróleo.",
-        "video_link": "https://www.youtube.com/watch?v=lJHXkfNCl5E",
-        "transcription_link": "https://www.youtube.com/api/timedtext?lang=es&v=lJHXkfNCl5E",
-        "check_data_link": "https://www.youtube.com/watch?v=lJHXkfNCl5E"
-      },
-      {
-        "title": "Using Fungi to Clean Contaminated Sites",
-        "description": "Proyectos de micorremediación para tratar sitios tóxicos y contaminados.",
-        "video_link": "https://www.youtube.com/watch?v=w4k5pkL5Me4",
-        "transcription_link": "https://www.youtube.com/api/timedtext?lang=es&v=w4k5pkL5Me4",
-        "check_data_link": "https://www.youtube.com/watch?v=w4k5pkL5Me4"
+        "video_link": "https://www.youtube.com/watch?v=lJHXkfNCl5E"
       }
     ],
     "biodiversity_page": {
@@ -109,10 +129,9 @@
           "name": "Mariposa Monarca",
           "status": "En Peligro",
           "image_url": "/images/monarch.jpg",
-          "description": "Conocida por su migración de larga distancia, su supervivencia está amenazada por la pérdida de hábitat y el cambio climático."
+          "description": "Conocidas por su migración de larga distancia, su supervivencia está amenazada por la pérdida de hábitat y el cambio climático."
         }
       ]
     }
-  }
 }
 
