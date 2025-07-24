@@ -175,16 +175,117 @@
 
   <div class="max-w-5xl mx-auto">
 
-    <!-- Video player -->
+
+   <style>
+        /* Optional: Basic styling for better presentation of fallback links */
+        #fallbackLinks {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            font-family: sans-serif;
+            color: #333;
+        }
+        #fallbackLinks p {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        #fallbackLinks ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #fallbackLinks li {
+            margin-bottom: 8px;
+        }
+        #fallbackLinks a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #fallbackLinks a:hover {
+            text-decoration: underline;
+        }
+        .download-link { /* Style for the torrent link */
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .download-link:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
     <video id="videoPlayer" controls crossorigin="anonymous">
       <source src="av/test_output2.ia.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
 
-    <!-- Torrent download -->
-    <a class="download-link" href="https://archive.org/download/test_output2/test_output2_archive.torrent" download>
-      📥 Download via Torrent
-    </a>
+    <div id="fallbackLinks" style="display: none;">
+        <p>It looks like the video could not be loaded in your browser. Please try one of the following options:</p>
+        <ul>
+            <li><a href="av/test_output2.ia.mp4" download>Download MP4 (Recommended Quality)</a></li>
+            <li><a href="av/test_output2.ia.mov" download>Download MOV (Alternative Format)</a></li>
+            </ul>
+        <a class="download-link" href="https://archive.org/download/test_output2/test_output2_archive.torrent" download>
+            📥 Download via Torrent
+        </a>
+        <p style="font-size: 0.9em; margin-top: 10px; color: #666;">
+            If you're having trouble, downloading directly might help, or use a torrent client for larger files.
+        </p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoPlayer = document.getElementById('videoPlayer');
+            const fallbackLinks = document.getElementById('fallbackLinks');
+            const sourceElement = videoPlayer.querySelector('source'); // Get the existing source element
+
+            // Define your video sources in order of preference
+            const videoSources = [
+                { src: 'av/test_output2.ia.mp4', type: 'video/mp4' },
+                { src: 'av/test_output2.ia.mov', type: 'video/quicktime' } // Common type for .mov
+                // Add more sources here if you have different formats or resolutions
+                // For example: { src: 'av/test_output2_low.mp4', type: 'video/mp4' }
+            ];
+
+            let currentSourceIndex = 0;
+
+            function loadNextSource() {
+                if (currentSourceIndex < videoSources.length) {
+                    const nextSource = videoSources[currentSourceIndex];
+                    console.log(`Attempting to load: ${nextSource.src}`);
+                    sourceElement.src = nextSource.src;
+                    sourceElement.type = nextSource.type;
+                    videoPlayer.load(); // Reload the video element to pick up the new source
+                } else {
+                    // All sources failed, show fallback links
+                    console.log('All video sources failed to load. Displaying fallback links.');
+                    fallbackLinks.style.display = 'block';
+                    videoPlayer.style.display = 'none'; // Hide the video player
+                }
+            }
+
+            // Event listener for when the video fails to load
+            videoPlayer.addEventListener('error', function() {
+                console.error('Video load error detected.');
+                currentSourceIndex++;
+                loadNextSource();
+            });
+
+            // Initial load attempt (important for robustness)
+            videoPlayer.load();
+        });
+    </script>
+
 
 
   </div>
