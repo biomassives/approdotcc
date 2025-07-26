@@ -219,17 +219,53 @@
 
   <div class="max-w-5xl mx-auto">
 
-<video 
-    id="videoPlayer" 
-    controls 
-    preload="metadata"
-    playsinline
-    style="width: 100%; max-width: 640px; height: auto; background-color: black;"
->
-  <source src="https://archive.org/download/SuperStove-English/SuperStove-English.mp4" type="video/mp4">
-  Your browser does not support the video tag. Try downloading the video <a href="https://archive.org/download/SuperStove-English/SuperStove-English.mp4">here</a>.
-</video>
+<div class="video-container">
+    <video 
+        id="videoPlayer" 
+        controls 
+        preload="metadata"
+        playsinline
+        style="width: 100%; max-width: 640px; height: auto; background-color: black;"
+    >
+      <source src="/api/video-proxy" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div id="video-error-message" style="display: none; padding: 20px; border: 1px solid #ccc; background-color: #f8f8f8; text-align: center;">
+        <p>There was a problem loading the video.</p>
+        <p>Please try reloading the page or view it directly on the Internet Archive.</p>
+        <a href="https://archive.org/details/SuperStove-English" target="_blank" rel="noopener noreferrer">
+            View on Internet Archive
+        </a>
+    </div>
+</div>
+
+<p style="text-align: center; margin-top: 10px;">
+    <a href="https://archive.org/details/SuperStove-English" target="_blank" rel="noopener noreferrer">
+        View source details on Archive.org
+    </a>
+</p>
 	  
+
+<script>
+  const videoPlayer = document.getElementById('videoPlayer');
+  const errorMessage = document.getElementById('video-error-message');
+
+  videoPlayer.addEventListener('error', (event) => {
+    // Log the error for debugging purposes
+    console.error("Video loading error:", videoPlayer.error);
+
+    // Hide the video player
+    videoPlayer.style.display = 'none';
+    
+    // Show our custom fallback message with the link
+    errorMessage.style.display = 'block';
+  });
+</script>
+
+
+
+
 
  <br /> <br />
     
