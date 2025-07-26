@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Appro Community Connector</title>
+      
+      <meta property="og:image" content="images/briquette.webp">
+      <meta property="og:description" content="trash to fuel and water to drinkable">
+      <meta property="og:title" content="Appro - Community Connector">
+      <meta name="description" content="Appropriate Technology Engineering and Science Connector">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      <meta name="apple-mobile-web-app-title" content="Approvideo Hub">
+      <meta name="application-name" content="Approvideo Hub">
+      <meta name="theme-color" content="#047857">
+      <meta name="License" content="GPLv3">
+      <meta name="msapplication-TileColor" content="#047857">
+      <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
+      <link rel="icon" type="image/png" href="images/favicon.ico">
+      <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+      
+      <style>
+           :root {
+    /* Colors */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-orange-300: #fdba74;
+    --color-orange-500: #f97316;
+    --color-orange-600: #ea580c;
+    --color-blue-500: #3b82f6;
+    --color-blue-600: #2563eb;
+    --color-blue-700: #1d4ed8;
+    --color-gray-50: #f9fafb;
+    --color-gray-400: #9ca3af;
+    --color-gray-500: #6b7280;
+    --color-gray-600: #4b5563;
+    --color-gray-800: #1f2937;
+    --color-lime-300: #d9f99d;
+    --color-yellow-100: #fef9c3;
+    --color-yellow-300: #fde047;
+    --color-yellow-400: #facc15;
+    --color-yellow-900: #713f12;
+    --color-teal-950: #0d444e;
+    --color-stone-600: #57534e;
+    --color-slate-600: #475569;
+
+    /* Spacing & Sizing */
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-auto: auto;
+
+    /* Fonts */
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-weight-bold: 700;
+    --font-weight-semibold: 600;
+
+    /* Borders & Shadows */
+    --rounded-md: 0.375rem;
+    --rounded-lg: 0.5rem;
+    --rounded-full: 9999px;
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* --- Base & Body Styles --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 20px auto;
+    padding: 20px;
+    line-height: 1.6;
+    background-color: var(--color-gray-50);
+    min-height: 100vh;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Header --- */
+.app-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-4);
+    background-color: var(--color-orange-600);
+    color: var(--color-white);
+    box-shadow: var(--shadow-md);
+}
+
+.app-header .logo {
+    display: flex;
+    align-items: flex-start;
+}
+
+.app-header .logo h1 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    margin: 0;
+}
+.app-header .logo a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.app-header .breadcrumbs {
+    width: 100%;
+    text-align: left;
+}
+
+/* --- Main Content --- */
+main {
+    max-width: 64rem; /* max-w-5xl */
+    margin: 0 auto;
+}
+
+#dashboard-logged-out {
+    text-align: center;
+}
+
+#dashboard-logged-out h2 {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-800);
+    margin-bottom: var(--space-4);
+}
+
+#dashboard-logged-out p {
+    font-size: var(--font-size-xl);
+    color: var(--color-gray-600);
+    margin-bottom: var(--space-8);
+}
+
+.icon-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-4) 0;
+}
+
+.icon-links .icon-group {
+    display: flex;
+    gap: var(--space-4);
+}
+
+.icon-links img {
+    border-radius: var(--rounded-md);
+    transition: all 300ms;
+}
+
+.icon-links img:hover {
+    border: 2px solid var(--color-blue-500);
+}
+
+/* --- Topic Panels Grid --- */
+.panels-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+}
+
+@media (min-width: 768px) {
+    .panels-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.color-panel {
+    border-radius: var(--rounded-lg);
+    padding: var(--space-6);
+    cursor: pointer;
+    height: 12rem; /* h-48 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative; /* For icon positioning */
+    overflow: hidden; /* For icon positioning */
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.color-panel h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    margin: 0 0 var(--space-3) 0;
+}
+
+.color-panel p {
+    margin: 0;
+}
+
+.color-panel .icon-bg {
+    position: absolute;
+    right: -1rem;
+    bottom: -1rem;
+    width: 6rem;
+    height: 6rem;
+    opacity: 0.2;
+    color: currentColor;
+}
+
+/* Specific Panel Styles */
+#water { background-color: var(--color-teal-950); }
+#water h2 { color: var(--color-lime-300); }
+
+#briquette_use, #soakpit_panel { background-color: var(--color-stone-600); }
+#briquette_use h2, #soakpit_panel h2 { color: var(--color-orange-300); }
+
+#solar_cooker {
+    background-color: var(--color-yellow-100);
+    color: var(--color-yellow-900);
+    border: 2px solid var(--color-yellow-300);
+    box-shadow: var(--shadow-md);
+    transition: background-color 200ms;
+}
+#solar_cooker:hover { background-color: #fef08a; /* yellow-200 */ }
+#solar_cooker h2 { color: var(--color-orange-600); font-weight: var(--font-weight-bold); }
+#solar_cooker .icon-bg { width: 2.5rem; height: 2.5rem; color: var(--color-orange-500); opacity: 0.8; align-self: flex-end; }
+
+#mycelium_use, #rocket_stove { background-color: var(--color-slate-600); }
+#mycelium_use h2, #rocket_stove h2 { color: var(--color-yellow-400); }
+
+/* --- Footer --- */
+.app-footer {
+    background-color: var(--color-gray-800);
+    color: var(--color-white);
+    padding: var(--space-8) 0;
+    margin-top: 2rem;
+}
+.app-footer-container {
+    max-width: 80rem; /* Fallback for container class */
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+}
+
+.footer-grid {
+    display: grid;
+    gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--color-gray-500);
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-gray-400);
+}
+
+@media (min-width: 768px) {
+    .footer-bottom {
+        flex-direction: row;
+    }
+}
+
+.footer-links {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+}
+
+@media (min-width: 768px) {
+    .footer-links {
+        margin-top: 0;
+    }
+}
+
+.footer-links a {
+    color: var(--color-gray-400);
+    text-decoration: none;
+}
+.footer-links a:hover {
+    color: var(--color-white);
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background-color: var(--color-blue-600);
+    color: var(--color-white);
+    padding: 0.75rem;
+    border-radius: var(--rounded-full);
+    box-shadow: var(--shadow-lg);
+    display: none; /* JS will toggle this */
+    border: none;
+}
+#back-to-top:hover {
+    background-color: var(--color-blue-700);
+}
+#back-to-top svg {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+/* --- ORIGINAL CUSTOM STYLES (Merged & Cleaned) --- */
+.item-container {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.item-container h2 { margin-top: 0; color: #333; }
+.item-container h3 { margin-top: 10px; color: #555; }
+.item-container p, .item-container ul, .item-container ol { line-height: 1.6; }
+.item-container ul, .item-container ol { padding-left: 20px; }
+
+.breadcrumbs ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.breadcrumbs li + li::before {
+    content: ">>";
+    margin: 0 10px;
+    color: var(--color-white);
+}
+
+video {
+    width: 100%;
+    height: auto;
+    background: var(--color-black);
+    border-radius: 8px;
+}
+
+#fallbackLinks {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 15px;
+}
+#fallbackLinks ul { padding-left: 20px; }
+#fallbackLinks li { margin-bottom: 8px; }
+
+.download-link {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+.download-link:hover { background: #0056b3; }
+
+.help-text {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+}
+
+      </style>
+</head>
+<body>
+    <div id="app">
+        <header class="app-header">
+            <div class="logo">
+                <h1><a href=/><img src="images/favicon.webp" alt="Appro(priate technology) Community Connector"> Appro Community Connector </a></h1>
+            </div>
+            <nav class="breadcrumbs">
+                <ul><li></li><li><a href="waste.html">waste to fuel</a></li></ul>
+                <ul><li></li><li><a href="water.html">water to drink</a></li></ul>
+                <ul><li></li><li><a href="solarcooking.html">cooking with sunshine</a></li></ul>
+            </nav>
+        </header>
+    
+        <main>
+            <div id="dashboard-logged-out">
+                <h2>Appropriate Technology Reference</h2>
+                <p></p>
+                <div class="icon-links">
+                    <div class="icon-group">
+                        <a href="waste.html"><img src="images/wastemanagement64_.png" width="64" height="64" alt="waste to fuel" title="Waste to fuel"></a>
+                        <a href="water.html" title="Water"><img src="images/drinkingwater64_.png" width="64" height="64" alt="appro cc" title="Drinking water"></a>
+                        <a href="solarcooking.html" title="Solar Cooking"><img src="images/solarcooker-approcc.webp" width="64" height="64" alt="DIY Solar Cooker" title="DIY Solar Cooker"></a>
+                    </div>
+                </div>
+                <p>
+                    <a href="#infrarepair">Trash/ Waste</a>,
+                    <a href="#watersec">Drinking Water</a>,
+                    <a href="#solarcooker">Solar Cooking</a>
+                </p>
+            </div>
+
+            <div class="audio-player">
+                <div class="player-header">
+                    <img class="thumbnail" id="thumbnailImg" src="/images/briquette.webp" alt="Audio thumbnail">
+                    <div class="led-display">
+                        <div class="filename-text" id="filenameContainer">
+                            <span class="scrolling-text" id="filenameDisplay">Loading file...</span>
+                        </div>
+                    </div>
+                    <div class="controls-top">
+                        <button class="play-btn" id="playPauseBtn">▶</button>
+                        <a href="#" class="download-link" id="downloadLink" title="Download">▼</a>
+                    </div>
+                </div>
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <div class="player-controls">
+                    <div class="time-display">
+                        <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                    </div>
+                </div>
+                <audio id="audioElement" src="/av/Fuel-Briquette--ar.mp3"></audio>
+            </div>
+            
+            <br><br>
+            
+            <div class="video-container">
+                <video id="videoPlayer" controls preload="metadata" playsinline style="width: 100%; max-width: 640px; height: auto; background-color: black;">
+                    <source src="/api/video-proxy-superstove.js" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div id="video-error-message" style="display: none; padding: 20px; border: 1px solid #ccc; background-color: #f8f8f8; text-align: center;">
+                    <p>There was a problem loading the video.</p>
+                    <p>Please try reloading the page or view it directly on the Internet Archive.</p>
+                    <a href="https://archive.org/details/SuperStove-English" target="_blank" rel="noopener noreferrer">View on Internet Archive</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 10px;">
+                <a href="https://archive.org/details/SuperStove-English" target="_blank" rel="noopener noreferrer">View source details on Archive.org</a>
+            </p>
+
+            <br><br>
+
+            <video id="videoPlayer" controls crossorigin="anonymous">
+                <source src="av/test_output2.ia.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div id="fallbackLinks" style="display: none;">
+                <p><strong>Video won't play?</strong> Try downloading instead:</p>
+                <ul>
+                    <li><a href="av/test_output2.ia.mp4" download>Download MP4 (Local - 93.7MB)</a></li>
+                    <li><a href="https://archive.org/download/test_output2/test_output2.mp4" download>Download MP4 (Archive.org Mirror - 93.7MB)</a></li>
+                </ul>
+                <a class="download-link" href="https://archive.org/download/test_output2/test_output2_archive.torrent" download>📥 Download via Torrent (9.3KB)</a>
+                <p class="help-text">Direct download works on all devices. Torrent option available for resumable downloads.</p>
+            </div>
+            
+            <br><br>
+
+            <div class="panels-grid">
+                <div id="water" class="color-panel" data-color="frankincense">
+                    <h2>Water Security</h2>
+                    <p>Safe drinking water, hygenic sanitation</p>
+                    <svg class="icon-bg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M12 11.5v-7m0 0l-3 3m3-3l3 3m-12 9.5h16.5M12 18.5c-4.65 0-8.5-3.85-8.5-8.5 0-1.05.22-2.05.6-2.96m17.4 2.96c0 1.05-.22 2.05-.6 2.96M12 18.5c4.65 0 8.5-3.85 8.5-8.5 0-1.05-.22-2.05-.6-2.96M5.63 7.04L4.5 7.5m15-3l-1.1.55"></path></svg>
+                </div>
+                <div id="briquette_use" class="color-panel" data-color="myhrr">
+                    <h2>Fuel Briquette</h2>
+                    <p>Heating from waste sawdust, paper,...</p>
+                    <svg class="icon-bg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path></svg>
+                </div>
+                <div id="solar_cooker" class="color-panel" data-color="sunshine">
+                    <h2>Solar Cookers</h2>
+                    <p>Harnessing sunlight for clean, fuel-free cooking solutions.</p>
+                    <svg class="icon-bg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M6.05 17.95l-1.414 1.414M18.364 18.364l-1.414-1.414M6.05 6.05L4.636 7.464M12 7a5 5 0 100 10 5 5 0 000-10z" /></svg>
+                </div>
+                <div id="mycelium_use" class="color-panel" data-color="mycelium">
+                    <h2>Edible House?</h2>
+                    <p>Oyster mushroom panels, Hansel & Gretel concept – improved mycelial cake as emergency food.</p>
+                    <svg class="icon-bg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10l4.5-4.5m0 0L12 10m-4.5-4.5V21" /></svg>
+                </div>
+                <a href="soakpit.html" id="soakpit_panel" class="color-panel" data-color="soakpit">
+                    <h2>Sanitary latrine & Soak pit</h2>
+                    <p>Improved greywater drainage and sanitation using affordable soak pit systems.</p>
+                    <svg class="icon-bg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M4 12h16M4 16h16M4 8h16" /></svg>
+                </a>
+                <div id="rocket_stove" class="color-panel" data-color="rocketstove">
+                    <h2>Fuel Briquette Stove DIY</h2>
+                    <p>Simple video instrucitonal for production of useful briquette burning stove.</p>
+                    <svg class="icon-bg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10l4.5-4.5m0 0L12 10m-4.5-4.5V21" /></svg>
+                </div>
+            </div>
+
+            <div class="icon-links">
+                <div class="icon-group">
+                    <a href="waste.html"><img src="images/wastemanagement64_.png" width="64" height="64" alt="appro cc" title="Appro Community Connector" border=0></a>
+                    <a href="water.html"><img src="images/drinkingwater64_.png" width="64" height="64" alt="appro cc" title="Appro Community Connector" border=0></a>
+                    <a href="solarcooking.html" title="Solar Cooking"><img src="images/solarcooker-approcc.webp" width="64" height="64" alt="DIY Solar Cooker" title="DIY Solar Cooker"></a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <div class="app-footer-container">
+                <div class="footer-grid">
+                    <div>
+                        <img src="images/foote_logo_appro_dark220.webp" width="220" height="117" alt="appro cc" title="Appro Community Connector">
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <div>
+                        <p>
+                            <button id="back-to-top">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                                </svg>
+                            </button>
+                        </p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>open &copy; 2025 Appro Community Connector<br>Sharing knowledge & expertise benefits vulnerable communities.</p>
+                    <div class="footer-links">
+                        <a href="#privacy" id="privacy-link-footer">Privacy Policy</a>
+                        <a href="#terms" id="terms-link-footer">Terms of Service</a>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+                <a href=/><svg dataSlot="icon" aria-hidden="true" fill="none" strokeWidth={1.5} stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" strokeLinecap="round" strokeLinejoin="round" /></svg></a>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="js/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+    <script>
+      // All your existing scripts
+      document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('videoPlayer');
+            const fallback = document.getElementById('fallbackLinks');
+            const source = video.querySelector('source');
+            const sources = [
+                'av/test_output2.ia.mp4',
+                'https://archive.org/download/test_output2/test_output2.mp4'
+            ];
+            let currentSource = 0;
+            let loadTimeout;
+            function tryNextSource() {
+                if (currentSource < sources.length) {
+                    source.src = sources[currentSource];
+                    video.load();
+                    clearTimeout(loadTimeout);
+                    loadTimeout = setTimeout(() => {
+                        currentSource++;
+                        tryNextSource();
+                    }, 8000);
+                } else {
+                    showFallback();
+                }
+            }
+            function showFallback() {
+                fallback.style.display = 'block';
+                clearTimeout(loadTimeout);
+            }
+            function hideTimeout() {
+                clearTimeout(loadTimeout);
+            }
+            video.addEventListener('error', function() {
+                currentSource++;
+                tryNextSource();
+            });
+            video.addEventListener('loadeddata', hideTimeout);
+            video.addEventListener('canplay', hideTimeout);
+            video.load();
+        });
+      document.getElementById('water').addEventListener('click', function() { window.location.href = "water.html"; });
+      document.getElementById('briquette_use').addEventListener('click', function() { window.location.href = "waste.html"; });
+      document.getElementById('solar_cooker').addEventListener('click', function() { window.location.href = "solarcooking.html"; });
+      document.getElementById('mycelium_use').addEventListener('click', function() { window.location.href = "mycelium.html"; });
+      document.getElementById('soakpit_panel').addEventListener('click', function() { window.location.href = "soakpit.html"; });
+      document.addEventListener('DOMContentLoaded', function() {
+        const audioElement = document.getElementById('audioElement');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const progressBar = document.getElementById('progressBar');
+        const progressContainer = document.getElementById('progressContainer');
+        const currentTimeElement = document.getElementById('currentTime');
+        const durationElement = document.getElementById('duration');
+        const filenameDisplay = document.getElementById('filenameDisplay');
+        const filenameContainer = document.getElementById('filenameContainer');
+        const downloadLink = document.getElementById('downloadLink');
+        const thumbnailImg = document.getElementById('thumbnailImg');
+        let isPlaying = false;
+        function extractFilename(src) {
+            const fullPath = src.split('/');
+            const filename = fullPath[fullPath.length - 1];
+            const originalFilename = filename;
+            const cleanName = filename.split('.')[0].replace(/-/g, ' ');
+            return {
+                display: cleanName.split('_').map(word =>
+                    word.charAt(0).toUpperCase() + word.slice(1)
+                ).join(' '),
+                original: originalFilename
+            };
+        }
+        const fileInfo = extractFilename(audioElement.src);
+        filenameDisplay.textContent = fileInfo.display;
+        downloadLink.href = audioElement.src;
+        downloadLink.download = fileInfo.original;
+        downloadLink.setAttribute('title', 'Download ' + fileInfo.original);
+        function checkScroll() {
+            if (filenameDisplay.offsetWidth > filenameContainer.offsetWidth) {
+                filenameContainer.classList.add('scrolling');
+            } else {
+                filenameContainer.classList.remove('scrolling');
+            }
+        }
+        setTimeout(checkScroll, 100);
+        if (fileInfo.original.includes('briquette')) {
+            thumbnailImg.src = "/images/briquette.webp";
+            thumbnailImg.alt = "Briquette Audio";
+        } else {
+            thumbnailImg.src = "/images/briquette.webp";
+            thumbnailImg.alt = "Audio Thumbnail";
+        }
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            seconds = Math.floor(seconds % 60);
+            return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        }
+        audioElement.addEventListener('loadedmetadata', function() {
+            durationElement.textContent = formatTime(audioElement.duration);
+        });
+        playPauseBtn.addEventListener('click', function() {
+            if (isPlaying) {
+                audioElement.pause();
+                playPauseBtn.textContent = '▶';
+            } else {
+                audioElement.play().catch(error => {
+                    filenameDisplay.textContent = 'Error loading audio';
+                });
+                playPauseBtn.textContent = '❚❚';
+            }
+            isPlaying = !isPlaying;
+        });
+        audioElement.addEventListener('timeupdate', function() {
+            const progress = (audioElement.currentTime / audioElement.duration) * 100;
+            progressBar.style.width = `${progress}%`;
+            currentTimeElement.textContent = formatTime(audioElement.currentTime);
+        });
+        progressContainer.addEventListener('click', function(e) {
+            const rect = progressContainer.getBoundingClientRect();
+            const pos = (e.clientX - rect.left) / rect.width;
+            audioElement.currentTime = pos * audioElement.duration;
+        });
+        audioElement.addEventListener('ended', function() {
+            progressBar.style.width = '0%';
+            playPauseBtn.textContent = '▶';
+            isPlaying = false;
+            audioElement.currentTime = 0;
+            filenameContainer.classList.remove('scrolling');
+            setTimeout(checkScroll, 100);
+        });
+        audioElement.addEventListener('error', function() {
+            filenameDisplay.textContent = 'Error: File not found';
+            filenameDisplay.style.color = '#ff0000';
+            downloadLink.style.display = 'none';
+        });
+        filenameContainer.addEventListener('mouseenter', function() {
+            if (filenameDisplay.offsetWidth > filenameContainer.offsetWidth) {
+                filenameContainer.classList.add('scrolling');
+            }
+        });
+        filenameContainer.addEventListener('mouseleave', function() {
+            filenameContainer.classList.remove('scrolling');
+        });
+    });
+    </script>
+</body>
+</html>
