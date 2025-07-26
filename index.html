@@ -219,10 +219,17 @@
 
   <div class="max-w-5xl mx-auto">
 
-    <video id="videoPlayer" controls crossorigin="anonymous">
-        <source src="https://archive.org/download/SuperStove-English/SuperStove-English.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+<video 
+    id="videoPlayer" 
+    controls 
+    preload="metadata"
+    playsinline
+    style="width: 100%; max-width: 640px; height: auto; background-color: black;"
+>
+  <source src="https://archive.org/download/SuperStove-English/SuperStove-English.mp4" type="video/mp4">
+  Your browser does not support the video tag. Try downloading the video <a href="https://archive.org/download/SuperStove-English/SuperStove-English.mp4">here</a>.
+</video>
+	  
 
  <br /> <br />
     
